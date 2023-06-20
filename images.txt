@@ -1,0 +1,136 @@
+
+Pod: apimanager-679b9db58b-mkq9n in namespace: dockstaging
+Docker Image: sunbirded.azurecr.io/kong:1.8.0-gold docker.io/sunbird/go-dns:v1.2
+---------------------------
+Pod: apimanagerecho-687cf8ddd8-tjrgl in namespace: dockstaging
+Docker Image: sunbirded.azurecr.io/echo-server:1.5.0-gold
+---------------------------
+Pod: assessment-6dd99bc7fb-fr96v in namespace: dockstaging
+Docker Image: sunbirded.azurecr.io/assessment-service:release-5.2.0_RC3_1ad40fd_3
+---------------------------
+Pod: bot-6b6fdd87fc-gqhbl in namespace: dockstaging
+Docker Image: sunbirded.azurecr.io/bot:master_2fa2af8_ff5c4bd_18
+---------------------------
+Pod: cert-6b699cb957-mdtmb in namespace: dockstaging
+Docker Image: sunbirded.azurecr.io/cert_service:release-1.3.0_590ccd8
+---------------------------
+Pod: certregistry-5fc5584ddf-tb9zg in namespace: dockstaging
+Docker Image: sunbirded.azurecr.io/cert_registry_service:logback-json44cade372
+---------------------------
+Pod: content-5c78d8bb7f-f27mk in namespace: dockstaging
+Docker Image: sunbirded.azurecr.io/content-service:release-5.2.0_4daa146_105
+---------------------------
+Pod: hawkeye-superset-865598b568-qvgc5 in namespace: dockstaging
+Docker Image: sunbirded.azurecr.io/hawkeye:master_f93ced9
+---------------------------
+Pod: knowledgemw-6564cd4c4b-564zf in namespace: dockstaging
+Docker Image: sunbirded.azurecr.io/knowledge-mw-service:release-2.10.0_c07dc6b_2
+---------------------------
+Pod: mlworkbench-676df9b868-z97v7 in namespace: dockstaging
+Docker Image: sunbirded.azurecr.io/ml-api:vd_spirint11_42e0fb7
+---------------------------
+Pod: nginx-private-ingress-6759dbfbb9-d45nl in namespace: dockstaging
+Docker Image: sunbirded.azurecr.io/proxy:release-2.8.0_RC1_21
+---------------------------
+Pod: nginx-public-ingress-sq6cq in namespace: dockstaging
+Docker Image: sunbirded.azurecr.io/proxy:dock-0.0.3_RC5_1
+---------------------------
+Pod: opensaber-5bbdc899dc-mk52b in namespace: dockstaging
+Docker Image: sunbirded.azurecr.io/opensaber:vidyadaan_d1f7e10_26
+---------------------------
+Pod: player-797b4cf7bc-scksp in namespace: dockstaging
+Docker Image: sunbirded.azurecr.io/creation-player:release-5.2.0_RC2_9dd97da_563
+---------------------------
+Pod: print-d7cd559dc-6cbsh in namespace: dockstaging
+Docker Image: sunbirded.azurecr.io/print-service:release-3.0.0_ba12ae1
+---------------------------
+Pod: program-5f9fc7768c-79hvt in namespace: dockstaging
+Docker Image: sunbirded.azurecr.io/program-service:release-5.2.0_8a6235e_210
+---------------------------
+Pod: redis-7b79d9b4c7-xdw7t in namespace: dockstaging
+Docker Image: redis:alpine
+---------------------------
+Pod: router-56fcb5f44f-krpvg in namespace: dockstaging
+Docker Image: sunbirded.azurecr.io/router:master_2fa2af8_ff5c4bd_14
+---------------------------
+Pod: search-6888488665-t9nzl in namespace: dockstaging
+Docker Image: sunbirded.azurecr.io/search-service:release-5.0.0_RC2_1
+---------------------------
+Pod: taxonomy-6dccd746b5-mjs2g in namespace: dockstaging
+Docker Image: sunbirded.azurecr.io/taxonomy-service:release-5.2.0_RC3_d39ed09_39
+---------------------------
+Pod: telemetry-57c657c768-rtvwr in namespace: dockstaging
+Docker Image: sunbirded.azurecr.io/telemetry-service:release-3.3.0_50ebc6d
+---------------------------
+Pod: telemetry-logstash-dock-b8cbfd994-5ctm8 in namespace: dockstaging
+Docker Image: sunbird/logstash:5.6-alpine
+---------------------------
+Pod: activity-aggregate-updater-taskmanager-55557c4f4b-2tnqr in namespace: flink-kp-dock
+Docker Image: sunbirded.azurecr.io/knowledge-platform-jobs:release-5.0.1_RC1_671df25_616
+---------------------------
+Pod: asset-enrichment-taskmanager-7bd57d4c7d-vqd4h in namespace: flink-kp-dock
+Docker Image: sunbirded.azurecr.io/knowledge-platform-jobs:release-5.2.0_c6d3f7b_46
+---------------------------
+Pod: async-questionset-publish-taskmanager-9f5878b86-8gdtz in namespace: flink-kp-dock
+Docker Image: sunbirded.azurecr.io/data-pipeline:release-5.2.0_RC3_58d52be_6
+---------------------------
+Pod: audit-history-indexer-jobmanager-7snbv in namespace: flink-kp-dock
+Docker Image: sunbirded.azurecr.io/knowledge-platform-jobs:release-5.2.0_c6d3f7b_46
+---------------------------
+Pod: audit-history-indexer-taskmanager-85c7dc8ccd-4xvps in namespace: flink-kp-dock
+Docker Image: sunbirded.azurecr.io/knowledge-platform-jobs:release-5.2.0_c6d3f7b_46
+---------------------------
+Pod: auto-creator-v2-jobmanager-52xpj in namespace: flink-kp-dock
+Docker Image: sunbirded.azurecr.io/knowledge-platform-jobs:release-5.2.0_c6d3f7b_46
+---------------------------
+Pod: auto-creator-v2-taskmanager-bcb97bd49-svjzn in namespace: flink-kp-dock
+Docker Image: sunbirded.azurecr.io/knowledge-platform-jobs:release-5.2.0_c6d3f7b_46
+---------------------------
+Pod: content-auto-creator-jobmanager-sgfm7 in namespace: flink-kp-dock
+Docker Image: sunbirded.azurecr.io/knowledge-platform-jobs:release-5.2.0_c6d3f7b_46
+---------------------------
+Pod: content-auto-creator-taskmanager-66897444fd-5bcsm in namespace: flink-kp-dock
+Docker Image: sunbirded.azurecr.io/knowledge-platform-jobs:release-5.2.0_c6d3f7b_46
+---------------------------
+Pod: content-publish-jobmanager-tzwn8 in namespace: flink-kp-dock
+Docker Image: sunbirded.azurecr.io/knowledge-platform-jobs:release-5.2.1_RC1_5816fae_50
+---------------------------
+Pod: content-publish-taskmanager-58f44ccdcc-5v6lt in namespace: flink-kp-dock
+Docker Image: sunbirded.azurecr.io/knowledge-platform-jobs:release-5.2.1_RC1_5816fae_50
+---------------------------
+Pod: csp-migrator-jobmanager-9gr5x in namespace: flink-kp-dock
+Docker Image: sunbirded.azurecr.io/knowledge-platform-jobs:release-5.2.1_RC1_5816fae_50
+---------------------------
+Pod: csp-migrator-taskmanager-67499c79c6-gp2bb in namespace: flink-kp-dock
+Docker Image: sunbirded.azurecr.io/knowledge-platform-jobs:release-5.2.1_RC1_5816fae_50
+---------------------------
+Pod: live-node-publisher-jobmanager-bjgd5 in namespace: flink-kp-dock
+Docker Image: sunbirded.azurecr.io/knowledge-platform-jobs:release-5.2.0_d2969ea_47
+---------------------------
+Pod: live-node-publisher-taskmanager-6b7b8b7cc4-q2p72 in namespace: flink-kp-dock
+Docker Image: sunbirded.azurecr.io/knowledge-platform-jobs:release-5.2.0_d2969ea_47
+---------------------------
+Pod: post-publish-processor-jobmanager-wwl6w in namespace: flink-kp-dock
+Docker Image: sunbirded.azurecr.io/knowledge-platform-jobs:release-5.2.0_c6d3f7b_46
+---------------------------
+Pod: post-publish-processor-taskmanager-54cc56c467-ts87s in namespace: flink-kp-dock
+Docker Image: sunbirded.azurecr.io/knowledge-platform-jobs:release-5.2.0_c6d3f7b_46
+---------------------------
+Pod: questionset-republish-jobmanager-mpzmr in namespace: flink-kp-dock
+Docker Image: sunbirded.azurecr.io/data-pipeline:release-5.2.0_RC3_58d52be_6
+---------------------------
+Pod: questionset-republish-taskmanager-6966585fd8-kvdgz in namespace: flink-kp-dock
+Docker Image: sunbirded.azurecr.io/data-pipeline:release-5.2.0_RC3_58d52be_6
+---------------------------
+Pod: relation-cache-updater-taskmanager-59486847f4-5rhm8 in namespace: flink-kp-dock
+Docker Image: sunbirded.azurecr.io/knowledge-platform-jobs:release-5.0.1_RC1_671df25_616
+---------------------------
+Pod: search-indexer-jobmanager-96ndk in namespace: flink-kp-dock
+Docker Image: sunbirded.azurecr.io/knowledge-platform-jobs:release-5.2.0_c6d3f7b_46
+---------------------------
+Pod: search-indexer-taskmanager-84b7d87946-2cpjd in namespace: flink-kp-dock
+Docker Image: sunbirded.azurecr.io/knowledge-platform-jobs:release-5.2.0_c6d3f7b_46
+---------------------------
+Pod: video-stream-generator-taskmanager-79bbfb8bcd-6hlhd in namespace: flink-kp-dock
+Docker Image: sunbirded.azurecr.io/knowledge-platform-jobs:release-5.2.0_c6d3f7b_46
+---------------------------
