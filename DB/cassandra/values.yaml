@@ -90,7 +90,7 @@ image:
   pullSecrets: []
   ## Enable debug mode
   ##
-  debug: false
+  debug: true
 
 ## Secret with keystore, keystore password, truststore, truststore password
 ## DEPRECATED. Use tls.existingSecret instead

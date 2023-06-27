@@ -1,4 +1,63 @@
-CREATE KEYSPACE qmzbm_form_service WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'} AND durable_writes = true;
+CREATE KEYSPACE lock_db WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'}  AND durable_writes = true;
+
+CREATE TABLE lock_db.lock (
+    "resourceId" text,
+    "resourceType" text,
+    "createdBy" text,
+    "createdOn" timestamp,
+    "creatorInfo" text,
+    "deviceId" text,
+    "expiresAt" timestamp,
+    "lockId" uuid,
+    "resourceInfo" text,
+    PRIMARY KEY ("resourceId", "resourceType")
+) WITH CLUSTERING ORDER BY ("resourceType" ASC)
+    AND bloom_filter_fp_chance = 0.01
+    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
+    AND comment = ''
+    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}
+    AND compression = {'chunk_length_in_kb': '64', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
+    AND crc_check_chance = 1.0
+    AND dclocal_read_repair_chance = 0.1
+    AND default_time_to_live = 0
+    AND gc_grace_seconds = 864000
+    AND max_index_interval = 2048
+    AND memtable_flush_period_in_ms = 0
+    AND min_index_interval = 128
+    AND read_repair_chance = 0.0
+    AND speculative_retry = '99PERCENTILE';
+CREATE INDEX lock_lockid_idx ON lock_db.lock ("lockId");
+
+CREATE KEYSPACE okyrq_discussion_service WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'}  AND durable_writes = true;
+
+CREATE TABLE okyrq_discussion_service.post (
+    post_id text PRIMARY KEY,
+    body text,
+    created_on timestamp,
+    is_deleted boolean,
+    tag text,
+    thread_id text,
+    user_id text,
+    user_info map<text, text>
+) WITH bloom_filter_fp_chance = 0.01
+    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
+    AND comment = ''
+    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}
+    AND compression = {'chunk_length_in_kb': '64', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
+    AND crc_check_chance = 1.0
+    AND dclocal_read_repair_chance = 0.1
+    AND default_time_to_live = 0
+    AND gc_grace_seconds = 864000
+    AND max_index_interval = 2048
+    AND memtable_flush_period_in_ms = 0
+    AND min_index_interval = 128
+    AND read_repair_chance = 0.0
+    AND speculative_retry = '99PERCENTILE';
+CREATE INDEX post_thread_id_idx ON okyrq_discussion_service.post (thread_id);
+CREATE INDEX post_user_id_idx ON okyrq_discussion_service.post (user_id);
+CREATE INDEX post_tag_idx ON okyrq_discussion_service.post (tag);
+
+CREATE KEYSPACE qmzbm_form_service WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'}  AND durable_writes = true;
 
 CREATE TABLE qmzbm_form_service.form_data (
     root_org text,
@@ -26,93 +85,9 @@ CREATE TABLE qmzbm_form_service.form_data (
     AND read_repair_chance = 0.0
     AND speculative_retry = '99PERCENTILE';
 
-CREATE KEYSPACE system_auth WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'}  AND durable_writes = true;
+CREATE KEYSPACE dev_dialcode_store WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'}  AND durable_writes = true;
 
-CREATE TABLE system_auth.resource_role_permissons_index (
-    resource text,
-    role text,
-    PRIMARY KEY (resource, role)
-) WITH CLUSTERING ORDER BY (role ASC)
-    AND bloom_filter_fp_chance = 0.01
-    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
-    AND comment = 'index of db roles with permissions granted on a resource'
-    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}
-    AND compression = {'chunk_length_in_kb': '64', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
-    AND crc_check_chance = 1.0
-    AND dclocal_read_repair_chance = 0.0
-    AND default_time_to_live = 0
-    AND gc_grace_seconds = 7776000
-    AND max_index_interval = 2048
-    AND memtable_flush_period_in_ms = 3600000
-    AND min_index_interval = 128
-    AND read_repair_chance = 0.0
-    AND speculative_retry = '99PERCENTILE';
-
-CREATE TABLE system_auth.role_permissions (
-    role text,
-    resource text,
-    permissions set<text>,
-    PRIMARY KEY (role, resource)
-) WITH CLUSTERING ORDER BY (resource ASC)
-    AND bloom_filter_fp_chance = 0.01
-    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
-    AND comment = 'permissions granted to db roles'
-    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}
-    AND compression = {'chunk_length_in_kb': '64', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
-    AND crc_check_chance = 1.0
-    AND dclocal_read_repair_chance = 0.0
-    AND default_time_to_live = 0
-    AND gc_grace_seconds = 7776000
-    AND max_index_interval = 2048
-    AND memtable_flush_period_in_ms = 3600000
-    AND min_index_interval = 128
-    AND read_repair_chance = 0.0
-    AND speculative_retry = '99PERCENTILE';
-
-CREATE TABLE system_auth.role_members (
-    role text,
-    member text,
-    PRIMARY KEY (role, member)
-) WITH CLUSTERING ORDER BY (member ASC)
-    AND bloom_filter_fp_chance = 0.01
-    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
-    AND comment = 'role memberships lookup table'
-    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}
-    AND compression = {'chunk_length_in_kb': '64', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
-    AND crc_check_chance = 1.0
-    AND dclocal_read_repair_chance = 0.0
-    AND default_time_to_live = 0
-    AND gc_grace_seconds = 7776000
-    AND max_index_interval = 2048
-    AND memtable_flush_period_in_ms = 3600000
-    AND min_index_interval = 128
-    AND read_repair_chance = 0.0
-    AND speculative_retry = '99PERCENTILE';
-
-CREATE TABLE system_auth.roles (
-    role text PRIMARY KEY,
-    can_login boolean,
-    is_superuser boolean,
-    member_of set<text>,
-    salted_hash text
-) WITH bloom_filter_fp_chance = 0.01
-    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
-    AND comment = 'role definitions'
-    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}
-    AND compression = {'chunk_length_in_kb': '64', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
-    AND crc_check_chance = 1.0
-    AND dclocal_read_repair_chance = 0.0
-    AND default_time_to_live = 0
-    AND gc_grace_seconds = 7776000
-    AND max_index_interval = 2048
-    AND memtable_flush_period_in_ms = 3600000
-    AND min_index_interval = 128
-    AND read_repair_chance = 0.0
-    AND speculative_retry = '99PERCENTILE';
-
-CREATE KEYSPACE dock_dialcode_store WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'} AND durable_writes = true;
-
-CREATE TABLE dock_dialcode_store.publisher (
+CREATE TABLE dev_dialcode_store.publisher (
     identifier text PRIMARY KEY,
     channel text,
     created_on text,
@@ -133,7 +108,7 @@ CREATE TABLE dock_dialcode_store.publisher (
     AND read_repair_chance = 0.0
     AND speculative_retry = '99PERCENTILE';
 
-CREATE TABLE dock_dialcode_store.dial_code (
+CREATE TABLE dev_dialcode_store.dial_code (
     identifier text PRIMARY KEY,
     batchcode text,
     channel text,
@@ -158,7 +133,7 @@ CREATE TABLE dock_dialcode_store.dial_code (
     AND read_repair_chance = 0.0
     AND speculative_retry = '99PERCENTILE';
 
-CREATE TABLE dock_dialcode_store.system_config (
+CREATE TABLE dev_dialcode_store.system_config (
     prop_key text PRIMARY KEY,
     prop_value text
 ) WITH bloom_filter_fp_chance = 0.01
@@ -176,7 +151,7 @@ CREATE TABLE dock_dialcode_store.system_config (
     AND read_repair_chance = 0.0
     AND speculative_retry = '99PERCENTILE';
 
-CREATE KEYSPACE rvepo_framework WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'} AND durable_writes = true;
+CREATE KEYSPACE rvepo_framework WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'}  AND durable_writes = true;
 
 CREATE TABLE rvepo_framework.plugin_registry (
     id text PRIMARY KEY,
@@ -203,7 +178,7 @@ CREATE TABLE rvepo_framework.plugin_registry (
     AND read_repair_chance = 0.0
     AND speculative_retry = '99PERCENTILE';
 
-CREATE KEYSPACE sunbirdplugin WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'} AND durable_writes = true;
+CREATE KEYSPACE sunbirdplugin WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'}  AND durable_writes = true;
 
 CREATE TABLE sunbirdplugin.announcement (
     id text PRIMARY KEY,
@@ -401,7 +376,7 @@ CREATE TABLE sunbirdplugin.announcementauth (
     AND read_repair_chance = 0.0
     AND speculative_retry = '99PERCENTILE';
 
-CREATE KEYSPACE sunbird WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'} AND durable_writes = true;
+CREATE KEYSPACE sunbird WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'}  AND durable_writes = true;
 
 CREATE TABLE sunbird.assessment_eval (
     id text PRIMARY KEY,
@@ -1990,7 +1965,7 @@ CREATE TABLE sunbird.config_path_audit (
     AND speculative_retry = '99PERCENTILE';
 CREATE INDEX inx_created_date ON sunbird.config_path_audit (created_date);
 
-CREATE TABLE sunbird.page_section 
+CREATE TABLE sunbird.page_section (
     id text PRIMARY KEY,
     alt text,
     createdby text,
@@ -2023,89 +1998,33 @@ CREATE TABLE sunbird.page_section
 CREATE INDEX inx_ps_sectionname ON sunbird.page_section (name);
 CREATE INDEX inx_ps_sectiondatatype ON sunbird.page_section (sectiondatatype);
 
-CREATE KEYSPACE system_distributed WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'}  AND durable_writes = true;
+CREATE KEYSPACE dock_question_store WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'}  AND durable_writes = true;
 
-CREATE TABLE system_distributed.repair_history (
-    keyspace_name text,
-    columnfamily_name text,
-    id timeuuid,
-    coordinator inet,
-    coordinator_port int,
-    exception_message text,
-    exception_stacktrace text,
-    finished_at timestamp,
-    parent_id timeuuid,
-    participants set<inet>,
-    participants_v2 set<text>,
-    range_begin text,
-    range_end text,
-    started_at timestamp,
-    status text,
-    PRIMARY KEY ((keyspace_name, columnfamily_name), id)
-) WITH CLUSTERING ORDER BY (id ASC)
-    AND bloom_filter_fp_chance = 0.01
-    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
-    AND comment = 'Repair history'
-    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}
-    AND compression = {'chunk_length_in_kb': '64', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
-    AND crc_check_chance = 1.0
-    AND dclocal_read_repair_chance = 0.0
-    AND default_time_to_live = 0
-    AND gc_grace_seconds = 864000
-    AND max_index_interval = 2048
-    AND memtable_flush_period_in_ms = 3600000
-    AND min_index_interval = 128
-    AND read_repair_chance = 0.0
-    AND speculative_retry = '99PERCENTILE';
-
-CREATE TABLE system_distributed.view_build_status (
-    keyspace_name text,
-    view_name text,
-    host_id uuid,
-    status text,
-    PRIMARY KEY ((keyspace_name, view_name), host_id)
-) WITH CLUSTERING ORDER BY (host_id ASC)
-    AND bloom_filter_fp_chance = 0.01
-    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
-    AND comment = 'Materialized View build status'
-    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}
-    AND compression = {'chunk_length_in_kb': '64', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
-    AND crc_check_chance = 1.0
-    AND dclocal_read_repair_chance = 0.0
-    AND default_time_to_live = 0
-    AND gc_grace_seconds = 864000
-    AND max_index_interval = 2048
-    AND memtable_flush_period_in_ms = 3600000
-    AND min_index_interval = 128
-    AND read_repair_chance = 0.0
-    AND speculative_retry = '99PERCENTILE';
-
-CREATE TABLE system_distributed.parent_repair_history (
-    parent_id timeuuid PRIMARY KEY,
-    columnfamily_names set<text>,
-    exception_message text,
-    exception_stacktrace text,
-    finished_at timestamp,
-    keyspace_name text,
-    options map<text, text>,
-    requested_ranges set<text>,
-    started_at timestamp,
-    successful_ranges set<text>
+CREATE TABLE dock_question_store.question_data (
+    identifier text PRIMARY KEY,
+    answer blob,
+    body blob,
+    editorstate text,
+    hints text,
+    instructions text,
+    interactions text,
+    media text,
+    responsedeclaration text,
+    solutions text
 ) WITH bloom_filter_fp_chance = 0.01
     AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
-    AND comment = 'Repair history'
+    AND comment = ''
     AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}
     AND compression = {'chunk_length_in_kb': '64', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
     AND crc_check_chance = 1.0
-    AND dclocal_read_repair_chance = 0.0
+    AND dclocal_read_repair_chance = 0.1
     AND default_time_to_live = 0
     AND gc_grace_seconds = 864000
     AND max_index_interval = 2048
-    AND memtable_flush_period_in_ms = 3600000
+    AND memtable_flush_period_in_ms = 0
     AND min_index_interval = 128
     AND read_repair_chance = 0.0
     AND speculative_retry = '99PERCENTILE';
-
 
 CREATE KEYSPACE dock_category_store WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'}  AND durable_writes = true;
 
@@ -2127,7 +2046,6 @@ CREATE TABLE dock_category_store.category_definition_data (
     AND min_index_interval = 128
     AND read_repair_chance = 0.0
     AND speculative_retry = '99PERCENTILE';
-
 
 CREATE KEYSPACE dock_platform_db WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'}  AND durable_writes = true;
 
@@ -2172,277 +2090,6 @@ CREATE TABLE dock_platform_db.job_request (
     AND read_repair_chance = 0.0
     AND speculative_retry = '99PERCENTILE';
 
-
-CREATE KEYSPACE system_schema WITH replication = {'class': 'LocalStrategy'}  AND durable_writes = true;
-
-CREATE TABLE system_schema.tables (
-    keyspace_name text,
-    table_name text,
-    bloom_filter_fp_chance double,
-    caching frozen<map<text, text>>,
-    cdc boolean,
-    comment text,
-    compaction frozen<map<text, text>>,
-    compression frozen<map<text, text>>,
-    crc_check_chance double,
-    dclocal_read_repair_chance double,
-    default_time_to_live int,
-    extensions frozen<map<text, blob>>,
-    flags frozen<set<text>>,
-    gc_grace_seconds int,
-    id uuid,
-    max_index_interval int,
-    memtable_flush_period_in_ms int,
-    min_index_interval int,
-    read_repair_chance double,
-    speculative_retry text,
-    PRIMARY KEY (keyspace_name, table_name)
-) WITH CLUSTERING ORDER BY (table_name ASC)
-    AND bloom_filter_fp_chance = 0.01
-    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
-    AND comment = 'table definitions'
-    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}
-    AND compression = {'chunk_length_in_kb': '64', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
-    AND crc_check_chance = 1.0
-    AND dclocal_read_repair_chance = 0.0
-    AND default_time_to_live = 0
-    AND gc_grace_seconds = 604800
-    AND max_index_interval = 2048
-    AND memtable_flush_period_in_ms = 3600000
-    AND min_index_interval = 128
-    AND read_repair_chance = 0.0
-    AND speculative_retry = '99PERCENTILE';
-
-CREATE TABLE system_schema.functions (
-    keyspace_name text,
-    function_name text,
-    argument_types frozen<list<text>>,
-    argument_names frozen<list<text>>,
-    body text,
-    called_on_null_input boolean,
-    language text,
-    return_type text,
-    PRIMARY KEY (keyspace_name, function_name, argument_types)
-) WITH CLUSTERING ORDER BY (function_name ASC, argument_types ASC)
-    AND bloom_filter_fp_chance = 0.01
-    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
-    AND comment = 'user defined function definitions'
-    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}
-    AND compression = {'chunk_length_in_kb': '64', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
-    AND crc_check_chance = 1.0
-    AND dclocal_read_repair_chance = 0.0
-    AND default_time_to_live = 0
-    AND gc_grace_seconds = 604800
-    AND max_index_interval = 2048
-    AND memtable_flush_period_in_ms = 3600000
-    AND min_index_interval = 128
-    AND read_repair_chance = 0.0
-    AND speculative_retry = '99PERCENTILE';
-
-CREATE TABLE system_schema.triggers (
-    keyspace_name text,
-    table_name text,
-    trigger_name text,
-    options frozen<map<text, text>>,
-    PRIMARY KEY (keyspace_name, table_name, trigger_name)
-) WITH CLUSTERING ORDER BY (table_name ASC, trigger_name ASC)
-    AND bloom_filter_fp_chance = 0.01
-    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
-    AND comment = 'trigger definitions'
-    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}
-    AND compression = {'chunk_length_in_kb': '64', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
-    AND crc_check_chance = 1.0
-    AND dclocal_read_repair_chance = 0.0
-    AND default_time_to_live = 0
-    AND gc_grace_seconds = 604800
-    AND max_index_interval = 2048
-    AND memtable_flush_period_in_ms = 3600000
-    AND min_index_interval = 128
-    AND read_repair_chance = 0.0
-    AND speculative_retry = '99PERCENTILE';
-
-CREATE TABLE system_schema.aggregates (
-    keyspace_name text,
-    aggregate_name text,
-    argument_types frozen<list<text>>,
-    final_func text,
-    initcond text,
-    return_type text,
-    state_func text,
-    state_type text,
-    PRIMARY KEY (keyspace_name, aggregate_name, argument_types)
-) WITH CLUSTERING ORDER BY (aggregate_name ASC, argument_types ASC)
-    AND bloom_filter_fp_chance = 0.01
-    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
-    AND comment = 'user defined aggregate definitions'
-    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}
-    AND compression = {'chunk_length_in_kb': '64', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
-    AND crc_check_chance = 1.0
-    AND dclocal_read_repair_chance = 0.0
-    AND default_time_to_live = 0
-    AND gc_grace_seconds = 604800
-    AND max_index_interval = 2048
-    AND memtable_flush_period_in_ms = 3600000
-    AND min_index_interval = 128
-    AND read_repair_chance = 0.0
-    AND speculative_retry = '99PERCENTILE';
-
-CREATE TABLE system_schema.views (
-    keyspace_name text,
-    view_name text,
-    base_table_id uuid,
-    base_table_name text,
-    bloom_filter_fp_chance double,
-    caching frozen<map<text, text>>,
-    cdc boolean,
-    comment text,
-    compaction frozen<map<text, text>>,
-    compression frozen<map<text, text>>,
-    crc_check_chance double,
-    dclocal_read_repair_chance double,
-    default_time_to_live int,
-    extensions frozen<map<text, blob>>,
-    gc_grace_seconds int,
-    id uuid,
-    include_all_columns boolean,
-    max_index_interval int,
-    memtable_flush_period_in_ms int,
-    min_index_interval int,
-    read_repair_chance double,
-    speculative_retry text,
-    where_clause text,
-    PRIMARY KEY (keyspace_name, view_name)
-) WITH CLUSTERING ORDER BY (view_name ASC)
-    AND bloom_filter_fp_chance = 0.01
-    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
-    AND comment = 'view definitions'
-    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}
-    AND compression = {'chunk_length_in_kb': '64', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
-    AND crc_check_chance = 1.0
-    AND dclocal_read_repair_chance = 0.0
-    AND default_time_to_live = 0
-    AND gc_grace_seconds = 604800
-    AND max_index_interval = 2048
-    AND memtable_flush_period_in_ms = 3600000
-    AND min_index_interval = 128
-    AND read_repair_chance = 0.0
-    AND speculative_retry = '99PERCENTILE';
-
-CREATE TABLE system_schema.indexes (
-    keyspace_name text,
-    table_name text,
-    index_name text,
-    kind text,
-    options frozen<map<text, text>>,
-    PRIMARY KEY (keyspace_name, table_name, index_name)
-) WITH CLUSTERING ORDER BY (table_name ASC, index_name ASC)
-    AND bloom_filter_fp_chance = 0.01
-    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
-    AND comment = 'secondary index definitions'
-    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}
-    AND compression = {'chunk_length_in_kb': '64', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
-    AND crc_check_chance = 1.0
-    AND dclocal_read_repair_chance = 0.0
-    AND default_time_to_live = 0
-    AND gc_grace_seconds = 604800
-    AND max_index_interval = 2048
-    AND memtable_flush_period_in_ms = 3600000
-    AND min_index_interval = 128
-    AND read_repair_chance = 0.0
-    AND speculative_retry = '99PERCENTILE';
-
-CREATE TABLE system_schema.keyspaces (
-    keyspace_name text PRIMARY KEY,
-    durable_writes boolean,
-    replication frozen<map<text, text>>
-) WITH bloom_filter_fp_chance = 0.01
-    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
-    AND comment = 'keyspace definitions'
-    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}
-    AND compression = {'chunk_length_in_kb': '64', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
-    AND crc_check_chance = 1.0
-    AND dclocal_read_repair_chance = 0.0
-    AND default_time_to_live = 0
-    AND gc_grace_seconds = 604800
-    AND max_index_interval = 2048
-    AND memtable_flush_period_in_ms = 3600000
-    AND min_index_interval = 128
-    AND read_repair_chance = 0.0
-    AND speculative_retry = '99PERCENTILE';
-
-CREATE TABLE system_schema.types (
-    keyspace_name text,
-    type_name text,
-    field_names frozen<list<text>>,
-    field_types frozen<list<text>>,
-    PRIMARY KEY (keyspace_name, type_name)
-) WITH CLUSTERING ORDER BY (type_name ASC)
-    AND bloom_filter_fp_chance = 0.01
-    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
-    AND comment = 'user defined type definitions'
-    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}
-    AND compression = {'chunk_length_in_kb': '64', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
-    AND crc_check_chance = 1.0
-    AND dclocal_read_repair_chance = 0.0
-    AND default_time_to_live = 0
-    AND gc_grace_seconds = 604800
-    AND max_index_interval = 2048
-    AND memtable_flush_period_in_ms = 3600000
-    AND min_index_interval = 128
-    AND read_repair_chance = 0.0
-    AND speculative_retry = '99PERCENTILE';
-
-CREATE TABLE system_schema.dropped_columns (
-    keyspace_name text,
-    table_name text,
-    column_name text,
-    dropped_time timestamp,
-    kind text,
-    type text,
-    PRIMARY KEY (keyspace_name, table_name, column_name)
-) WITH CLUSTERING ORDER BY (table_name ASC, column_name ASC)
-    AND bloom_filter_fp_chance = 0.01
-    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
-    AND comment = 'dropped column registry'
-    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}
-    AND compression = {'chunk_length_in_kb': '64', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
-    AND crc_check_chance = 1.0
-    AND dclocal_read_repair_chance = 0.0
-    AND default_time_to_live = 0
-    AND gc_grace_seconds = 604800
-    AND max_index_interval = 2048
-    AND memtable_flush_period_in_ms = 3600000
-    AND min_index_interval = 128
-    AND read_repair_chance = 0.0
-    AND speculative_retry = '99PERCENTILE';
-
-CREATE TABLE system_schema.columns (
-    keyspace_name text,
-    table_name text,
-    column_name text,
-    clustering_order text,
-    column_name_bytes blob,
-    kind text,
-    position int,
-    type text,
-    PRIMARY KEY (keyspace_name, table_name, column_name)
-) WITH CLUSTERING ORDER BY (table_name ASC, column_name ASC)
-    AND bloom_filter_fp_chance = 0.01
-    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
-    AND comment = 'column definitions'
-    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}
-    AND compression = {'chunk_length_in_kb': '64', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
-    AND crc_check_chance = 1.0
-    AND dclocal_read_repair_chance = 0.0
-    AND default_time_to_live = 0
-    AND gc_grace_seconds = 604800
-    AND max_index_interval = 2048
-    AND memtable_flush_period_in_ms = 3600000
-    AND min_index_interval = 128
-    AND read_repair_chance = 0.0
-    AND speculative_retry = '99PERCENTILE';
-
-
 CREATE KEYSPACE dock_content_store WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'}  AND durable_writes = true;
 
 CREATE TABLE dock_content_store.question_data (
@@ -2466,7 +2113,6 @@ CREATE TABLE dock_content_store.question_data (
     AND min_index_interval = 128
     AND read_repair_chance = 0.0
     AND speculative_retry = '99PERCENTILE';
-CREATE TRIGGER question_data_trigger ON dock_content_store.question_data USING 'org.sunbird.cassandra.triggers.TransactionEventTrigger';
 
 CREATE TABLE dock_content_store.content_data (
     content_id text PRIMARY KEY,
@@ -2502,8 +2148,6 @@ CREATE TABLE dock_content_store.content_data (
     AND min_index_interval = 128
     AND read_repair_chance = 0.0
     AND speculative_retry = '99PERCENTILE';
-CREATE TRIGGER content_data_trigger ON dock_content_store.content_data USING 'org.sunbird.cassandra.triggers.TransactionEventTrigger';
-
 
 CREATE KEYSPACE portal WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'}  AND durable_writes = true;
 
@@ -2526,7 +2170,185 @@ CREATE TABLE portal.sessions (
     AND read_repair_chance = 0.0
     AND speculative_retry = '99PERCENTILE';
 
- CREATE KEYSPACE dialcodes WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'}  AND durable_writes = true;
+CREATE KEYSPACE sunbird_courses WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'}  AND durable_writes = true;
+
+CREATE TYPE sunbird_courses.question (
+    id text,
+    assess_ts timestamp,
+    max_score double,
+    score double,
+    type text,
+    title text,
+    resvalues list<frozen<map<text, text>>>,
+    params list<frozen<map<text, text>>>,
+    description text,
+    duration decimal
+);
+
+CREATE TABLE sunbird_courses.content_consumption (
+    userid text,
+    contentid text,
+    batchid text,
+    courseid text,
+    completedcount int,
+    contentversion text,
+    datetime timestamp,
+    grade text,
+    lastaccesstime text,
+    lastcompletedtime text,
+    lastupdatedtime text,
+    progress int,
+    result text,
+    score text,
+    status int,
+    viewcount int,
+    PRIMARY KEY (userid, contentid, batchid, courseid)
+) WITH CLUSTERING ORDER BY (contentid ASC, batchid ASC, courseid ASC)
+    AND bloom_filter_fp_chance = 0.01
+    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
+    AND comment = ''
+    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}
+    AND compression = {'chunk_length_in_kb': '64', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
+    AND crc_check_chance = 1.0
+    AND dclocal_read_repair_chance = 0.1
+    AND default_time_to_live = 0
+    AND gc_grace_seconds = 864000
+    AND max_index_interval = 2048
+    AND memtable_flush_period_in_ms = 0
+    AND min_index_interval = 128
+    AND read_repair_chance = 0.0
+    AND speculative_retry = '99PERCENTILE';
+CREATE INDEX inx_cc_status ON sunbird_courses.content_consumption (status);
+
+CREATE TABLE sunbird_courses.course_batch (
+    courseid text,
+    batchid text,
+    cert_templates map<text, frozen<map<text, text>>>,
+    createdby text,
+    createddate text,
+    createdfor list<text>,
+    description text,
+    enddate text,
+    enrollmentenddate text,
+    enrollmenttype text,
+    mentors list<text>,
+    name text,
+    startdate text,
+    status int,
+    updateddate text,
+    PRIMARY KEY (courseid, batchid)
+) WITH CLUSTERING ORDER BY (batchid ASC)
+    AND bloom_filter_fp_chance = 0.01
+    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
+    AND comment = ''
+    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}
+    AND compression = {'chunk_length_in_kb': '64', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
+    AND crc_check_chance = 1.0
+    AND dclocal_read_repair_chance = 0.1
+    AND default_time_to_live = 0
+    AND gc_grace_seconds = 864000
+    AND max_index_interval = 2048
+    AND memtable_flush_period_in_ms = 0
+    AND min_index_interval = 128
+    AND read_repair_chance = 0.0
+    AND speculative_retry = '99PERCENTILE';
+CREATE INDEX inx_cou_bat_status ON sunbird_courses.course_batch (status);
+
+CREATE TABLE sunbird_courses.bulk_upload_process (
+    id text PRIMARY KEY,
+    data text,
+    failureresult text,
+    objecttype text,
+    processendtime text,
+    processstarttime text,
+    status int,
+    successresult text,
+    uploadedby text,
+    uploadeddate text
+) WITH bloom_filter_fp_chance = 0.01
+    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
+    AND comment = ''
+    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}
+    AND compression = {'chunk_length_in_kb': '64', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
+    AND crc_check_chance = 1.0
+    AND dclocal_read_repair_chance = 0.1
+    AND default_time_to_live = 0
+    AND gc_grace_seconds = 864000
+    AND max_index_interval = 2048
+    AND memtable_flush_period_in_ms = 0
+    AND min_index_interval = 128
+    AND read_repair_chance = 0.0
+    AND speculative_retry = '99PERCENTILE';
+CREATE INDEX inx_bup_status ON sunbird_courses.bulk_upload_process (status);
+
+CREATE TABLE sunbird_courses.user_courses (
+    batchid text,
+    userid text,
+    active boolean,
+    addedby text,
+    certificates list<frozen<map<text, text>>>,
+    completedon timestamp,
+    completionpercentage int,
+    contentstatus map<text, int>,
+    courseid text,
+    datetime timestamp,
+    delta text,
+    enrolleddate text,
+    grade text,
+    lastreadcontentid text,
+    lastreadcontentstatus int,
+    progress int,
+    status int,
+    PRIMARY KEY (batchid, userid)
+) WITH CLUSTERING ORDER BY (userid ASC)
+    AND bloom_filter_fp_chance = 0.01
+    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
+    AND comment = ''
+    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}
+    AND compression = {'chunk_length_in_kb': '64', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
+    AND crc_check_chance = 1.0
+    AND dclocal_read_repair_chance = 0.1
+    AND default_time_to_live = 0
+    AND gc_grace_seconds = 864000
+    AND max_index_interval = 2048
+    AND memtable_flush_period_in_ms = 0
+    AND min_index_interval = 128
+    AND read_repair_chance = 0.0
+    AND speculative_retry = '99PERCENTILE';
+CREATE INDEX inx_ucs_status ON sunbird_courses.user_courses (status);
+
+CREATE TABLE sunbird_courses.assessment_aggregator (
+    course_id text,
+    batch_id text,
+    user_id text,
+    content_id text,
+    attempt_id text,
+    created_on timestamp,
+    grand_total text,
+    last_attempted_on timestamp,
+    question list<frozen<question>>,
+    total_max_score double,
+    total_score double,
+    updated_on timestamp,
+    PRIMARY KEY (course_id, batch_id, user_id, content_id, attempt_id)
+) WITH CLUSTERING ORDER BY (batch_id ASC, user_id ASC, content_id ASC, attempt_id ASC)
+    AND bloom_filter_fp_chance = 0.01
+    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
+    AND comment = ''
+    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}
+    AND compression = {'chunk_length_in_kb': '64', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
+    AND crc_check_chance = 1.0
+    AND dclocal_read_repair_chance = 0.1
+    AND default_time_to_live = 0
+    AND gc_grace_seconds = 864000
+    AND max_index_interval = 2048
+    AND memtable_flush_period_in_ms = 0
+    AND min_index_interval = 128
+    AND read_repair_chance = 0.0
+    AND speculative_retry = '99PERCENTILE';
+CREATE INDEX assessment_aggregator_last_attempted_on_idx ON sunbird_courses.assessment_aggregator (last_attempted_on);
+
+CREATE KEYSPACE dialcodes WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'}  AND durable_writes = true;
 
 CREATE TABLE dialcodes.dialcode_images (
     filename text PRIMARY KEY,
@@ -2576,7 +2398,6 @@ CREATE TABLE dialcodes.dialcode_batch (
     AND read_repair_chance = 0.0
     AND speculative_retry = '99PERCENTILE';
 
-
 CREATE KEYSPACE apzvp_review_comment WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'}  AND durable_writes = true;
 
 CREATE TABLE apzvp_review_comment.context_details (
@@ -2604,7 +2425,6 @@ CREATE TABLE apzvp_review_comment.context_details (
     AND speculative_retry = '99PERCENTILE';
 CREATE INDEX context_details_meta_data_idx ON apzvp_review_comment.context_details (entries(meta_data));
 CREATE INDEX context_details_thread_id_idx ON apzvp_review_comment.context_details (thread_id);
-
 
 CREATE KEYSPACE dock_uci_store WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'}  AND durable_writes = true;
 
@@ -2638,7 +2458,6 @@ CREATE TABLE dock_uci_store.xmessage (
     AND min_index_interval = 128
     AND read_repair_chance = 0.0
     AND speculative_retry = '99PERCENTILE';
-
 
 CREATE KEYSPACE pmjrm_program WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'}  AND durable_writes = true;
 
@@ -2696,7 +2515,6 @@ CREATE TABLE pmjrm_program.program (
     AND speculative_retry = '99PERCENTILE';
 CREATE INDEX program_status_idx ON pmjrm_program.program (status);
 
-
 CREATE KEYSPACE dock_hierarchy_store WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'}  AND durable_writes = true;
 
 CREATE TABLE dock_hierarchy_store.questionset_hierarchy (
@@ -2737,7 +2555,6 @@ CREATE TABLE dock_hierarchy_store.content_hierarchy (
     AND min_index_interval = 128
     AND read_repair_chance = 0.0
     AND speculative_retry = '99PERCENTILE';
-CREATE TRIGGER content_hierarchy_trigger ON dock_hierarchy_store.content_hierarchy USING 'org.sunbird.cassandra.triggers.TransactionEventTrigger';
 
 CREATE TABLE dock_hierarchy_store.framework_hierarchy (
     identifier text PRIMARY KEY,
@@ -2756,5 +2573,3 @@ CREATE TABLE dock_hierarchy_store.framework_hierarchy (
     AND min_index_interval = 128
     AND read_repair_chance = 0.0
     AND speculative_retry = '99PERCENTILE';
-CREATE TRIGGER framework_hierarchy_trigger ON dock_hierarchy_store.framework_hierarchy USING 'org.sunbird.cassandra.triggers.TransactionEventTrigger';   
-

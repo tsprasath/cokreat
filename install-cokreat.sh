@@ -100,23 +100,44 @@ figlet -f slant "Sunbird cokreat Installation"
   # PUBLIC_IP=$(kubectl get svc -n dev nginx-public-ingress --output jsonpath='{.status.loadBalancer.ingress[0].ip}')
   # echo Public IP of $PUBLIC_IP
   # exit 1
+neo4j=$(kubectl get pods -l app=neo4j -n dock -o jsonpath='{.items[0].metadata.name}')
+kubectl -n dock exec -it $neo4j -c neo4j -- bash -c "bin/cypher-shell <<EOF
+CREATE CONSTRAINT ON (domain:domain) ASSERT domain.IL_UNIQUE_ID IS UNIQUE;
+CREATE INDEX ON :domain(IL_FUNC_OBJECT_TYPE);
+CREATE INDEX ON :domain(IL_SYS_NODE_TYPE);
+EOF"
+  
 }
 
 postscript() {
-    # Loop through each line in the CSV file
-        while IFS=',' read -r chart_name chart_repo; do
-            # Check if the chart repository URL is empty
-            if [ -z "$chart_repo" ]; then
-                echo "Error: Repository URL not found for $chart_name in postscript.csv"
-                exit 1
-            fi
-            if ! helm upgrade --install "$chart_name" "$chart_repo" -n "$namespace" -f global-values.yaml --kubeconfig "$kubeconfig_file" ; then
-                echo -e "\e[91mError installing $chart_name\e[0m"
-                # exit 1
-            fi
-            echo -e "\e[92m$chart_name is installed successfully\e[0m"
-            # fi
-        done < postscript.csv
+
+## Update Neo4J Definition ##
+## It is expected to have the definition directory kept in the same folder. Download the definitions
+learningpod=`kubectl get pods --selector=app=learning -n dock | awk '{if(NR==2) print $1}'`
+kubectl port-forward $learningpod 8085:8080 -n dock &
+sleep 5
+for f in neo4j-definitions/*;
+do
+  echo "Updating $f ..."
+  curl -X POST -H "Content-Type: application/json" -H "user-id: system" -d @$f  http://localhost:8085/learning-service/taxonomy/domain/definition
+done
+
+
+
+    # # Loop through each line in the CSV file
+    #     while IFS=',' read -r chart_name chart_repo; do
+    #         # Check if the chart repository URL is empty
+    #         if [ -z "$chart_repo" ]; then
+    #             echo "Error: Repository URL not found for $chart_name in postscript.csv"
+    #             exit 1
+    #         fi
+    #         if ! helm upgrade --install "$chart_name" "$chart_repo" -n "$namespace" -f global-values.yaml --kubeconfig "$kubeconfig_file" ; then
+    #             echo -e "\e[91mError installing $chart_name\e[0m"
+    #             # exit 1
+    #         fi
+    #         echo -e "\e[92m$chart_name is installed successfully\e[0m"
+    #         # fi
+    #     done < postscript.csv
 }
 
 # Parse the command-line arguments

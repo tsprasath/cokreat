@@ -1,4 +1,5 @@
-domain: ""                            # Domain name  ed.example.com
+env: dev
+domain: "dock.sunbirded.org"                            # Domain name  ed.example.com
 cloud_public_storage_accountname: ""  # name of the azure storage account
 cloud_public_storage_secret: ""      # Access key of the azure storage account. You can get the value by login to azure portal -> Select the storage account -> Select Access Keys from the left side panel -> Click show button for Key -> Copy the key
 
@@ -31,32 +32,32 @@ sunbird_google_oauth_clientSecret : "" #Google OAuth Client Secret
 nginx_private_ingress_ip: ""        # Pick an free IP from Pod CIDR Range. if PodCIDRRange  is 192.168.0.0/16 then add 192.168.0.200 as value
 
 
-inquiry_cassandra_connection: cassandra.dev.svc.cluster.local:9042
-inquiry_redis_host: redis-master.dev.svc.cluster.local
-learning_neo4j_bolt_url: bolt://neo4j.dev.svc.cluster.local:7687
-learning_write_elb_url: bolt://neo4j.dev.svc.cluster.local:7687
-learning_read_elb_url: bolt://neo4j.dev.svc.cluster.local:7687
-language_neo4j_bolt_url: bolt://neo4j.dev.svc.cluster.local:8687
-language_write_elb_url: bolt://neo4j.dev.svc.cluster.local:8687
-language_read_elb_url: bolt://neo4j.dev.svc.cluster.local:8687
-inquiry_kafka_urls: kafka.dev.svc.cluster.local:9092
-inquiry_search_service_base_url: http://search-service.dev.svc.cluster.local:9000/v3/search
+inquiry_cassandra_connection: cassandra.dock.svc.cluster.local:9042
+inquiry_redis_host: redis-master.dock.svc.cluster.local
+learning_neo4j_bolt_url: bolt://neo4j.dock.svc.cluster.local:7687
+learning_write_elb_url: bolt://neo4j.dock.svc.cluster.local:7687
+learning_read_elb_url: bolt://neo4j.dock.svc.cluster.local:7687
+language_neo4j_bolt_url: bolt://neo4j.dock.svc.cluster.local:8687
+language_write_elb_url: bolt://neo4j.dock.svc.cluster.local:8687
+language_read_elb_url: bolt://neo4j.dock.svc.cluster.local:8687
+inquiry_kafka_urls: kafka.dock.svc.cluster.local:9092
+inquiry_search_service_base_url: http://search-service.dock.svc.cluster.local:9000/v3/search
 
 ####DONT CHANGE IT #####
 sunbird_pg_host: postgresql.dev.svc.cluster.local
-sunbird_redis_host: redis-master.dev.svc.cluster.local
-sunbird_user_org_api_base_url: http://learner-service.dev.svc.cluster.local:9000
-sunbird_user_service_api_base_url: http://learner-service.dev.svc.cluster.local:9000
-sunbird_cassandra_host: cassandra.dev.svc.cluster.local
-sunbird_cert_service_base_url: http://cert-service.dev.svc.cluster.local:9000
-sunbird_es_host: elasticsearch.dev.svc.cluster.local
-sunbird_group_service_api_base_url: http://groups.dev.svc.cluster.local:9000
-redis__host: redis-master.dev.svc.cluster.local
+sunbird_redis_host: redis-master.dock.svc.cluster.local
+sunbird_user_org_api_base_url: http://learner-service.dock.svc.cluster.local:9000
+sunbird_user_service_api_base_url: http://learner-service.dock.svc.cluster.local:9000
+sunbird_cassandra_host: cassandra.dock.svc.cluster.local
+sunbird_cert_service_base_url: http://cert-service.dock.svc.cluster.local:9000
+sunbird_es_host: elasticsearch.dock.svc.cluster.local
+sunbird_group_service_api_base_url: http://groups.dock.svc.cluster.local:9000
+redis__host: redis-master.dock.svc.cluster.local
 kong_pg_host: postgresql.dev.svc.cluster.local
 kong_admin_listen: 0.0.0.0:8001
-learning_service_base_url: http://learning-service.dev.svc.cluster.local:8080/learning-service
-sunbird_analytics_api_base_url: http://analytics-service.dev.svc.cluster.local:9000
-sunbird_cs_base_url: http://knowledge-mw-service.dev.svc.cluster.local:5000
+learning_service_base_url: http://learning-service.dock.svc.cluster.local:8080/learning-service
+sunbird_analytics_api_base_url: http://analytics-service.dock.svc.cluster.local:9000
+sunbird_cs_base_url: http://knowledge-mw-service.dock.svc.cluster.local:5000
 sunbird_sso_username: "admin"
 sunbird_sso_password: "sunbird"
 sunbird_pg_user: "postgres"  
