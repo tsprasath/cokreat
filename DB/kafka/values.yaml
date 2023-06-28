@@ -1520,12 +1520,121 @@ provisioning:
   ##     flush.messages: 1
   ##
   topics:
-  
+
+#analytics_kafka_topics:
+  - name: dev.analytics.job_queue
+    retention.ms: 172800000
+  - name: dev.analytics_metrics
+    retention.ms: 172800000 
+
+#assessment_kafka_topics:
+  - name: dev.assessment.postpublish.request
+    retention.ms: 172800000
+  - name: dev.assessment.publish.request
+    retention.ms: 172800000 
+  - name: dev.assessment.republish.request
+    retention.ms: 172800000 
+
+#auto_creation_kafka_topics:
+  - name: dev.auto.creation.job.failedevent
+    retention.ms: 172800000
+  - name: dev.auto.creation.job.request
+    retention.ms: 172800000 
+  - name: dev.auto.creation.job.request.failed
+    retention.ms: 172800000
+
+#av_service_topics:
+  - name: dev.av.question.bulkupload
+    retention.ms: 172800000
+
+#cassandra_kafka_topics:
+  - name: dev.cassandra.data.migration.job.request.failed
+    retention.ms: 172800000
+  - name: dev.cassandra.data.migration.request
+    retention.ms: 172800000
+
+#content_kafka_topics:
+  - name: dev.content.postpublish.request
+    retention.ms: 172800000
+  - name: dev.contentstate.invalid
+    retention.ms: 172800000
+
+#coursebatch_kafka_topics:
+  - name: dev.coursebatch.certificate.request
+    retention.ms: 172800000
+  - name: dev.coursebatch.job.request
+    retention.ms: 172800000 
+  - name: dev.csp.migration.job.request
+    retention.ms: 172800000
+  - name: dev.db.query.events
+    retention.ms: 172800000 
+
+#learning_kafka_topics:
+  - name: dev.learning.events.failed
+    retention.ms: 172800000
+  - name: dev.learning.graph.events
+    retention.ms: 17280000   
+  - name: dev.learning.graph.events.fail
+    retention.ms: 17280000
+  - name: dev.learning.job.request
+    retention.ms: 17280000
+  - name: dev.learning.job.request.fail
+    retention.ms: 17280000      
+  - name: dev.learning.republish.job.request
+    retention.ms: 17280000            
+  - name: dev.live.video.stream.requests
+    retention.ms: 17280000
+  - name: dev.metrics
+    retention.ms: 17280000
+  - name: dev.mvc.events.failed
+    retention.ms: 17280000
+  - name: dev.mvc.processor.job.request
+    retention.ms: 17280000
+  - name: dev.object.import.request
+    retention.ms: 17280000
+  - name: dev.pipeline_metrics
+    retention.ms: 17280000
+  - name: dev.publish.job.request
+    retention.ms: 17280000
+  - name: dev.republish.job.request
+    retention.ms: 17280000 
+  - name: dev.system.command
+    retention.ms: 17280000  
+
+#Telemetry_kafka_topics:
+  - name: dev.telemetry.de_normalized
+    retention.ms: 172800000
+  - name: dev.telemetry.derived
+    retention.ms: 17280000
+  - name: dev.telemetry.duplicate
+    retention.ms: 17280000
+  - name: dev.telemetry.extractor.failed
+    retention.ms: 17280000
+  - name: dev.telemetry.failed
+    retention.ms: 17280000
+  - name: dev.telemetry.indexer.failed
+    retention.ms: 17280000
+  - name: dev.telemetry.ingest
+    retention.ms: 17280000
+  - name: dev.telemetry.ingestion
+    retention.ms: 17280000
+  - name: dev.telemetry.log
+    retention.ms: 17280000 
+  - name: dev.telemetry.malformed
+    retention.ms: 17280000 
+  - name: dev.telemetry.raw
+    retention.ms: 17280000
+  - name: dev.telemetry.sink
+    retention.ms: 17280000
+  - name: dev.telemetry.unique
+    retention.ms: 17280000
+  - name: dev.telemetry.valid
+    retention.ms: 17280000 
+  - name: dev.telemetry.with_location
+    retention.ms: 17280000     
+
 #processing_kafka_topics:
   - name: dev.lms.sso.events
-    retention.ms: 172800000
-  - name: dev.lms.sso.events
-    partitions: 4
     retention.ms: 172800000
   - name: dev.lms.user.account.merge
     retention.ms: 172800000
@@ -1583,10 +1692,6 @@ provisioning:
     retention.ms: 86400000
   - name: dev.uci.telemetry
     retention.ms: 86400000
-
-#av_service_topics:
-  - name: dev.av.question.bulkupload
-    retention.ms: 172800000
 
   ## @param provisioning.nodeSelector Node labels for pod assignment
   ## Ref: https://kubernetes.io/docs/user-guide/node-selection/

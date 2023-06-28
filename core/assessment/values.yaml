@@ -1,5 +1,5 @@
 graph_passport_key: jd5ECm/o0BXwQCe8PfZY1NoUkB9HN41QjA80p22MKyRIcP5RW4qHw8sZztC
-inquiry_schema_path: https://sunbirdstagingpublic.blob.core.windows.net/sunbird-content-staging/schemas/local
+inquiry_schema_path: https://stagingdock.blob.core.windows.net/content-service/schemas
 inquiry_cassandra_connection: cassandra.lern.svc.cluster.local:9042
 inquiry_redis_host: redis.lern.svc.cluster.local
 graph_passport_key: jd5ECm/o0BXwQCe8PfZY1NoUkB9HN41QjA80p22MKyRIcP5RW4qHw8sZztC
@@ -15,7 +15,7 @@ inquiry_assessment_publish_kafka_topic_name: dev.assessment.publish.request
 inquiry_search_service_base_url: http://search-service.staging.svc.cluster.local:9000/v3/search
 inquiry_assessment_import_kafka_topic_name: dev.object.import.request
 master_category_validation_enabled: yes
-cloud_storage_content_bucketname: publicbucket
+cloud_storage_content_bucketname: sunbird-content-dock
 cloudstorage_replace_absolute_path: true
 cloudstorage_metadata_list: '["appIcon", "artifactUrl", "posterImage", "previewUrl", "thumbnail", "assetsMap", "certTemplate", "itemSetPreviewUrl", "grayScaleAppIcon", "sourceURL", "variants", "downloadUrl", "streamingUrl", "toc_url", "data", "question", "solutions", "editorState", "media", "pdfUrl", "transcripts"]'
 cloudstorage_relative_path_prefix: CONTENT_STORAGE_BASE_PATH

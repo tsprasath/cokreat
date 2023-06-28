@@ -1,8 +1,6 @@
-env: dev
 domain: "dock.sunbirded.org"                            # Domain name  ed.example.com
-cloud_public_storage_accountname: ""  # name of the azure storage account
-cloud_public_storage_secret: ""      # Access key of the azure storage account. You can get the value by login to azure portal -> Select the storage account -> Select Access Keys from the left side panel -> Click show button for Key -> Copy the key
-
+cloud_public_storage_accountname: "oneclicktest"  # name of the azure storage account
+cloud_public_storage_secret: "sWlgHDWgzYDNuKRZq8n4nAJ52JS3z8vCFos8HixlRRK3rz7YU53bZcVXTkVc6x+eYzwJsGNR7nlX+ASt3MYynA=="
 # core_vault_proxy_site_key: |+
 #   -----BEGIN PRIVATE KEY-----
 #   -----END PRIVATE KEY----
@@ -10,21 +8,204 @@ cloud_public_storage_secret: ""      # Access key of the azure storage account. 
 #   -----BEGIN CERTIFICATE-----
 #     -----END CERTIFICATE-----  
 # SSL Private Key ie private.key
-core_vault_proxy_site_key: |+ 
+core_vault_proxy_site_key: |+
+  -----BEGIN PRIVATE KEY-----
+  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
+  RztyNAUM8U0VnV8SgaC1KQDr0ilhuw==
+  -----END PRIVATE KEY-----
 
-# SSL Public Key(Bundle+CA)
 core_vault_proxy_site_crt: |+
+  -----BEGIN CERTIFICATE-----
+  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
+  vOwsabT5LDhpSWw=
+  -----END CERTIFICATE-----
+  -----BEGIN CERTIFICATE-----
+  MIIFFjCCAv6gAwIBAgIRAJErCErPDBinU/bWLiWnX1owDQYJKoZIhvcNAQELBQAw
+  TzELMAkGA1UEBhMCVVMxKTAnBgNVBAoTIEludGVybmV0IFNlY3VyaXR5IFJlc2Vh
+  cmNoIEdyb3VwMRUwEwYDVQQDEwxJU1JHIFJvb3QgWDEwHhcNMjAwOTA0MDAwMDAw
+  WhcNMjUwOTE1MTYwMDAwWjAyMQswCQYDVQQGEwJVUzEWMBQGA1UEChMNTGV0J3Mg
+  RW5jcnlwdDELMAkGA1UEAxMCUjMwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEK
+  AoIBAQC7AhUozPaglNMPEuyNVZLD+ILxmaZ6QoinXSaqtSu5xUyxr45r+XXIo9cP
+  R5QUVTVXjJ6oojkZ9YI8QqlObvU7wy7bjcCwXPNZOOftz2nwWgsbvsCUJCWH+jdx
+  sxPnHKzhm+/b5DtFUkWWqcFTzjTIUu61ru2P3mBw4qVUq7ZtDpelQDRrK9O8Zutm
+  NHz6a4uPVymZ+DAXXbpyb/uBxa3Shlg9F8fnCbvxK/eG3MHacV3URuPMrSXBiLxg
+  Z3Vms/EY96Jc5lP/Ooi2R6X/ExjqmAl3P51T+c8B5fWmcBcUr2Ok/5mzk53cU6cG
+  /kiFHaFpriV1uxPMUgP17VGhi9sVAgMBAAGjggEIMIIBBDAOBgNVHQ8BAf8EBAMC
+  AYYwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMBMBIGA1UdEwEB/wQIMAYB
+  Af8CAQAwHQYDVR0OBBYEFBQusxe3WFbLrlAJQOYfr52LFMLGMB8GA1UdIwQYMBaA
+  FHm0WeZ7tuXkAXOACIjIGlj26ZtuMDIGCCsGAQUFBwEBBCYwJDAiBggrBgEFBQcw
+  AoYWaHR0cDovL3gxLmkubGVuY3Iub3JnLzAnBgNVHR8EIDAeMBygGqAYhhZodHRw
+  Oi8veDEuYy5sZW5jci5vcmcvMCIGA1UdIAQbMBkwCAYGZ4EMAQIBMA0GCysGAQQB
+  gt8TAQEBMA0GCSqGSIb3DQEBCwUAA4ICAQCFyk5HPqP3hUSFvNVneLKYY611TR6W
+  PTNlclQtgaDqw+34IL9fzLdwALduO/ZelN7kIJ+m74uyA+eitRY8kc607TkC53wl
+  ikfmZW4/RvTZ8M6UK+5UzhK8jCdLuMGYL6KvzXGRSgi3yLgjewQtCPkIVz6D2QQz
+  CkcheAmCJ8MqyJu5zlzyZMjAvnnAT45tRAxekrsu94sQ4egdRCnbWSDtY7kh+BIm
+  lJNXoB1lBMEKIq4QDUOXoRgffuDghje1WrG9ML+Hbisq/yFOGwXD9RiX8F6sw6W4
+  avAuvDszue5L3sz85K+EC4Y/wFVDNvZo4TYXao6Z0f+lQKc0t8DQYzk1OXVu8rp2
+  yJMC6alLbBfODALZvYH7n7do1AZls4I9d1P4jnkDrQoxB3UqQ9hVl3LEKQ73xF1O
+  yK5GhDDX8oVfGKF5u+decIsH4YaTw7mP3GFxJSqv3+0lUFJoi5Lc5da149p90Ids
+  hCExroL1+7mryIkXPeFM5TgO9r0rvZaBFOvV2z0gp35Z0+L4WPlbuEjN/lxPFin+
+  HlUjr8gRsI3qfJOQFy/9rKIJR0Y/8Omwt/8oTWgy1mdeHmmjk7j1nYsvC9JSQ6Zv
+  MldlTTKB3zhThV1+XWYp6rjd5JW1zbVWEkLNxE7GJThEUG3szgBVGP7pSWTUTsqX
+  nLRbwHOoq7hHwg==
+  -----END CERTIFICATE-----
+  -----BEGIN CERTIFICATE-----
+  MIIFYDCCBEigAwIBAgIQQAF3ITfU6UK47naqPGQKtzANBgkqhkiG9w0BAQsFADA/
+  MSQwIgYDVQQKExtEaWdpdGFsIFNpZ25hdHVyZSBUcnVzdCBDby4xFzAVBgNVBAMT
+  DkRTVCBSb290IENBIFgzMB4XDTIxMDEyMDE5MTQwM1oXDTI0MDkzMDE4MTQwM1ow
+  TzELMAkGA1UEBhMCVVMxKTAnBgNVBAoTIEludGVybmV0IFNlY3VyaXR5IFJlc2Vh
+  cmNoIEdyb3VwMRUwEwYDVQQDEwxJU1JHIFJvb3QgWDEwggIiMA0GCSqGSIb3DQEB
+  AQUAA4ICDwAwggIKAoICAQCt6CRz9BQ385ueK1coHIe+3LffOJCMbjzmV6B493XC
+  ov71am72AE8o295ohmxEk7axY/0UEmu/H9LqMZshftEzPLpI9d1537O4/xLxIZpL
+  wYqGcWlKZmZsj348cL+tKSIG8+TA5oCu4kuPt5l+lAOf00eXfJlII1PoOK5PCm+D
+  LtFJV4yAdLbaL9A4jXsDcCEbdfIwPPqPrt3aY6vrFk/CjhFLfs8L6P+1dy70sntK
+  4EwSJQxwjQMpoOFTJOwT2e4ZvxCzSow/iaNhUd6shweU9GNx7C7ib1uYgeGJXDR5
+  bHbvO5BieebbpJovJsXQEOEO3tkQjhb7t/eo98flAgeYjzYIlefiN5YNNnWe+w5y
+  sR2bvAP5SQXYgd0FtCrWQemsAXaVCg/Y39W9Eh81LygXbNKYwagJZHduRze6zqxZ
+  Xmidf3LWicUGQSk+WT7dJvUkyRGnWqNMQB9GoZm1pzpRboY7nn1ypxIFeFntPlF4
+  FQsDj43QLwWyPntKHEtzBRL8xurgUBN8Q5N0s8p0544fAQjQMNRbcTa0B7rBMDBc
+  SLeCO5imfWCKoqMpgsy6vYMEG6KDA0Gh1gXxG8K28Kh8hjtGqEgqiNx2mna/H2ql
+  PRmP6zjzZN7IKw0KKP/32+IVQtQi0Cdd4Xn+GOdwiK1O5tmLOsbdJ1Fu/7xk9TND
+  TwIDAQABo4IBRjCCAUIwDwYDVR0TAQH/BAUwAwEB/zAOBgNVHQ8BAf8EBAMCAQYw
+  SwYIKwYBBQUHAQEEPzA9MDsGCCsGAQUFBzAChi9odHRwOi8vYXBwcy5pZGVudHJ1
+  c3QuY29tL3Jvb3RzL2RzdHJvb3RjYXgzLnA3YzAfBgNVHSMEGDAWgBTEp7Gkeyxx
+  +tvhS5B1/8QVYIWJEDBUBgNVHSAETTBLMAgGBmeBDAECATA/BgsrBgEEAYLfEwEB
+  ATAwMC4GCCsGAQUFBwIBFiJodHRwOi8vY3BzLnJvb3QteDEubGV0c2VuY3J5cHQu
+  b3JnMDwGA1UdHwQ1MDMwMaAvoC2GK2h0dHA6Ly9jcmwuaWRlbnRydXN0LmNvbS9E
+  U1RST09UQ0FYM0NSTC5jcmwwHQYDVR0OBBYEFHm0WeZ7tuXkAXOACIjIGlj26Ztu
+  MA0GCSqGSIb3DQEBCwUAA4IBAQAKcwBslm7/DlLQrt2M51oGrS+o44+/yQoDFVDC
+  5WxCu2+b9LRPwkSICHXM6webFGJueN7sJ7o5XPWioW5WlHAQU7G75K/QosMrAdSW
+  9MUgNTP52GE24HGNtLi1qoJFlcDyqSMo59ahy2cI2qBDLKobkx/J3vWraV0T9VuG
+  WCLKTVXkcGdtwlfFRjlBz4pYg1htmf5X6DYO8A4jqv2Il9DjXA6USbW1FzXSLr9O
+  he8Y4IWS6wY7bCkjCWDcRQJMEhg76fsO3txE+FiYruq9RUWhiF1myv4Q6W+CyBFC
+  Dfvp7OOGAN6dEOM4+qR9sdjoSYKEBpsr6GtPAQw4dy753ec5
+  -----END CERTIFICATE-----
+
 
 # openssl genrsa -out key.pem; cat key.pem;
 # openssl rsa -in key.pem -pubout -out pubkey.pem;
 
-CERTIFICATE_PRIVATE_KEY: |          # update the content from key.pem which is generated in line 19(openssl command)
-#   -----BEGIN PRIVATE KEY-----
-#   -----END PRIVATE KEY----- 
+CERTIFICATE_PRIVATE_KEY: |
+  -----BEGIN PRIVATE KEY-----
+  MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDHmgcCeKqbTRND
+  p9Gdpoi+hJQCp/qcSSD1ws5r+gbRSxO5puzriRWF2qbCKNAqag3TBB98aImHd9Qp
+  x3M9wfdstrnSdLeIvZgvX2H/wZfotdTR1v32/bOArOjIS6DaERk+D3i1OXhNdMl1
+  b0wKgzKlpIG/2OgrfRZ++UDa7d5JF9M6Vlwbg3ptK2piBSogpHdyMa8i30U8l09j
+  81uq1+M5HVo+CSQNK7I/bhCyv8IIno9T0x8lHjb2YnkdV2s0BYWEYN9FLp6Xz51+
+  FisRCgxm0R/ZG68zWCHaV9liEObFjSvnaIJ87/5WQ9sFzocokLKq6v6ZDSFLPRhY
+  fYefEucRAgMBAAECggEAAX2XfLhRYVjc6CLWrCCSR1+YZHo4pWdWJ09nyhHxi7cZ
+  F/FhPzk6LvuH2MJviOREWBKsfzMR1TcS9AwrdzpuxAMnNwwNpTgkCELkPi+PE7VT
+  jxFu8Zz+W6JUpbzGxu1D0Nd3ClARFbQ1vQuMr/opCuzmY/nNSUYRxUA1kvxm902i
+  gHFBe/sVW+JFGglqb5uUTV93tRwZwxD5grAldaM6NwScPaTvVY3g6aFpH9OQAg0E
+  C/hS5c3JgDSv5tMf8DNuj7279FRIbUTRtgIk49M4zDFjHHd1r3Z86AkGMNbOPsJv
+  pOJfikgdG3MWg+HsZ8+JuktHkoauYxDhh/8uQNBF4QKBgQDou35epiz+XYAuyzbg
+  Sr3PCtoNKWRq5c9qGyeTNJBubP7ZYSEfFi3Ysh8qkTY1oXyBg9dp6+4wq7nqyBEY
+  NqYJp6+J25bYpWAh5UVx42csyDxbCN3mB7hDuG/GjIOb9SI1pgSoJdYdJ6/h1TqK
+  gHKTzJh/3/0l/s0J+2GlwN9VIQKBgQDbjpew5FGrWvS+1epIPEFyrcACGpu6f6Sq
+  Q+rqy0OYqtPdCY4yxFuFD/Ul7JKA/XvsiiRTAt6Jk4E8qH6BVcrzAgHrWbrfJ0Dj
+  jupcNal1s1xKh30HwBNw2uTvBi40LkF+aZ6zRGtCx9B8U8goOqhjAHxrcWekHaMV
+  dzi3aehj8QKBgBB88Af+l+NxdlpaVUnwoZ/gcfBKxW15WId44wXfzHe2SxvVcMZG
+  CPt4KxMV9JQ6G5sFXyaG63oRQHusruFbRcobUilfIEG6/aOJHbFi3fVjPjto1mes
+  llZd47VaURykckcAuwW6oH+yRxilxZ74WKW18fvlP4cIlTgm0hUvI+NhAoGANJ+s
+  w/01hfi7CLKFAONQXIhAqUBvavgFI7o7qCMoBIONXEFaD9j4hqAYhgp54ujetwc1
+  RaA+boMoSr2n9J/3kN8+ToanP61M5D3w9kD2aPugd0yaLy1ee4I7tP6qPF+J2x69
+  pwITI2J5GhOKufm1OmV3bNk1miRwXkjBE1UTGkECgYEAgXgrlqJiKlr5gIaGvwx+
+  XIDj31kLUpVINHhXQi33Tx6FKUvwWbMp2jC9n4fBLjSMEqIkAfcAri1N45ulgaxo
+  nWibc1JkSiGZqjW+zf2lCowLHUY7geO2f+VLHSklibftfVaCLukuH2HBlSn3gt3Y
+  T0WvrrHLXxr1cnT0Mx3vZL4=
+  -----END PRIVATE KEY-----
 
-CERTIFICATE_PUBLIC_KEY: |           # update te content from pubkey.pem which is generated in line 20 (openssl command)
-#   -----BEGIN PUBLIC KEY-----
-#   -----END PUBLIC KEY-----
+CERTIFICATE_PUBLIC_KEY: |
+  -----BEGIN PUBLIC KEY-----
+  MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAx5oHAniqm00TQ6fRnaaI
+  voSUAqf6nEkg9cLOa/oG0UsTuabs64kVhdqmwijQKmoN0wQffGiJh3fUKcdzPcH3
+  bLa50nS3iL2YL19h/8GX6LXU0db99v2zgKzoyEug2hEZPg94tTl4TXTJdW9MCoMy
+  paSBv9joK30WfvlA2u3eSRfTOlZcG4N6bStqYgUqIKR3cjGvIt9FPJdPY/Nbqtfj
+  OR1aPgkkDSuyP24Qsr/CCJ6PU9MfJR429mJ5HVdrNAWFhGDfRS6el8+dfhYrEQoM
+  ZtEf2RuvM1gh2lfZYhDmxY0r52iCfO/+VkPbBc6HKJCyqur+mQ0hSz0YWH2HnxLn
+  EQIDAQAB
+  -----END PUBLIC KEY-----
+
 core_vault_sunbird_google_captcha_site_key_portal: ""      # Google reCaptcha site Key       
 google_captcha_private_key: ""         # Google reCaptcha private Key
 sunbird_google_oauth_clientId : ""     # Google OAuth Client ID 
@@ -44,6 +225,7 @@ inquiry_kafka_urls: kafka.dock.svc.cluster.local:9092
 inquiry_search_service_base_url: http://search-service.dock.svc.cluster.local:9000/v3/search
 
 ####DONT CHANGE IT #####
+cloud_service_provider: azure
 sunbird_pg_host: postgresql.dev.svc.cluster.local
 sunbird_redis_host: redis-master.dock.svc.cluster.local
 sunbird_user_org_api_base_url: http://learner-service.dock.svc.cluster.local:9000
@@ -66,7 +248,7 @@ connectionInfo_username: "admin"
 connectionInfo_password: "password"
 sunbird_sso_realm: sunbird
 cloud_service_provider: "azure"       # Can be one of - azure, aws, gcloud
-cloud_public_storage_container: sunbird-content-dev     # STORAGE CONTAINER NAME eg : storageacc
+cloud_public_storage_container: sunbird-content-dock    # STORAGE CONTAINER NAME eg : storageacc
 checkpoint_store_type: "azure"  # DEFAULT AZURE
 CACHE_CONTEXT_URLS: https://sunbirdstagingpublic.blob.core.windows.net/sunbird-content-staging/schema/v1_context.json,https://sunbirdstagingpublic.blob.core.windows.net/sunbird-content-staging/schema/sunbird_context.json,https://sunbirdstagingpublic.blob.core.windows.net/sunbird-content-staging/schema/credential_template.json
 sunbird_encryption_key: "aead61390a587dbf7d10"
@@ -332,3 +514,75 @@ global:
       7v6NDrwFCbEwgq8Ix856aJEbtcTDalGMhP5nWD3wBVexBjbxKfM2PFhWg2gLOkWk
       YwIDAQAB
       -----END PUBLIC KEY-----
+cloud_private_storage_accountname: "oneclicktest"
+cloud_storage_key: "oneclicktest"
+sunbird_azure_account_name: "oneclicktest"
+cloud_storage_base_url: "https://oneclicktest.blob.core.windows.net"
+cloud_storage_cname_url: "https://oneclicktest.blob.core.windows.net"
+sunbird_azure_storage_account_name: "https://oneclicktest.blob.core.windows.net"
+cloud_private_storage_secret: "sWlgHDWgzYDNuKRZq8n4nAJ52JS3z8vCFos8HixlRRK3rz7YU53bZcVXTkVc6x+eYzwJsGNR7nlX+ASt3MYynA=="
+cloud_storage_secret: "sWlgHDWgzYDNuKRZq8n4nAJ52JS3z8vCFos8HixlRRK3rz7YU53bZcVXTkVc6x+eYzwJsGNR7nlX+ASt3MYynA=="
+sunbird_azure_account_key: "sWlgHDWgzYDNuKRZq8n4nAJ52JS3z8vCFos8HixlRRK3rz7YU53bZcVXTkVc6x+eYzwJsGNR7nlX+ASt3MYynA=="
+cloud_private_storage_accountname: "oneclicktest"
+cloud_storage_key: "oneclicktest"
+sunbird_azure_account_name: "oneclicktest"
+cloud_storage_base_url: "https://oneclicktest.blob.core.windows.net"
+cloud_storage_cname_url: "https://oneclicktest.blob.core.windows.net"
+sunbird_azure_storage_account_name: "https://oneclicktest.blob.core.windows.net"
+cloud_private_storage_secret: "sWlgHDWgzYDNuKRZq8n4nAJ52JS3z8vCFos8HixlRRK3rz7YU53bZcVXTkVc6x+eYzwJsGNR7nlX+ASt3MYynA=="
+cloud_storage_secret: "sWlgHDWgzYDNuKRZq8n4nAJ52JS3z8vCFos8HixlRRK3rz7YU53bZcVXTkVc6x+eYzwJsGNR7nlX+ASt3MYynA=="
+sunbird_azure_account_key: "sWlgHDWgzYDNuKRZq8n4nAJ52JS3z8vCFos8HixlRRK3rz7YU53bZcVXTkVc6x+eYzwJsGNR7nlX+ASt3MYynA=="
+cloud_private_storage_accountname: "oneclicktest"
+cloud_storage_key: "oneclicktest"
+sunbird_azure_account_name: "oneclicktest"
+cloud_storage_base_url: "https://oneclicktest.blob.core.windows.net"
+cloud_storage_cname_url: "https://oneclicktest.blob.core.windows.net"
+sunbird_azure_storage_account_name: "https://oneclicktest.blob.core.windows.net"
+cloud_private_storage_secret: "sWlgHDWgzYDNuKRZq8n4nAJ52JS3z8vCFos8HixlRRK3rz7YU53bZcVXTkVc6x+eYzwJsGNR7nlX+ASt3MYynA=="
+cloud_storage_secret: "sWlgHDWgzYDNuKRZq8n4nAJ52JS3z8vCFos8HixlRRK3rz7YU53bZcVXTkVc6x+eYzwJsGNR7nlX+ASt3MYynA=="
+sunbird_azure_account_key: "sWlgHDWgzYDNuKRZq8n4nAJ52JS3z8vCFos8HixlRRK3rz7YU53bZcVXTkVc6x+eYzwJsGNR7nlX+ASt3MYynA=="
+cloud_private_storage_accountname: "oneclicktest"
+cloud_storage_key: "oneclicktest"
+sunbird_azure_account_name: "oneclicktest"
+cloud_storage_base_url: "https://oneclicktest.blob.core.windows.net"
+cloud_storage_cname_url: "https://oneclicktest.blob.core.windows.net"
+sunbird_azure_storage_account_name: "https://oneclicktest.blob.core.windows.net"
+cloud_private_storage_secret: "sWlgHDWgzYDNuKRZq8n4nAJ52JS3z8vCFos8HixlRRK3rz7YU53bZcVXTkVc6x+eYzwJsGNR7nlX+ASt3MYynA=="
+cloud_storage_secret: "sWlgHDWgzYDNuKRZq8n4nAJ52JS3z8vCFos8HixlRRK3rz7YU53bZcVXTkVc6x+eYzwJsGNR7nlX+ASt3MYynA=="
+sunbird_azure_account_key: "sWlgHDWgzYDNuKRZq8n4nAJ52JS3z8vCFos8HixlRRK3rz7YU53bZcVXTkVc6x+eYzwJsGNR7nlX+ASt3MYynA=="
+cloud_private_storage_accountname: "oneclicktest"
+cloud_storage_key: "oneclicktest"
+sunbird_azure_account_name: "oneclicktest"
+cloud_storage_base_url: "https://oneclicktest.blob.core.windows.net"
+cloud_storage_cname_url: "https://oneclicktest.blob.core.windows.net"
+sunbird_azure_storage_account_name: "https://oneclicktest.blob.core.windows.net"
+cloud_private_storage_secret: "sWlgHDWgzYDNuKRZq8n4nAJ52JS3z8vCFos8HixlRRK3rz7YU53bZcVXTkVc6x+eYzwJsGNR7nlX+ASt3MYynA=="
+cloud_storage_secret: "sWlgHDWgzYDNuKRZq8n4nAJ52JS3z8vCFos8HixlRRK3rz7YU53bZcVXTkVc6x+eYzwJsGNR7nlX+ASt3MYynA=="
+sunbird_azure_account_key: "sWlgHDWgzYDNuKRZq8n4nAJ52JS3z8vCFos8HixlRRK3rz7YU53bZcVXTkVc6x+eYzwJsGNR7nlX+ASt3MYynA=="
+cloud_private_storage_accountname: "oneclicktest"
+cloud_storage_key: "oneclicktest"
+sunbird_azure_account_name: "oneclicktest"
+cloud_storage_base_url: "https://oneclicktest.blob.core.windows.net"
+cloud_storage_cname_url: "https://oneclicktest.blob.core.windows.net"
+sunbird_azure_storage_account_name: "https://oneclicktest.blob.core.windows.net"
+cloud_private_storage_secret: "sWlgHDWgzYDNuKRZq8n4nAJ52JS3z8vCFos8HixlRRK3rz7YU53bZcVXTkVc6x+eYzwJsGNR7nlX+ASt3MYynA=="
+cloud_storage_secret: "sWlgHDWgzYDNuKRZq8n4nAJ52JS3z8vCFos8HixlRRK3rz7YU53bZcVXTkVc6x+eYzwJsGNR7nlX+ASt3MYynA=="
+sunbird_azure_account_key: "sWlgHDWgzYDNuKRZq8n4nAJ52JS3z8vCFos8HixlRRK3rz7YU53bZcVXTkVc6x+eYzwJsGNR7nlX+ASt3MYynA=="
+cloud_private_storage_accountname: "oneclicktest"
+cloud_storage_key: "oneclicktest"
+sunbird_azure_account_name: "oneclicktest"
+cloud_storage_base_url: "https://oneclicktest.blob.core.windows.net"
+cloud_storage_cname_url: "https://oneclicktest.blob.core.windows.net"
+sunbird_azure_storage_account_name: "https://oneclicktest.blob.core.windows.net"
+cloud_private_storage_secret: "sWlgHDWgzYDNuKRZq8n4nAJ52JS3z8vCFos8HixlRRK3rz7YU53bZcVXTkVc6x+eYzwJsGNR7nlX+ASt3MYynA=="
+cloud_storage_secret: "sWlgHDWgzYDNuKRZq8n4nAJ52JS3z8vCFos8HixlRRK3rz7YU53bZcVXTkVc6x+eYzwJsGNR7nlX+ASt3MYynA=="
+sunbird_azure_account_key: "sWlgHDWgzYDNuKRZq8n4nAJ52JS3z8vCFos8HixlRRK3rz7YU53bZcVXTkVc6x+eYzwJsGNR7nlX+ASt3MYynA=="
+cloud_private_storage_accountname: "oneclicktest"
+cloud_storage_key: "oneclicktest"
+sunbird_azure_account_name: "oneclicktest"
+cloud_storage_base_url: "https://oneclicktest.blob.core.windows.net"
+cloud_storage_cname_url: "https://oneclicktest.blob.core.windows.net"
+sunbird_azure_storage_account_name: "https://oneclicktest.blob.core.windows.net"
+cloud_private_storage_secret: "sWlgHDWgzYDNuKRZq8n4nAJ52JS3z8vCFos8HixlRRK3rz7YU53bZcVXTkVc6x+eYzwJsGNR7nlX+ASt3MYynA=="
+cloud_storage_secret: "sWlgHDWgzYDNuKRZq8n4nAJ52JS3z8vCFos8HixlRRK3rz7YU53bZcVXTkVc6x+eYzwJsGNR7nlX+ASt3MYynA=="
+sunbird_azure_account_key: "sWlgHDWgzYDNuKRZq8n4nAJ52JS3z8vCFos8HixlRRK3rz7YU53bZcVXTkVc6x+eYzwJsGNR7nlX+ASt3MYynA=="
