@@ -198,3 +198,4 @@ checkpoint_store_type: "azure"  # DEFAULT AZURE
 
 PORTAL_API_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIwVDNRZkR6QTFtNzNsQzhPZkszWU5ZeUVRMlg4Z0JRSiJ9.wFrjtNGfWy_xlZtBbVfXR4ioV1FZuB8TnnGGeQ7S368"
 ANALYTICS_API_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIwVDNRZkR6QTFtNzNsQzhPZkszWU5ZeUVRMlg4Z0JRSiJ9.wFrjtNGfWy_xlZtBbVfXR4ioV1FZuB8TnnGGeQ7S368"
+sunbird_image_storage_url: "https://oneclicktest.blob.core.windows.net/dial/"

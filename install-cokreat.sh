@@ -91,6 +91,8 @@ echo "sunbird_azure_account_name: $AccountName" >> global-values.yaml
 echo "cloud_storage_base_url: \"https://$AccountNameStriped.blob.core.windows.net\"" >> global-values.yaml
 echo "cloud_storage_cname_url: \"https://$AccountNameStriped.blob.core.windows.net\"" >> global-values.yaml
 echo "sunbird_azure_storage_account_name: \"https://$AccountNameStriped.blob.core.windows.net\"" >> global-values.yaml
+echo "sunbird_image_storage_url: \"https://$AccountNameStriped.blob.core.windows.net/dial/\"" >> global-values.yaml
+
 
 echo "cloud_private_storage_secret: $AccountKey" >> global-values.yaml
 echo "cloud_storage_secret: $AccountKey" >> global-values.yaml
@@ -99,10 +101,6 @@ echo "sunbird_azure_account_key: $AccountKey" >> global-values.yaml
 # NginxPrvateIP=$(grep "nginx_private_ingress_ip" global-values.yaml | awk -F ":" '{if($1=="nginx_private_ingress_ip") print $2}' | awk '{print $1}' | sed 's/^.\(.*\).$/\1/')
 # echo "sunbird_user_service_base_url: \"http://$NginxPrvateIP/learner\"" >> global-values.yaml
 # echo "sunbird_lms_base_url: \"http://$NginxPrvateIP/api\"" >> global-values.yaml
-
-# DomainName=$(grep "domain" global-values.yaml | awk -F ":" '{if($1=="domain") print $2}' | awk '{print $1}' | sed 's/^.\(.*\).$/\1/')
-# echo "PORTAL_API_HOST: \"http://$DomainName/api/data/v1/report-service\"" >> global-values.yaml
-# echo "PORTAL_HOST: \"http://$DomainName\""  >> global-values.yaml
 
 # Get the job logs and search for the tokens for onboardconsumer
 LOGS=$(kubectl logs -l job-name=onboardconsumer -n dev --tail=10000)
