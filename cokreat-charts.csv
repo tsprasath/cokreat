@@ -5,6 +5,8 @@ elasticsearch,https://sunbirdartifact.blob.core.windows.net/easyinstaller/elasti
 redis,https://sunbirdartifact.blob.core.windows.net/easyinstaller/redis-17.8.3.tgz
 apimanager,https://sunbirdartifact.blob.core.windows.net/easyinstaller/apimanager-0.2.0.tgz
 apimanagerecho,https://sunbirdartifact.blob.core.windows.net/easyinstaller/apimanagerecho-0.2.0.tgz
+assessment,https://sunbirdartifact.blob.core.windows.net/easyinstaller/assessment-0.2.0.tgz
 cert,https://sunbirdartifact.blob.core.windows.net/easyinstaller/cert-0.2.0.tgz
 certregistry,https://sunbirdartifact.blob.core.windows.net/easyinstaller/certregistry-0.2.0.tgz
 content,https://sunbirdartifact.blob.core.windows.net/easyinstaller/content-0.2.0.tgz
+knowledgemw,https://sunbirdartifact.blob.core.windows.net/easyinstaller/knowledgemw-0.2.0.tgz
