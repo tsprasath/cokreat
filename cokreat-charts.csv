@@ -3,7 +3,8 @@ neo4j,https://sunbirdartifact.blob.core.windows.net/easyinstaller/neo4j-0.2.0.tg
 kafka,https://sunbirdartifact.blob.core.windows.net/easyinstaller/kafka-0.2.0.tgz
 elasticsearch,https://sunbirdartifact.blob.core.windows.net/easyinstaller/elasticsearch-19.5.14.tgz
 redis,https://sunbirdartifact.blob.core.windows.net/easyinstaller/redis-17.8.3.tgz
-cert,https://sunbirdartifact.blob.core.windows.net/easyinstaller/cert-0.2.0.tgz
-certregistry,https://sunbirdartifact.blob.core.windows.net/easyinstaller/certregistry-0.2.0.tgz
 apimanager,https://sunbirdartifact.blob.core.windows.net/easyinstaller/apimanager-0.2.0.tgz
 apimanagerecho,https://sunbirdartifact.blob.core.windows.net/easyinstaller/apimanagerecho-0.2.0.tgz
+cert,https://sunbirdartifact.blob.core.windows.net/easyinstaller/cert-0.2.0.tgz
+certregistry,https://sunbirdartifact.blob.core.windows.net/easyinstaller/certregistry-0.2.0.tgz
+content,https://sunbirdartifact.blob.core.windows.net/easyinstaller/content-0.2.0.tgz
