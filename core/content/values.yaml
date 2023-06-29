@@ -1,9 +1,31 @@
-env:
-  javaoptions: -Xmx600m
+javaoptions: -Xmx600m
 
 replicaCount: 1
-repository: docker.io/aimansharief/content-service-modified
-image_tag: R5.2.0
+
+image:
+  registry: sunbirded.azurecr.io
+  repository: content-service
+  tag: release-5.2.0_4daa146_105
+healthcheck: true
+livenessProbe:
+  failureThreshold: 2
+  httpGet:
+      path: /service/health
+      port: 9000
+  initialDelaySeconds: 15
+  periodSeconds: 15
+  timeoutSeconds: 5
+
+readinessProbe:
+  failureThreshold: 2
+  httpGet:
+      path: /service/health
+      port: 9000
+  initialDelaySeconds: 15
+  periodSeconds: 15
+  timeoutSeconds: 5
+
+
 resources:
   requests:
     cpu: 100m
