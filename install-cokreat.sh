@@ -101,7 +101,19 @@ echo "sunbird_azure_account_key: $AccountKey" >> global-values.yaml
 # echo "sunbird_lms_base_url: \"http://$NginxPrvateIP/api\"" >> global-values.yaml
 
 # DomainName=$(grep "domain" global-values.yaml | awk -F ":" '{if($1=="domain") print $2}' | awk '{print $1}' | sed 's/^.\(.*\).$/\1/')
-# echo "sunbird_sso_url: \"http://$DomainName/auth/\"" >> global-values.yaml
+# echo "PORTAL_API_HOST: \"http://$DomainName/api/data/v1/report-service\"" >> global-values.yaml
+# echo "PORTAL_HOST: \"http://$DomainName\""  >> global-values.yaml
+
+# Get the job logs and search for the tokens for onboardconsumer
+LOGS=$(kubectl logs -l job-name=onboardconsumer -n dev --tail=10000)
+# Extract the JWT token from the logs
+TOKEN_LINE=$(echo "$LOGS" | grep "JWT token for api-admin is")
+# Use awk to extract the token from the line
+TOKEN=$(echo "$TOKEN_LINE" | awk -F' : ' '{print $2}')
+echo "PORTAL_API_KEY: \"$TOKEN\"" >> global-values.yaml
+echo "ANALYTICS_API_KEY: \"$TOKEN\"" >> global-values.yaml
+
+
 
   while IFS=',' read -r chart_name chart_repo; do
     # Check if the chart repository URL is empty
