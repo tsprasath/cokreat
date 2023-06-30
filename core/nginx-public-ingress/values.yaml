@@ -1,7 +1,7 @@
 #jinja2:lstrip_blocks: True
 
-nginx_private_ingress_ip: "10.0.1.100"
-domain: easyinstall.sunbirded.org
+nginx_private_ingress_ip: "10.244.0.100"
+domain: dock.sunbirded.org
 cloud_public_storage_accountname: ""
 cloud_public_storage_container: ""
 # nginx private and public cert
@@ -19,14 +19,14 @@ service:
   - port: 80
     name: http
     targetPort: 80
-    nodePort: 31380
+    nodePort: 31480
   - port: 443
     name: https
     targetPort: 443
-    nodePort: 31390
+    nodePort: 31490
 
 imagepullsecrets: ""
-dockerhub: docker.io
+dockerhub: sunbirded.azurecr.io
 
 resources:
   requests:
@@ -36,8 +36,8 @@ resources:
     cpu: 1
     memory: '1024Mi'
 
-repository: tsprasath91/proxy
-image_tag: release-5.1.0
+repository: proxy
+image_tag: dock-0.0.3_RC5_1
 
 serviceMonitor:
   enabled: false

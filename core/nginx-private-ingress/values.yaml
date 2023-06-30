@@ -1,4 +1,3 @@
-
 imagepullsecrets: ""
 dockerhub: sunbirded.azurecr.io
 repository: proxy
