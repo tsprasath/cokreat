@@ -1,0 +1,26 @@
+### Default variable file for program ###
+domain: "testing.com"
+core_vault_sunbird_api_auth_token: ""
+sunbird_google_oauth_clientId: ""
+sunbird_google_oauth_private_key: ""
+CORE_INGRESS_GATEWAY_IP: ""
+imagepullsecrets: ""
+dockerhub: sunbirded.azurecr.io
+
+replicaCount: 1
+repository: program-service
+image_tag: release-5.2.0_8a6235e_210
+resources:
+  requests:
+    cpu: 500m
+    memory: 200Mi
+  limits:
+    cpu: 1
+    memory: 1024Mi
+network:
+  port: 6000 
+  targetport: 6000
+strategy:
+  type: RollingUpdate
+  maxsurge: 25%
+  maxunavailable: 25%
