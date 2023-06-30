@@ -174,6 +174,7 @@ inquiry_kafka_urls: kafka.dock.svc.cluster.local:9092
 inquiry_search_service_base_url: http://search-service.dock.svc.cluster.local:9000/v3/search
 
 ####DONT CHANGE IT #####
+sunbird_kafka_host: kafka.dock.svc.cluster.local
 sunbird_pg_host: postgresql.dev.svc.cluster.local
 sunbird_redis_host: redis-master.dock.svc.cluster.local
 sunbird_user_org_api_base_url: http://learner-service.dock.svc.cluster.local:9000
