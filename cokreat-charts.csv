@@ -12,3 +12,5 @@ content,https://sunbirdartifact.blob.core.windows.net/easyinstaller/content-0.2.
 knowledgemw,https://sunbirdartifact.blob.core.windows.net/easyinstaller/knowledgemw-0.2.0.tgz
 mlworkbench,https://sunbirdartifact.blob.core.windows.net/easyinstaller/mlworkbench-0.2.0.tgz
 nginx-private-ingress,https://sunbirdartifact.blob.core.windows.net/easyinstaller/nginx-private-ingress-0.2.0.tgz
+opensaber,https://sunbirdartifact.blob.core.windows.net/easyinstaller/opensaber-0.2.0.tgz
+nginx-public-ingress,https://sunbirdartifact.blob.core.windows.net/easyinstaller/nginx-public-ingress-0.2.0.tgz
