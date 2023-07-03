@@ -180,6 +180,8 @@ sunbird_pg_host: postgresql.dev.svc.cluster.local
 sunbird_redis_host: redis-master.dock.svc.cluster.local
 sunbird_user_org_api_base_url: http://learner-service.dock.svc.cluster.local:9000
 sunbird_user_service_api_base_url: http://learner-service.dock.svc.cluster.local:9000
+opensaber_service_url: http://opensaber-service.dock.svc.cluster.local:8080
+content_service_url: http://content-service.dock.svc.cluster.local:9000/
 sunbird_cassandra_host: cassandra.dock.svc.cluster.local
 sunbird_cert_service_base_url: http://cert-service.dock.svc.cluster.local:9000
 sunbird_es_host: elasticsearch.dock.svc.cluster.local
@@ -194,7 +196,12 @@ sunbird_pg_user: "postgres"
 sunbird_pg_password: "postgres"
 sunbird_sso_realm: sunbird
 cloud_service_provider: "azure"       # Can be one of - azure, aws, gcloud
-cloud_public_storage_container: sunbird-content-dock    # STORAGE CONTAINER NAME eg : storageacc
+cloud_public_storage_container: sunbird-content-dock  # STORAGE CONTAINER NAME eg : storageacc
+
+sunbird_google_oauth_clientId : "438130763650-l4ffohe1ir6m1mb247b1qskrdv17rcj6.apps.googleusercontent.com"     # Google OAuth Client ID 
+sunbird_google_oauth_clientSecret : "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" #Google OAuth Client Secret 
+CORE_INGRESS_GATEWAY_IP: "20.204.204.171"  # Ed Public ingress IP
+
 checkpoint_store_type: "azure"  # DEFAULT AZURE
 cloud_private_storage_accountname: "oneclicktest"
 cloud_storage_key: "oneclicktest"
