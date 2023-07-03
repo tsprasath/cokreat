@@ -1,5 +1,5 @@
 ### Default variable file for search-service ###
-
+sunbird_es_host: "elasticsearch.dock.svc.cluster.local"
 imagepullsecrets: ""
 dockerhub: sunbirded.azurecr.io
 
