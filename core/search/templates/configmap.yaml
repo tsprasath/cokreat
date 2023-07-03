@@ -1,8 +1,9 @@
 apiVersion: v1
-kind: Conf
+kind: ConfigMap
 metadata:
-  name: {{ .Chart.Name }}-service
-  namespace: {{ .Release.namespace }}
+ creationTimestamp: null
+ name: {{ .Chart.Name }}-config
+ namespace: {{ .Release.namespace }}
 data:
   search-service_application.conf: |
     # This is the main configuration file for the application.
@@ -354,7 +355,14 @@ data:
     content.tagging.backward_enable=false
     content.tagging.property=["subject","medium"]
     search.payload.log_enable=true
- 
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+ creationTimestamp: null
+ name: {{ .Chart.Name }}-xml-config
+ namespace: {{ .Release.namespace }}
+data: 
   search-service_logback.xml: |
     <configuration>
 
@@ -388,7 +396,7 @@ data:
                 <pattern>%msg</pattern>
             </encoder>
 
-            <topic>staging.telemetry.raw</topic>
+            <topic>dock.telemetry.raw</topic>
             <!-- ensure that every message sent by the executing host is partitioned to the same partition strategy -->
             <keyingStrategy class="com.github.danielwegener.logback.kafka.keying.NoKeyKeyingStrategy" />
             <!-- block the logging application thread if the kafka appender cannot keep up with sending the log messages -->
@@ -397,7 +405,7 @@ data:
             <!-- each <producerConfig> translates to regular kafka-client config (format: key=value) -->
             <!-- producer configs are documented here: https://kafka.apache.org/documentation.html#newproducerconfigs -->
             <!-- bootstrap.servers is the only mandatory producerConfig -->
-            <producerConfig>bootstrap.servers=11.4.1.8:9092</producerConfig>
+            <producerConfig>bootstrap.servers={{ .Values.sunbird_kafka_host }}:9200</producerConfig>
             <!-- don't wait for a broker to ack the reception of a batch.  -->
             <producerConfig>acks=0</producerConfig>
             <!-- wait up to 1000ms and collect log messages before sending them as a batch -->
@@ -414,3 +422,5 @@ data:
         <logger name="TelemetryEventLogger" level="INFO">
             <appender-ref ref="kafka-appender" />
         </logger>
+
+    </configuration>
