@@ -404,7 +404,7 @@ data:
     # Framework master category validation supported values are Yes/No
     master.category.validation.enabled="No"
 
-  cloudstorage {
+    cloudstorage {
       metadata.replace_absolute_path=true
       relative_path_prefix=CONTENT_STORAGE_BASE_PATH
       metadata.list={{ .Values.cloudstorage_metadata_list | toJson | }}
