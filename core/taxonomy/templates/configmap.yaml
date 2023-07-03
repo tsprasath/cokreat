@@ -452,7 +452,7 @@ data:
                 <pattern>%msg</pattern>
             </encoder>
 
-            <topic>staging.telemetry.raw</topic>
+            <topic>dock.telemetry.raw</topic>
             <!-- ensure that every message sent by the executing host is partitioned to the same partition strategy -->
             <keyingStrategy class="com.github.danielwegener.logback.kafka.keying.NoKeyKeyingStrategy" />
             <!-- block the logging application thread if the kafka appender cannot keep up with sending the log messages -->
@@ -478,4 +478,5 @@ data:
         <logger name="TelemetryEventLogger" level="INFO">
             <appender-ref ref="kafka-appender" />
         </logger>
-    <configuration>
+
+    </configuration>
