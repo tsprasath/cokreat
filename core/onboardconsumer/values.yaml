@@ -1,12 +1,12 @@
 # kong_admin_listen: http://0.0.0.0:8001
-kong_admin_listen: http://kong.dev.svc.cluster.local:8001
+kong_admin_listen: http://kong.dock.svc.cluster.local:8001
 
 imagepullsecrets: ""
-dockerhub: docker.io
+dockerhub: sunbirded.azurecr.io
 
 replicaCount: 1
-repository: tsprasath91/kong
-image_tag:  0.14.1
+repository: kong
+image_tag:  1.8.0-gold
 
 resources:
   requests:
