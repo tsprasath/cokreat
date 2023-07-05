@@ -40,7 +40,7 @@
         ],
         "request_path": "/content/v1/flag/accept",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/content/flag/accept"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/content/flag/accept"
     },
     {
         "name": "acceptTermsAndCondition",
@@ -83,7 +83,7 @@
         ],
         "request_path": "/user/v1/tnc/accept",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/user/tnc/accept"
+        "upstream_url": "http://learner-service:9000/v1/user/tnc/accept"
     },
     {
         "name": "addBadgeToUser",
@@ -126,7 +126,7 @@
         ],
         "request_path": "/user/v1/badges/add",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/user/badges/add"
+        "upstream_url": "http://learner-service:9000/v1/user/badges/add"
     },
     {
         "name": "addMember",
@@ -169,7 +169,7 @@
         ],
         "request_path": "/org/v1/member/add",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/org/member/add"
+        "upstream_url": "http://learner-service:9000/v1/org/member/add"
     },
     {
         "name": "addRegCertificate",
@@ -212,7 +212,7 @@
         ],
         "request_path": "/certreg/v1/certs/add",
         "strip_request_path": true,
-        "upstream_url": "http://cert-registry-service.dock.svc.cluster.local:9000/certs/v1/registry/add"
+        "upstream_url": "http://cert-registry-service:9000/certs/v1/registry/add"
     },
     {
         "name": "addSystemSettings",
@@ -255,7 +255,7 @@
         ],
         "request_path": "/data/v1/system/settings/set",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/system/settings/set"
+        "upstream_url": "http://learner-service:9000/v1/system/settings/set"
     },
     {
         "name": "addUserSkill",
@@ -298,7 +298,7 @@
         ],
         "request_path": "/user/v1/skill/add",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/user/skill/add"
+        "upstream_url": "http://learner-service:9000/v1/user/skill/add"
     },
     {
         "name": "addUserSkillEndorsement",
@@ -341,7 +341,7 @@
         ],
         "request_path": "/user/v1/skill/endorse/add",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/user/skill/endorse/add"
+        "upstream_url": "http://learner-service:9000/v1/user/skill/endorse/add"
     },
     {
         "name": "addUserToBatch",
@@ -384,7 +384,7 @@
         ],
         "request_path": "/course/v1/batch/user/add",
         "strip_request_path": true,
-        "upstream_url": "http://lms-service.dock.svc.cluster.local:9000/v1/course/batch/users/add"
+        "upstream_url": "http://lms-service:9000/v1/course/batch/users/add"
     },
     {
         "name": "assemblePage",
@@ -418,7 +418,7 @@
         ],
         "request_path": "/data/v1/page/assemble",
         "strip_request_path": true,
-        "upstream_url": "http://lms-service.dock.svc.cluster.local:9000/v1/page/assemble"
+        "upstream_url": "http://lms-service:9000/v1/page/assemble"
     },
     {
         "name": "assignRole",
@@ -461,7 +461,7 @@
         ],
         "request_path": "/user/v1/role/assign",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/user/assign/role"
+        "upstream_url": "http://learner-service:9000/v1/user/assign/role"
     },
     {
         "name": "batchBulkEnrolment",
@@ -504,7 +504,7 @@
         ],
         "request_path": "/course/v1/batch/bulk/enrollment",
         "strip_request_path": true,
-        "upstream_url": "http://lms-service.dock.svc.cluster.local:9000/v1/batch/bulk/enrollment"
+        "upstream_url": "http://lms-service:9000/v1/batch/bulk/enrollment"
     },
     {
         "name": "batchBulkUnEnrolment",
@@ -547,7 +547,7 @@
         ],
         "request_path": "/course/v1/batch/bulk/unenrollment",
         "strip_request_path": true,
-        "upstream_url": "http://lms-service.dock.svc.cluster.local:9000/v1/batch/bulk/unenrollment"
+        "upstream_url": "http://lms-service:9000/v1/batch/bulk/unenrollment"
     },
     {
         "name": "blockUser",
@@ -590,7 +590,7 @@
         ],
         "request_path": "/user/v1/block",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/user/block"
+        "upstream_url": "http://learner-service:9000/v1/user/block"
     },
     {
         "name": "checkUploadJobStatus",
@@ -634,7 +634,7 @@
         ],
         "request_path": "/data/v1/upload/status",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/upload/status"
+        "upstream_url": "http://learner-service:9000/v1/upload/status"
     },
     {
         "name": "compositeSearch",
@@ -678,7 +678,7 @@
         ],
         "request_path": "/composite/v1/search",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/search"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/search"
     },
     {
         "name": "compositePrivateSearch",
@@ -721,7 +721,7 @@
         ],
         "request_path": "/composite/v1/private/search",
         "strip_request_path": true,
-        "upstream_url": "http://search-service.dock.svc.cluster.local:9000/v3/private/search"
+        "upstream_url": "http://search-service:9000/v3/private/search"
     },
     {
         "name": "contentBadgeLink",
@@ -764,7 +764,7 @@
         ],
         "request_path": "/badging/v1/content/link",
         "strip_request_path": true,
-        "upstream_url": "http://lms-service.dock.svc.cluster.local:9000/v1/content/link"
+        "upstream_url": "http://lms-service:9000/v1/content/link"
     },
     {
         "name": "contentBadgeUnLink",
@@ -807,7 +807,7 @@
         ],
         "request_path": "/badging/v1/content/unlink",
         "strip_request_path": true,
-        "upstream_url": "http://lms-service.dock.svc.cluster.local:9000/v1/content/unlink"
+        "upstream_url": "http://lms-service:9000/v1/content/unlink"
     },
     {
         "name": "copyContent",
@@ -850,7 +850,7 @@
         ],
         "request_path": "/content/v1/copy",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/content/copy"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/content/copy"
     },
     {
         "name": "copyFramework",
@@ -893,7 +893,7 @@
         ],
         "request_path": "/framework/v1/copy",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/framework/copy"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/framework/copy"
     },
     {
         "name": "courseBatchAddCertificateTemplate",
@@ -936,7 +936,7 @@
         ],
         "request_path": "/course/batch/cert/v1/template/add",
         "strip_request_path": true,
-        "upstream_url": "http://lms-service.dock.svc.cluster.local:9000/v1/course/batch/cert/template/add"
+        "upstream_url": "http://lms-service:9000/v1/course/batch/cert/template/add"
     },
     {
         "name": "courseBatchRemoveCertificateTemplate",
@@ -979,7 +979,7 @@
         ],
         "request_path": "/course/batch/cert/v1/template/remove",
         "strip_request_path": true,
-        "upstream_url": "http://lms-service.dock.svc.cluster.local:9000/v1/course/batch/cert/template/remove"
+        "upstream_url": "http://lms-service:9000/v1/course/batch/cert/template/remove"
     },
     {
         "name": "courseEnrolment",
@@ -1022,7 +1022,7 @@
         ],
         "request_path": "/course/v1/enrol",
         "strip_request_path": true,
-        "upstream_url": "http://lms-service.dock.svc.cluster.local:9000/v1/course/enroll"
+        "upstream_url": "http://lms-service:9000/v1/course/enroll"
     },
     {
         "name": "courseIssueCertificate",
@@ -1065,7 +1065,7 @@
         ],
         "request_path": "/course/batch/cert/v1/issue",
         "strip_request_path": true,
-        "upstream_url": "http://lms-service.dock.svc.cluster.local:9000/v1/course/batch/cert/issue"
+        "upstream_url": "http://lms-service:9000/v1/course/batch/cert/issue"
     },
     {
         "name": "courseUnEnrolment",
@@ -1108,7 +1108,7 @@
         ],
         "request_path": "/course/v1/unenrol",
         "strip_request_path": true,
-        "upstream_url": "http://lms-service.dock.svc.cluster.local:9000/v1/course/unenroll"
+        "upstream_url": "http://lms-service:9000/v1/course/unenroll"
     },
     {
         "name": "createAssertion",
@@ -1151,7 +1151,7 @@
         ],
         "request_path": "/badging/v1/issuer/badge/assertion/create",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/issuer/badge/assertion/create"
+        "upstream_url": "http://learner-service:9000/v1/issuer/badge/assertion/create"
     },
     {
         "name": "createBadgeClass",
@@ -1194,7 +1194,7 @@
         ],
         "request_path": "/badging/v1/issuer/badge/create",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/issuer/badge/create"
+        "upstream_url": "http://learner-service:9000/v1/issuer/badge/create"
     },
     {
         "name": "createBatch",
@@ -1237,7 +1237,7 @@
         ],
         "request_path": "/course/v1/batch/create",
         "strip_request_path": true,
-        "upstream_url": "http://lms-service.dock.svc.cluster.local:9000/v1/course/batch/create"
+        "upstream_url": "http://lms-service:9000/v1/course/batch/create"
     },
     {
         "name": "createCertTemplate",
@@ -1280,7 +1280,7 @@
         ],
         "request_path": "/cert/v1/template/create",
         "strip_request_path": true,
-        "upstream_url": "http://cert-service.dock.svc.cluster.local:9000/cert/v1/template/create"
+        "upstream_url": "http://cert-service:9000/cert/v1/template/create"
     },
     {
         "name": "createChannel",
@@ -1323,7 +1323,7 @@
         ],
         "request_path": "/channel/v1/create",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/channel/create"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/channel/create"
     },
     {
         "name": "createContent",
@@ -1366,7 +1366,7 @@
         ],
         "request_path": "/content/v1/create",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/content/create"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/content/create"
     },
     {
         "name": "createCourse",
@@ -1409,7 +1409,7 @@
         ],
         "request_path": "/course/v1/create",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/course/create"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/course/create"
     },
     {
         "name": "createData",
@@ -1452,7 +1452,7 @@
         ],
         "request_path": "/data/v1/object/create",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/object/create"
+        "upstream_url": "http://learner-service:9000/v1/object/create"
     },
     {
         "name": "createForm",
@@ -1538,7 +1538,7 @@
         ],
         "request_path": "/framework/v1/create",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/framework/create"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/framework/create"
     },
     {
         "name": "createFrameworkCategory",
@@ -1581,7 +1581,7 @@
         ],
         "request_path": "/framework/v1/category/create",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/framework/category/create"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/framework/category/create"
     },
     {
         "name": "createFrameworkTerm",
@@ -1624,7 +1624,7 @@
         ],
         "request_path": "/framework/v1/term/create",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/framework/term/create"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/framework/term/create"
     },
     {
         "name": "createissuer",
@@ -1667,7 +1667,7 @@
         ],
         "request_path": "/badging/v1/issuer/create",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/issuer/create"
+        "upstream_url": "http://learner-service:9000/v1/issuer/create"
     },
     {
         "name": "createLocation",
@@ -1710,7 +1710,7 @@
         ],
         "request_path": "/org/v1/location/create",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/notification/location/create"
+        "upstream_url": "http://learner-service:9000/v1/notification/location/create"
     },
     {
         "name": "createLock",
@@ -1753,7 +1753,7 @@
         ],
         "request_path": "/lock/v1/create",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/lock/create"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/lock/create"
     },
     {
         "name": "createNote",
@@ -1796,7 +1796,7 @@
         ],
         "request_path": "/notes/v1/create",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/note/create"
+        "upstream_url": "http://learner-service:9000/v1/note/create"
     },
     {
         "name": "createOrg",
@@ -1839,7 +1839,7 @@
         ],
         "request_path": "/org/v1/create",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/org/create"
+        "upstream_url": "http://learner-service:9000/v1/org/create"
     },
     {
         "name": "createOrgType",
@@ -1882,7 +1882,7 @@
         ],
         "request_path": "/org/v1/type/create",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/org/type/create"
+        "upstream_url": "http://learner-service:9000/v1/org/type/create"
     },
     {
         "name": "createPage",
@@ -1925,7 +1925,7 @@
         ],
         "request_path": "/data/v1/page/create",
         "strip_request_path": true,
-        "upstream_url": "http://lms-service.dock.svc.cluster.local:9000/v1/page/create"
+        "upstream_url": "http://lms-service:9000/v1/page/create"
     },
     {
         "name": "createPageSection",
@@ -1968,7 +1968,7 @@
         ],
         "request_path": "/data/v1/page/section/create",
         "strip_request_path": true,
-        "upstream_url": "http://lms-service.dock.svc.cluster.local:9000/v1/page/section/create"
+        "upstream_url": "http://lms-service:9000/v1/page/section/create"
     },
     {
         "name": "createPublisher",
@@ -2011,7 +2011,7 @@
         ],
         "request_path": "/dialcode/v1/publisher/create",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/dialcode/publisher/create"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/dialcode/publisher/create"
     },
     {
         "name": "createSession",
@@ -2097,7 +2097,7 @@
         ],
         "request_path": "/user/v1/create",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/user/create"
+        "upstream_url": "http://learner-service:9000/v1/user/create"
     },
     {
         "name": "createUserLearnerV3",
@@ -2140,7 +2140,7 @@
         ],
         "request_path": "/user/v1/signup",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/user/signup"
+        "upstream_url": "http://learner-service:9000/v1/user/signup"
     },
     {
         "name": "createUserVersion2",
@@ -2183,7 +2183,7 @@
         ],
         "request_path": "/user/v2/create",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v2/user/create"
+        "upstream_url": "http://learner-service:9000/v2/user/create"
     },
     {
         "name": "createUserVersion3",
@@ -2226,7 +2226,7 @@
         ],
         "request_path": "/user/v3/create",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v3/user/create"
+        "upstream_url": "http://learner-service:9000/v3/user/create"
     },
     {
         "name": "deleteBadgeClass",
@@ -2269,7 +2269,7 @@
         ],
         "request_path": "/badging/v1/issuer/badge/delete",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/issuer/badge/delete"
+        "upstream_url": "http://learner-service:9000/v1/issuer/badge/delete"
     },
     {
         "name": "deleteData",
@@ -2312,7 +2312,7 @@
         ],
         "request_path": "/data/v1/object/delete",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/object/delete"
+        "upstream_url": "http://learner-service:9000/v1/object/delete"
     },
     {
         "name": "deleteIssuer",
@@ -2355,7 +2355,7 @@
         ],
         "request_path": "/badging/v1/issuer/delete",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/issuer/delete"
+        "upstream_url": "http://learner-service:9000/v1/issuer/delete"
     },
     {
         "name": "deleteLocation",
@@ -2398,7 +2398,7 @@
         ],
         "request_path": "/org/v1/location/delete",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/notification/location/delete"
+        "upstream_url": "http://learner-service:9000/v1/notification/location/delete"
     },
     {
         "name": "deleteNote",
@@ -2441,7 +2441,7 @@
         ],
         "request_path": "/notes/v1/delete",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/note/delete"
+        "upstream_url": "http://learner-service:9000/v1/note/delete"
     },
     {
         "name": "deviceProfile",
@@ -2561,7 +2561,7 @@
         ],
         "request_path": "/data/v1/dial/assemble",
         "strip_request_path": true,
-        "upstream_url": "http://lms-service.dock.svc.cluster.local:9000/v1/dial/assemble"
+        "upstream_url": "http://lms-service:9000/v1/dial/assemble"
     },
     {
         "name": "downloadCertificate",
@@ -2604,7 +2604,7 @@
         ],
         "request_path": "/user/v1/certs/download",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/user/certs/download"
+        "upstream_url": "http://learner-service:9000/v1/user/certs/download"
     },
     {
         "name": "downloadRegCertificate",
@@ -2647,7 +2647,7 @@
         ],
         "request_path": "/certreg/v1/certs/download",
         "strip_request_path": true,
-        "upstream_url": "http://cert-registry-service.dock.svc.cluster.local:9000/certs/v1/registry/download"
+        "upstream_url": "http://cert-registry-service:9000/certs/v1/registry/download"
     },
     {
         "name": "downloadTOC",
@@ -2690,7 +2690,7 @@
         ],
         "request_path": "/textbook/v1/toc/download",
         "strip_request_path": true,
-        "upstream_url": "http://lms-service.dock.svc.cluster.local:9000/v1/textbook/toc/download"
+        "upstream_url": "http://lms-service:9000/v1/textbook/toc/download"
     },
     {
         "name": "echo",
@@ -2862,7 +2862,7 @@
         ],
         "request_path": "/content/v1/fetchmeta",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/url/fetchmeta"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/url/fetchmeta"
     },
     {
         "name": "flagContent",
@@ -2905,7 +2905,7 @@
         ],
         "request_path": "/content/v1/flag",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/content/flag"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/content/flag"
     },
     {
         "name": "freshDesk",
@@ -2991,7 +2991,7 @@
         ],
         "request_path": "/cert/v1/certs/generate",
         "strip_request_path": true,
-        "upstream_url": "http://cert-service.dock.svc.cluster.local:9000/v1/certs/generate"
+        "upstream_url": "http://cert-service:9000/v1/certs/generate"
     },
     {
         "name": "generateDialcodes",
@@ -3034,7 +3034,7 @@
         ],
         "request_path": "/dialcode/v1/generate",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/dialcode/generate"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/dialcode/generate"
     },
     {
         "name": "generateOtp",
@@ -3077,7 +3077,7 @@
         ],
         "request_path": "/otp/v1/generate",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/otp/generate"
+        "upstream_url": "http://learner-service:9000/v1/otp/generate"
     },
     {
         "name": "getAllData",
@@ -3120,7 +3120,7 @@
         ],
         "request_path": "/data/v1/object/read/list",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/object/read/list"
+        "upstream_url": "http://learner-service:9000/v1/object/read/list"
     },
     {
         "name": "getAllIssuer",
@@ -3163,7 +3163,7 @@
         ],
         "request_path": "/badging/v1/issuer/list",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/issuer/list"
+        "upstream_url": "http://learner-service:9000/v1/issuer/list"
     },
     {
         "name": "getAssertion",
@@ -3206,7 +3206,7 @@
         ],
         "request_path": "/badging/v1/issuer/badge/assertion/read",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/issuer/badge/assertion/read"
+        "upstream_url": "http://learner-service:9000/v1/issuer/badge/assertion/read"
     },
     {
         "name": "getAssertionList",
@@ -3249,7 +3249,7 @@
         ],
         "request_path": "/badging/v1/issuer/badge/assertion/search",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/issuer/badge/assertion/search"
+        "upstream_url": "http://learner-service:9000/v1/issuer/badge/assertion/search"
     },
     {
         "name": "getAudienceCount",
@@ -3292,7 +3292,7 @@
         ],
         "request_path": "/data/v1/notification/audience",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/notification/audience"
+        "upstream_url": "http://learner-service:9000/v1/notification/audience"
     },
     {
         "name": "getBadgeClass",
@@ -3335,7 +3335,7 @@
         ],
         "request_path": "/badging/v1/issuer/badge/read",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/issuer/badge/read"
+        "upstream_url": "http://learner-service:9000/v1/issuer/badge/read"
     },
     {
         "name": "getBatch",
@@ -3378,7 +3378,7 @@
         ],
         "request_path": "/course/v1/batch/read",
         "strip_request_path": true,
-        "upstream_url": "http://lms-service.dock.svc.cluster.local:9000/v1/course/batch/read"
+        "upstream_url": "http://lms-service:9000/v1/course/batch/read"
     },
     {
         "name": "getContentUploadUrl",
@@ -3421,7 +3421,7 @@
         ],
         "request_path": "/content/v1/upload/url/read",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/content/upload/url"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/content/upload/url"
     },
     {
         "name": "getCourseConsumptionDashboard",
@@ -3464,7 +3464,7 @@
         ],
         "request_path": "/dashboard/v1/consumption/course",
         "strip_request_path": true,
-        "upstream_url": "http://lms-service.dock.svc.cluster.local:9000/v1/dashboard/consumption/course"
+        "upstream_url": "http://lms-service:9000/v1/dashboard/consumption/course"
     },
     {
         "name": "getCourseHierarchy",
@@ -3498,7 +3498,7 @@
         ],
         "request_path": "/course/v1/hierarchy",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/course/hierarchy"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/course/hierarchy"
     },
     {
         "name": "getCourseProgressDashboard",
@@ -3541,7 +3541,7 @@
         ],
         "request_path": "/dashboard/v1/progress/course",
         "strip_request_path": true,
-        "upstream_url": "http://lms-service.dock.svc.cluster.local:9000/v1/dashboard/progress/course"
+        "upstream_url": "http://lms-service:9000/v1/dashboard/progress/course"
     },
     {
         "name": "getCourseProgressDashboardV2",
@@ -3584,7 +3584,7 @@
         ],
         "request_path": "/dashboard/v2/progress/course",
         "strip_request_path": true,
-        "upstream_url": "http://lms-service.dock.svc.cluster.local:9000/v2/dashboard/progress/course"
+        "upstream_url": "http://lms-service:9000/v2/dashboard/progress/course"
     },
     {
         "name": "getData",
@@ -3627,7 +3627,7 @@
         ],
         "request_path": "/data/v1/object/read",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/object/read"
+        "upstream_url": "http://learner-service:9000/v1/object/read"
     },
     {
         "name": "getIssuerDetails",
@@ -3670,7 +3670,7 @@
         ],
         "request_path": "/badging/v1/issuer/read",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/issuer/read"
+        "upstream_url": "http://learner-service:9000/v1/issuer/read"
     },
     {
         "name": "getLocation",
@@ -3713,7 +3713,7 @@
         ],
         "request_path": "/org/v1/location/read",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/notification/location/read"
+        "upstream_url": "http://learner-service:9000/v1/notification/location/read"
     },
     {
         "name": "getMediaTypes",
@@ -3756,7 +3756,7 @@
         ],
         "request_path": "/user/v1/mediatype/list",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/user/mediatype/list"
+        "upstream_url": "http://learner-service:9000/v1/user/mediatype/list"
     },
     {
         "name": "getPageSettings",
@@ -3799,7 +3799,7 @@
         ],
         "request_path": "/data/v1/page/read",
         "strip_request_path": true,
-        "upstream_url": "http://lms-service.dock.svc.cluster.local:9000/v1/page/read"
+        "upstream_url": "http://lms-service:9000/v1/page/read"
     },
     {
         "name": "getParticipants",
@@ -3842,7 +3842,7 @@
         ],
         "request_path": "/course/v1/batch/participants/list",
         "strip_request_path": true,
-        "upstream_url": "http://lms-service.dock.svc.cluster.local:9000/v1/batch/participants/list"
+        "upstream_url": "http://lms-service:9000/v1/batch/participants/list"
     },
     {
         "name": "getSkills",
@@ -3885,7 +3885,7 @@
         ],
         "request_path": "/data/v1/skills",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/skills"
+        "upstream_url": "http://learner-service:9000/v1/skills"
     },
     {
         "name": "getSystemSettings",
@@ -3928,7 +3928,7 @@
         ],
         "request_path": "/data/v1/system/settings/get",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/system/settings/get"
+        "upstream_url": "http://learner-service:9000/v1/system/settings/get"
     },
     {
         "name": "getTenantInfo",
@@ -4015,7 +4015,7 @@
         ],
         "request_path": "/data/v1/upload/statusDownloadLink",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/upload/statusDownloadLink"
+        "upstream_url": "http://learner-service:9000/v1/upload/statusDownloadLink"
     },
     {
         "name": "getUserByKey",
@@ -4058,7 +4058,7 @@
         ],
         "request_path": "/user/v1/get",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/user/get"
+        "upstream_url": "http://learner-service:9000/v1/user/get"
     },
     {
         "name": "getUserConsumptionDasbhoard",
@@ -4101,7 +4101,7 @@
         ],
         "request_path": "/dashboard/v1/consumption/user",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/dashboard/consumption/user"
+        "upstream_url": "http://learner-service:9000/v1/dashboard/consumption/user"
     },
     {
         "name": "getUserProfile",
@@ -4144,7 +4144,7 @@
         ],
         "request_path": "/user/v1/read",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/user/read"
+        "upstream_url": "http://learner-service:9000/v1/user/read"
     },
     {
         "name": "getUserProfileV2",
@@ -4187,7 +4187,7 @@
         ],
         "request_path": "/user/v2/read",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v2/user/read"
+        "upstream_url": "http://learner-service:9000/v2/user/read"
     },
     {
         "name": "getUserSkill",
@@ -4230,7 +4230,7 @@
         ],
         "request_path": "/user/v1/skill/read",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/user/skill/read"
+        "upstream_url": "http://learner-service:9000/v1/user/skill/read"
     },
     {
         "name": "getUserType",
@@ -4273,7 +4273,7 @@
         ],
         "request_path": "/user/v1/type/list",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/user/type/list"
+        "upstream_url": "http://learner-service:9000/v1/user/type/list"
     },
     {
         "name": "indexSync",
@@ -4317,7 +4317,7 @@
         ],
         "request_path": "/data/v1/index/sync",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/data/sync"
+        "upstream_url": "http://learner-service:9000/v1/data/sync"
     },
     {
         "name": "ItemSetAPIs",
@@ -4360,7 +4360,7 @@
         ],
         "request_path": "/itemset/v1",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/itemset/v1"
+        "upstream_url": "http://knowledge-mw-service:5000/itemset/v1"
     },
     {
         "name": "KongConsumerApi",
@@ -4446,7 +4446,7 @@
         ],
         "request_path": "/license/v3",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/license/v3"
+        "upstream_url": "http://content-service:9000/license/v3"
     },
     {
         "name": "linkDialcodeContent",
@@ -4489,7 +4489,7 @@
         ],
         "request_path": "/dialcode/v1/content/link",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/dialcode/content/link"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/dialcode/content/link"
     },
     {
         "name": "listAllBadges",
@@ -4532,7 +4532,7 @@
         ],
         "request_path": "/org/v1/badges/list",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/badges/list"
+        "upstream_url": "http://learner-service:9000/v1/badges/list"
     },
     {
         "name": "listChannel",
@@ -4575,7 +4575,7 @@
         ],
         "request_path": "/channel/v1/list",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/channel/list"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/channel/list"
     },
     {
         "name": "listCourseEnrollments",
@@ -4618,7 +4618,7 @@
         ],
         "request_path": "/course/v1/user/enrollment/list",
         "strip_request_path": true,
-        "upstream_url": "http://lms-service.dock.svc.cluster.local:9000/v1/user/courses/list"
+        "upstream_url": "http://lms-service:9000/v1/user/courses/list"
     },
     {
         "name": "listDialcodes",
@@ -4661,7 +4661,7 @@
         ],
         "request_path": "/dialcode/v1/list",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/dialcode/list"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/dialcode/list"
     },
     {
         "name": "listFramework",
@@ -4704,7 +4704,7 @@
         ],
         "request_path": "/framework/v1/list",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/framework/list"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/framework/list"
     },
     {
         "name": "listLock",
@@ -4747,7 +4747,7 @@
         ],
         "request_path": "/lock/v1/list",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/lock/list"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/lock/list"
     },
     {
         "name": "listOrdinals",
@@ -4790,7 +4790,7 @@
         ],
         "request_path": "/meta/v1/ordinals/list",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/ordinals/list"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/ordinals/list"
     },
     {
         "name": "listOrgTypes",
@@ -4833,7 +4833,7 @@
         ],
         "request_path": "/org/v1/type/list",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/org/type/list"
+        "upstream_url": "http://learner-service:9000/v1/org/type/list"
     },
     {
         "name": "listPageSections",
@@ -4876,7 +4876,7 @@
         ],
         "request_path": "/data/v1/page/section/list",
         "strip_request_path": true,
-        "upstream_url": "http://lms-service.dock.svc.cluster.local:9000/v1/page/section/list"
+        "upstream_url": "http://lms-service:9000/v1/page/section/list"
     },
     {
         "name": "listResourceBundles",
@@ -4919,7 +4919,7 @@
         ],
         "request_path": "/meta/v1/resourcebundles/list",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/resourcebundles/list"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/resourcebundles/list"
     },
     {
         "name": "listSystemSettings",
@@ -4962,7 +4962,7 @@
         ],
         "request_path": "/data/v1/system/settings/list",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/system/settings/list"
+        "upstream_url": "http://learner-service:9000/v1/system/settings/list"
     },
     {
         "name": "listTerms",
@@ -5005,7 +5005,7 @@
         ],
         "request_path": "/meta/v1/terms/list",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/terms/list"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/terms/list"
     },
     {
         "name": "masterLocationCreate",
@@ -5048,7 +5048,7 @@
         ],
         "request_path": "/data/v1/location/create",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/location/create"
+        "upstream_url": "http://learner-service:9000/v1/location/create"
     },
     {
         "name": "masterLocationDelete",
@@ -5091,7 +5091,7 @@
         ],
         "request_path": "/data/v1/location/delete",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/location/delete"
+        "upstream_url": "http://learner-service:9000/v1/location/delete"
     },
     {
         "name": "masterLocationSearch",
@@ -5134,7 +5134,7 @@
         ],
         "request_path": "/data/v1/location/search",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/location/search"
+        "upstream_url": "http://learner-service:9000/v1/location/search"
     },
     {
         "name": "masterLocationUpdate",
@@ -5177,7 +5177,7 @@
         ],
         "request_path": "/data/v1/location/update",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/location/update"
+        "upstream_url": "http://learner-service:9000/v1/location/update"
     },
     {
         "name": "masterLocationUpload",
@@ -5220,7 +5220,7 @@
         ],
         "request_path": "/data/v1/bulk/location/upload",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/bulk/location/upload"
+        "upstream_url": "http://learner-service:9000/v1/bulk/location/upload"
     },
     {
         "name": "mergeUserAccounts",
@@ -5263,7 +5263,7 @@
         ],
         "request_path": "/user/v1/account/merge",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/private/user/v1/account/merge"
+        "upstream_url": "http://learner-service:9000/private/user/v1/account/merge"
     },
     {
         "name": "metricsSearchData",
@@ -5306,7 +5306,7 @@
         ],
         "request_path": "/data/v1/object/metrics",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/object/metrics"
+        "upstream_url": "http://learner-service:9000/v1/object/metrics"
     },
     {
         "name": "onboardConsumer",
@@ -5392,7 +5392,7 @@
         ],
         "request_path": "/org/v1/assign/key",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/org/assign/key"
+        "upstream_url": "http://learner-service:9000/v1/org/assign/key"
     },
     {
         "name": "orgBulkUpload",
@@ -5435,7 +5435,7 @@
         ],
         "request_path": "/org/v1/upload",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/org/upload"
+        "upstream_url": "http://learner-service:9000/v1/org/upload"
     },
     {
         "name": "pluginSearch",
@@ -5478,7 +5478,7 @@
         ],
         "request_path": "/plugins/v1/search",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/plugins/search"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/plugins/search"
     },
     {
         "name": "PrivateContentCreateAPIs",
@@ -5521,7 +5521,7 @@
         ],
         "request_path": "/private/content/v3/create",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/content/v3/create"
+        "upstream_url": "http://content-service:9000/content/v3/create"
     },
     {
         "name": "PrivateContentReadAPIs",
@@ -5564,7 +5564,7 @@
         ],
         "request_path": "/private/content/v3/read",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/content/v3/read"
+        "upstream_url": "http://content-service:9000/content/v3/read"
     },
     {
         "name": "PrivateContentUpdateAPIs",
@@ -5607,7 +5607,7 @@
         ],
         "request_path": "/private/content/v3/update",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/content/v3/update"
+        "upstream_url": "http://content-service:9000/content/v3/update"
     },
     {
         "name": "PrivateContentRetireAPI",
@@ -5908,7 +5908,7 @@
         ],
         "request_path": "/user/private/v1/assign/role",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/private/user/v1/assign/role"
+        "upstream_url": "http://learner-service:9000/private/user/v1/assign/role"
     },
     {
         "name": "privateUserRead",
@@ -5951,7 +5951,7 @@
         ],
         "request_path": "/user/private/v1/read",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/private/user/v1/read"
+        "upstream_url": "http://learner-service:9000/private/user/v1/read"
     },
     {
         "name": "privateUserUpdate",
@@ -5994,7 +5994,7 @@
         ],
         "request_path": "/user/private/v1/update",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/private/user/v1/update"
+        "upstream_url": "http://learner-service:9000/private/user/v1/update"
     },
     {
         "name": "profileVisibility",
@@ -6037,7 +6037,7 @@
         ],
         "request_path": "/user/v1/profile/visibility",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/user/profile/visibility"
+        "upstream_url": "http://learner-service:9000/v1/user/profile/visibility"
     },
     {
         "name": "publishContent",
@@ -6080,7 +6080,7 @@
         ],
         "request_path": "/content/v1/publish",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/content/v3/publish"
+        "upstream_url": "http://content-service:9000/content/v3/publish"
     },
     {
         "name": "publishContentV2",
@@ -6123,7 +6123,7 @@
         ],
         "request_path": "/content/v2/publish",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/content/v4/publish"
+        "upstream_url": "http://content-service:9000/content/v4/publish"
     },
     {
         "name": "unlistedPublishContent",
@@ -6166,7 +6166,7 @@
         ],
         "request_path": "/content/v1/unlisted/publish",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/content/v3/unlisted/publish"
+        "upstream_url": "http://content-service:9000/content/v3/unlisted/publish"
     },
     {
         "name": "unlistedPublishContentV2",
@@ -6209,7 +6209,7 @@
         ],
         "request_path": "/content/v2/unlisted/publish",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/content/v4/unlisted/publish"
+        "upstream_url": "http://content-service:9000/content/v4/unlisted/publish"
     },
     {
         "name": "publishCollection",
@@ -6252,7 +6252,7 @@
         ],
         "request_path": "/collection/v1/publish",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/collection/v4/publish"
+        "upstream_url": "http://content-service:9000/collection/v4/publish"
     },
     {
         "name": "unlistedPublishCollection",
@@ -6295,7 +6295,7 @@
         ],
         "request_path": "/collection/v1/unlisted/publish",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/collection/v4/unlisted/publish"
+        "upstream_url": "http://content-service:9000/collection/v4/unlisted/publish"
     },
     {
         "name": "publishCourse",
@@ -6338,7 +6338,7 @@
         ],
         "request_path": "/course/v1/publish",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/course/publish"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/course/publish"
     },
     {
         "name": "publishDialcode",
@@ -6381,7 +6381,7 @@
         ],
         "request_path": "/dialcode/v1/publish",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/dialcode/publish"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/dialcode/publish"
     },
     {
         "name": "publishFramework",
@@ -6424,7 +6424,7 @@
         ],
         "request_path": "/framework/v1/publish",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/framework/publish"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/framework/publish"
     },
     {
         "name": "qrCodeBatchProcessRetry",
@@ -6467,7 +6467,7 @@
         ],
         "request_path": "/dialcode/v1/process/retry",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/dialcode/process/retry"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/dialcode/process/retry"
     },
     {
         "name": "qrCodeBatchProcessStatus",
@@ -6510,7 +6510,7 @@
         ],
         "request_path": "/dialcode/v1/process/status",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/dialcode/process/status"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/dialcode/process/status"
     },
     {
         "name": "qrCodeDownload",
@@ -6553,7 +6553,7 @@
         ],
         "request_path": "/course/v1/qrcode/download",
         "strip_request_path": true,
-        "upstream_url": "http://lms-service.dock.svc.cluster.local:9000/v1/course/qrcode/download"
+        "upstream_url": "http://lms-service:9000/v1/course/qrcode/download"
     },
     {
         "name": "readCertTemplate",
@@ -6596,7 +6596,7 @@
         ],
         "request_path": "/cert/v1/template/read",
         "strip_request_path": true,
-        "upstream_url": "http://cert-service.dock.svc.cluster.local:9000/cert/v1/template/read"
+        "upstream_url": "http://cert-service:9000/cert/v1/template/read"
     },
     {
         "name": "readChannel",
@@ -6664,7 +6664,7 @@
         ],
         "request_path": "/content/v1/read",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/content/read"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/content/read"
     },
     {
         "name": "contentPrivateRead",
@@ -6707,7 +6707,7 @@
         ],
         "request_path": "/content/v1/private/read",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/content/v4/private/read"
+        "upstream_url": "http://content-service:9000/content/v4/private/read"
     },
     {
         "name": "readContentState",
@@ -6750,7 +6750,7 @@
         ],
         "request_path": "/course/v1/content/state/read",
         "strip_request_path": true,
-        "upstream_url": "http://lms-service.dock.svc.cluster.local:9000/v1/content/state/read"
+        "upstream_url": "http://lms-service:9000/v1/content/state/read"
     },
     {
         "name": "readCourse",
@@ -6793,7 +6793,7 @@
         ],
         "request_path": "/course/v1/read",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/course/read"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/course/read"
     },
     {
         "name": "readCourseEnrollment",
@@ -6836,7 +6836,7 @@
         ],
         "request_path": "/course/v1/user/enrollment/read",
         "strip_request_path": true,
-        "upstream_url": "http://lms-service.dock.svc.cluster.local:9000/v1/user/courses/read"
+        "upstream_url": "http://lms-service:9000/v1/user/courses/read"
     },
     {
         "name": "readDialcode",
@@ -6879,7 +6879,7 @@
         ],
         "request_path": "/dialcode/v1/read",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/dialcode/read"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/dialcode/read"
     },
     {
         "name": "readForm",
@@ -6990,7 +6990,7 @@
         ],
         "request_path": "/framework/v1/category/read",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/framework/category/read"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/framework/category/read"
     },
     {
         "name": "readFrameworkTerm",
@@ -7033,7 +7033,7 @@
         ],
         "request_path": "/framework/v1/term/read",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/framework/term/read"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/framework/term/read"
     },
     {
         "name": "readNote",
@@ -7076,7 +7076,7 @@
         ],
         "request_path": "/notes/v1/read",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/note/read"
+        "upstream_url": "http://learner-service:9000/v1/note/read"
     },
     {
         "name": "readOrg",
@@ -7119,7 +7119,7 @@
         ],
         "request_path": "/org/v1/read",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/org/read"
+        "upstream_url": "http://learner-service:9000/v1/org/read"
     },
     {
         "name": "readPageSection",
@@ -7162,7 +7162,7 @@
         ],
         "request_path": "/data/v1/page/section/read",
         "strip_request_path": true,
-        "upstream_url": "http://lms-service.dock.svc.cluster.local:9000/v1/page/section/read"
+        "upstream_url": "http://lms-service:9000/v1/page/section/read"
     },
     {
         "name": "readPublisher",
@@ -7205,7 +7205,7 @@
         ],
         "request_path": "/dialcode/v1/publisher/read",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/dialcode/publisher/read"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/dialcode/publisher/read"
     },
     {
         "name": "readRoleMapping",
@@ -7248,7 +7248,7 @@
         ],
         "request_path": "/data/v1/role/read",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/role/read"
+        "upstream_url": "http://learner-service:9000/v1/role/read"
     },
     {
         "name": "readUserProfile",
@@ -7291,7 +7291,7 @@
         ],
         "request_path": "/user/v1/profile/read",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/user/getuser"
+        "upstream_url": "http://learner-service:9000/v1/user/getuser"
     },
     {
         "name": "registerDesktopApp",
@@ -7420,7 +7420,7 @@
         ],
         "request_path": "/lock/v1/refresh",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/lock/refresh"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/lock/refresh"
     },
     {
         "name": "registerMobileApp",
@@ -7721,7 +7721,7 @@
         ],
         "request_path": "/content/v1/reject",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/content/reject"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/content/reject"
     },
     {
         "name": "rejectContentFlag",
@@ -7764,7 +7764,7 @@
         ],
         "request_path": "/content/v1/flag/reject",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/content/flag/reject"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/content/flag/reject"
     },
     {
         "name": "releaseDialcode",
@@ -7807,7 +7807,7 @@
         ],
         "request_path": "/dialcode/v1/release",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/dialcode/release"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/dialcode/release"
     },
     {
         "name": "removeMember",
@@ -7850,7 +7850,7 @@
         ],
         "request_path": "/org/v1/member/remove",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/org/member/remove"
+        "upstream_url": "http://learner-service:9000/v1/org/member/remove"
     },
     {
         "name": "removeUserFromBatch",
@@ -7893,7 +7893,7 @@
         ],
         "request_path": "/course/v1/batch/user/remove",
         "strip_request_path": true,
-        "upstream_url": "http://lms-service.dock.svc.cluster.local:9000/v1/course/batch/users/remove"
+        "upstream_url": "http://lms-service:9000/v1/course/batch/users/remove"
     },
     {
         "name": "reserveDialcode",
@@ -7936,7 +7936,7 @@
         ],
         "request_path": "/dialcode/v1/reserve",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/dialcode/reserve"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/dialcode/reserve"
     },
     {
         "name": "retireContent",
@@ -7979,7 +7979,7 @@
         ],
         "request_path": "/content/v1/retire",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/content/retire"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/content/retire"
     },
     {
         "name": "retireCourse",
@@ -8022,7 +8022,7 @@
         ],
         "request_path": "/course/v1/retire",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/course/retire"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/course/retire"
     },
     {
         "name": "retireLock",
@@ -8065,7 +8065,7 @@
         ],
         "request_path": "/lock/v1/retire",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/lock/retire"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/lock/retire"
     },
     {
         "name": "revokeAssertion",
@@ -8108,7 +8108,7 @@
         ],
         "request_path": "/badging/v1/issuer/badge/assertion/delete",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/issuer/badge/assertion/delete"
+        "upstream_url": "http://learner-service:9000/v1/issuer/badge/assertion/delete"
     },
     {
         "name": "searchBadgeClass",
@@ -8151,7 +8151,7 @@
         ],
         "request_path": "/badging/v1/issuer/badge/search",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/issuer/badge/search"
+        "upstream_url": "http://learner-service:9000/v1/issuer/badge/search"
     },
     {
         "name": "searchChannel",
@@ -8194,7 +8194,7 @@
         ],
         "request_path": "/channel/v1/search",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/channel/search"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/channel/search"
     },
     {
         "name": "searchContent",
@@ -8228,7 +8228,7 @@
         ],
         "request_path": "/content/v1/search",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/content/search"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/content/search"
     },
     {
         "name": "searchCourse",
@@ -8271,7 +8271,7 @@
         ],
         "request_path": "/course/v1/search",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/course/search"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/course/search"
     },
     {
         "name": "searchData",
@@ -8314,7 +8314,7 @@
         ],
         "request_path": "/data/v1/object/search",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/object/search"
+        "upstream_url": "http://learner-service:9000/v1/object/search"
     },
     {
         "name": "searchDialcodes",
@@ -8357,7 +8357,7 @@
         ],
         "request_path": "/dialcode/v1/search",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/dialcode/search"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/dialcode/search"
     },
     {
         "name": "searchFrameworkCategory",
@@ -8400,7 +8400,7 @@
         ],
         "request_path": "/framework/v1/category/search",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/framework/category/search"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/framework/category/search"
     },
     {
         "name": "searchFrameworkTerm",
@@ -8443,7 +8443,7 @@
         ],
         "request_path": "/framework/v1/term/search",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/framework/term/search"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/framework/term/search"
     },
     {
         "name": "searchNotes",
@@ -8486,7 +8486,7 @@
         ],
         "request_path": "/notes/v1/search",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/note/search"
+        "upstream_url": "http://learner-service:9000/v1/note/search"
     },
     {
         "name": "searchOrg",
@@ -8520,7 +8520,7 @@
         ],
         "request_path": "/org/v1/search",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/org/search"
+        "upstream_url": "http://learner-service:9000/v1/org/search"
     },
     {
         "name": "searchUser",
@@ -8563,7 +8563,7 @@
         ],
         "request_path": "/user/v1/search",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/user/search"
+        "upstream_url": "http://learner-service:9000/v1/user/search"
     },
     {
         "name": "sendEmailNotification",
@@ -8606,7 +8606,7 @@
         ],
         "request_path": "/user/v1/notification/email",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/notification/email"
+        "upstream_url": "http://learner-service:9000/v1/notification/email"
     },
     {
         "name": "sendNotification",
@@ -8649,7 +8649,7 @@
         ],
         "request_path": "/data/v1/notification/send",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/notification/send"
+        "upstream_url": "http://learner-service:9000/v1/notification/send"
     },
     {
         "name": "submitContentForReview",
@@ -8692,7 +8692,7 @@
         ],
         "request_path": "/content/v1/review",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/content/review"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/content/review"
     },
     {
         "name": "submitCourseForReview",
@@ -8735,7 +8735,7 @@
         ],
         "request_path": "/course/v1/review",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/course/review"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/course/review"
     },
     {
         "name": "telemetry",
@@ -8778,7 +8778,7 @@
         ],
         "request_path": "/data/v1/telemetry",
         "strip_request_path": true,
-        "upstream_url": "http://telemetry-service.dock.svc.cluster.local:9001/v1/telemetry"
+        "upstream_url": "http://telemetry-service:9001/v1/telemetry"
     },
     {
         "name": "telemetryErrorLogging",
@@ -8864,7 +8864,7 @@
         ],
         "request_path": "/user/v1/unblock",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/user/unblock"
+        "upstream_url": "http://learner-service:9000/v1/user/unblock"
     },
     {
         "name": "updateBatch",
@@ -8907,7 +8907,7 @@
         ],
         "request_path": "/course/v1/batch/update",
         "strip_request_path": true,
-        "upstream_url": "http://lms-service.dock.svc.cluster.local:9000/v1/course/batch/update"
+        "upstream_url": "http://lms-service:9000/v1/course/batch/update"
     },
     {
         "name": "updateCertTemplate",
@@ -8950,7 +8950,7 @@
         ],
         "request_path": "/cert/v1/template/update",
         "strip_request_path": true,
-        "upstream_url": "http://cert-service.dock.svc.cluster.local:9000/cert/v1/template/update"
+        "upstream_url": "http://cert-service:9000/cert/v1/template/update"
     },
     {
         "name": "updateChannel",
@@ -8993,7 +8993,7 @@
         ],
         "request_path": "/channel/v1/update",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/channel/update"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/channel/update"
     },
     {
         "name": "updateCollaborators",
@@ -9036,7 +9036,7 @@
         ],
         "request_path": "/content/v1/collaborator/update",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/content/collaborator/update"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/content/collaborator/update"
     },
     {
         "name": "updateContent",
@@ -9079,7 +9079,7 @@
         ],
         "request_path": "/content/v1/update",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/content/update"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/content/update"
     },
     {
         "name": "updateContentState",
@@ -9122,7 +9122,7 @@
         ],
         "request_path": "/course/v1/content/state/update",
         "strip_request_path": true,
-        "upstream_url": "http://lms-service.dock.svc.cluster.local:9000/v1/content/state/update"
+        "upstream_url": "http://lms-service:9000/v1/content/state/update"
     },
     {
         "name": "updateCourse",
@@ -9165,7 +9165,7 @@
         ],
         "request_path": "/course/v1/update",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/course/update"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/course/update"
     },
     {
         "name": "updateCourseHierarchy",
@@ -9208,7 +9208,7 @@
         ],
         "request_path": "/course/v1/hierarchy/update",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/course/hierarchy/update"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/course/hierarchy/update"
     },
     {
         "name": "updateData",
@@ -9251,7 +9251,7 @@
         ],
         "request_path": "/data/v1/object/update",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/object/update"
+        "upstream_url": "http://learner-service:9000/v1/object/update"
     },
     {
         "name": "updateDesktopApp",
@@ -9337,7 +9337,7 @@
         ],
         "request_path": "/dialcode/v1/update",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/dialcode/update"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/dialcode/update"
     },
     {
         "name": "updateForm",
@@ -9423,7 +9423,7 @@
         ],
         "request_path": "/framework/v1/update",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/framework/update"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/framework/update"
     },
     {
         "name": "updateFrameworkCategory",
@@ -9466,7 +9466,7 @@
         ],
         "request_path": "/framework/v1/category/update",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/framework/category/update"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/framework/category/update"
     },
     {
         "name": "updateFrameworkTerm",
@@ -9509,7 +9509,7 @@
         ],
         "request_path": "/framework/v1/term/update",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/framework/term/update"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/framework/term/update"
     },
     {
         "name": "updateLocation",
@@ -9552,7 +9552,7 @@
         ],
         "request_path": "/org/v1/location/update",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/notification/location/update"
+        "upstream_url": "http://learner-service:9000/v1/notification/location/update"
     },
     {
         "name": "updateNote",
@@ -9595,7 +9595,7 @@
         ],
         "request_path": "/notes/v1/update",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/note/update"
+        "upstream_url": "http://learner-service:9000/v1/note/update"
     },
     {
         "name": "updateOrg",
@@ -9638,7 +9638,7 @@
         ],
         "request_path": "/org/v1/update",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/org/update"
+        "upstream_url": "http://learner-service:9000/v1/org/update"
     },
     {
         "name": "updateOrgStatus",
@@ -9681,7 +9681,7 @@
         ],
         "request_path": "/org/v1/status/update",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/org/status/update"
+        "upstream_url": "http://learner-service:9000/v1/org/status/update"
     },
     {
         "name": "updateOrgType",
@@ -9724,7 +9724,7 @@
         ],
         "request_path": "/org/v1/type/update",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/org/type/update"
+        "upstream_url": "http://learner-service:9000/v1/org/type/update"
     },
     {
         "name": "updatePage",
@@ -9767,7 +9767,7 @@
         ],
         "request_path": "/data/v1/page/update",
         "strip_request_path": true,
-        "upstream_url": "http://lms-service.dock.svc.cluster.local:9000/v1/page/update"
+        "upstream_url": "http://lms-service:9000/v1/page/update"
     },
     {
         "name": "updatePageSection",
@@ -9810,7 +9810,7 @@
         ],
         "request_path": "/data/v1/page/section/update",
         "strip_request_path": true,
-        "upstream_url": "http://lms-service.dock.svc.cluster.local:9000/v1/page/section/update"
+        "upstream_url": "http://lms-service:9000/v1/page/section/update"
     },
     {
         "name": "updatePublisher",
@@ -9853,7 +9853,7 @@
         ],
         "request_path": "/dialcode/v1/publisher/update",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/dialcode/publisher/update"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/dialcode/publisher/update"
     },
     {
         "name": "updateUser",
@@ -9896,7 +9896,7 @@
         ],
         "request_path": "/user/v1/update",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/user/update"
+        "upstream_url": "http://learner-service:9000/v1/user/update"
     },
     {
         "name": "updateUserloginTime",
@@ -9939,7 +9939,7 @@
         ],
         "request_path": "/user/v1/update/logintime",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/user/update/logintime"
+        "upstream_url": "http://learner-service:9000/v1/user/update/logintime"
     },
     {
         "name": "updateUserSkill",
@@ -9982,7 +9982,7 @@
         ],
         "request_path": "/user/v1/skill/update",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/user/skill/update"
+        "upstream_url": "http://learner-service:9000/v1/user/skill/update"
     },
     {
         "name": "uploadContent",
@@ -10025,7 +10025,7 @@
         ],
         "request_path": "/content/v1/upload",
         "strip_request_path": true,
-        "upstream_url": "http://knowledge-mw-service.dock.svc.cluster.local:5000/v1/content/upload"
+        "upstream_url": "http://knowledge-mw-service:5000/v1/content/upload"
     },
     {
         "name": "uploadCrashLogs",
@@ -10111,7 +10111,7 @@
         ],
         "request_path": "/content/v1/media/upload",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/file/upload"
+        "upstream_url": "http://learner-service:9000/v1/file/upload"
     },
     {
         "name": "uploadTOC",
@@ -10154,7 +10154,7 @@
         ],
         "request_path": "/textbook/v1/toc/upload",
         "strip_request_path": true,
-        "upstream_url": "http://lms-service.dock.svc.cluster.local:9000/v1/textbook/toc/upload"
+        "upstream_url": "http://lms-service:9000/v1/textbook/toc/upload"
     },
     {
         "name": "userBulkUpload",
@@ -10197,7 +10197,7 @@
         ],
         "request_path": "/user/v1/upload",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/user/upload"
+        "upstream_url": "http://learner-service:9000/v1/user/upload"
     },
     {
         "name": "UserBulkUploadv2",
@@ -10240,7 +10240,7 @@
         ],
         "request_path": "/user/v2/bulk/upload",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v2/bulk/user/upload"
+        "upstream_url": "http://learner-service:9000/v2/bulk/user/upload"
     },
     {
         "name": "userExistenceApi",
@@ -10283,7 +10283,7 @@
         ],
         "request_path": "/user/v1/exists",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/user/exists"
+        "upstream_url": "http://learner-service:9000/v1/user/exists"
     },
     {
         "name": "userFeed",
@@ -10326,7 +10326,7 @@
         ],
         "request_path": "/user/v1/feed",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/user/feed"
+        "upstream_url": "http://learner-service:9000/v1/user/feed"
     },
     {
         "name": "userMigrate",
@@ -10369,7 +10369,7 @@
         ],
         "request_path": "/user/v1/migrate",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/user/migrate"
+        "upstream_url": "http://learner-service:9000/v1/user/migrate"
     },
     {
         "name": "validateRegCertificate",
@@ -10412,7 +10412,7 @@
         ],
         "request_path": "/certreg/v1/certs/validate",
         "strip_request_path": true,
-        "upstream_url": "http://cert-registry-service.dock.svc.cluster.local:9000/certs/v1/registry/validate"
+        "upstream_url": "http://cert-registry-service:9000/certs/v1/registry/validate"
     },
     {
         "name": "verifyOtp",
@@ -10455,7 +10455,7 @@
         ],
         "request_path": "/otp/v1/verify",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/otp/verify"
+        "upstream_url": "http://learner-service:9000/v1/otp/verify"
     },
     {
         "name": "verifyRegCertificate",
@@ -10498,7 +10498,7 @@
         ],
         "request_path": "/certreg/v1/certs/verify",
         "strip_request_path": true,
-        "upstream_url": "http://cert-registry-service.dock.svc.cluster.local:9000/certs/v1/registry/verify"
+        "upstream_url": "http://cert-registry-service:9000/certs/v1/registry/verify"
     },
     {
         "name": "registerIgotApp",
@@ -10627,7 +10627,7 @@
         ],
         "request_path": "/data/v1/report-service/report/list",
         "strip_request_path": true,
-        "upstream_url": "http://report-service.dock.svc.cluster.local:3030/report/list"
+        "upstream_url": "http://report-service:3030/report/list"
     },
     {
         "name": "getReport",
@@ -10670,7 +10670,7 @@
         ],
         "request_path": "/data/v1/report-service/report/get",
         "strip_request_path": true,
-        "upstream_url": "http://report-service.dock.svc.cluster.local:3030/report/get"
+        "upstream_url": "http://report-service:3030/report/get"
     },
     {
         "name": "updateReport",
@@ -10713,7 +10713,7 @@
         ],
         "request_path": "/data/v1/report-service/report/update",
         "strip_request_path": true,
-        "upstream_url": "http://report-service.dock.svc.cluster.local:3030/report/update"
+        "upstream_url": "http://report-service:3030/report/update"
     },
     {
         "name": "deleteReport",
@@ -10756,7 +10756,7 @@
         ],
         "request_path": "/data/v1/report-service/report/delete",
         "strip_request_path": true,
-        "upstream_url": "http://report-service.dock.svc.cluster.local:3030/report/delete"
+        "upstream_url": "http://report-service:3030/report/delete"
     },
     {
         "name": "createReport",
@@ -10799,7 +10799,7 @@
         ],
         "request_path": "/data/v1/report-service/report/create",
         "strip_request_path": true,
-        "upstream_url": "http://report-service.dock.svc.cluster.local:3030/report/create"
+        "upstream_url": "http://report-service:3030/report/create"
     },
     {
         "name": "createReportSummary",
@@ -10842,7 +10842,7 @@
         ],
         "request_path": "/data/v1/report-service/report/summary/create",
         "strip_request_path": true,
-        "upstream_url": "http://report-service.dock.svc.cluster.local:3030/report/summary/create"
+        "upstream_url": "http://report-service:3030/report/summary/create"
     },
     {
         "name": "getReportSummary",
@@ -10885,7 +10885,7 @@
         ],
         "request_path": "/data/v1/report-service/report/summary",
         "strip_request_path": true,
-        "upstream_url": "http://report-service.dock.svc.cluster.local:3030/report/summary"
+        "upstream_url": "http://report-service:3030/report/summary"
     },
     {
         "name": "listReportSummary",
@@ -10928,7 +10928,7 @@
         ],
         "request_path": "/data/v1/report-service/report/summary/list",
         "strip_request_path": true,
-        "upstream_url": "http://report-service.dock.svc.cluster.local:3030/report/summary/list"
+        "upstream_url": "http://report-service:3030/report/summary/list"
     },
     {
         "name": "searchRegCertificate",
@@ -10971,7 +10971,7 @@
         ],
         "request_path": "/certreg/v1/certs/search",
         "strip_request_path": true,
-        "upstream_url": "http://cert-registry-service.dock.svc.cluster.local:9000/certs/v1/registry/search"
+        "upstream_url": "http://cert-registry-service:9000/certs/v1/registry/search"
     },
     {
         "name": "readRegCertificate",
@@ -11014,7 +11014,7 @@
         ],
         "request_path": "/certreg/v1/certs/read",
         "strip_request_path": true,
-        "upstream_url": "http://cert-registry-service.dock.svc.cluster.local:9000/certs/v1/registry/read"
+        "upstream_url": "http://cert-registry-service:9000/certs/v1/registry/read"
     },
     {
         "name": "forgotPassword",
@@ -11057,7 +11057,7 @@
         ],
         "request_path": "/private/user/v1/password/reset",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/private/user/v1/password/reset"
+        "upstream_url": "http://learner-service:9000/private/user/v1/password/reset"
     },
     {
         "name": "publishReport",
@@ -11100,7 +11100,7 @@
         ],
         "request_path": "/data/v1/report-service/report/publish",
         "strip_request_path": true,
-        "upstream_url": "http://report-service.dock.svc.cluster.local:3030/report/publish"
+        "upstream_url": "http://report-service:3030/report/publish"
     },
     {
         "name": "retireReport",
@@ -11143,7 +11143,7 @@
         ],
         "request_path": "/data/v1/report-service/report/retire",
         "strip_request_path": true,
-        "upstream_url": "http://report-service.dock.svc.cluster.local:3030/report/retire"
+        "upstream_url": "http://report-service:3030/report/retire"
     },
     {
         "name": "searchManagedUser",
@@ -11186,7 +11186,7 @@
         ],
         "request_path": "/user/v1/managed",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/user/managed"
+        "upstream_url": "http://learner-service:9000/v1/user/managed"
     },
     {
         "name": "createGroup",
@@ -11229,7 +11229,7 @@
         ],
         "request_path": "/group/v1/create",
         "strip_request_path": true,
-        "upstream_url": "http://groups-service.dock.svc.cluster.local:9000/v1/group/create"
+        "upstream_url": "http://groups-service:9000/v1/group/create"
     },
     {
         "name": "updateGroup",
@@ -11272,7 +11272,7 @@
         ],
         "request_path": "/group/v1/update",
         "strip_request_path": true,
-        "upstream_url": "http://groups-service.dock.svc.cluster.local:9000/v1/group/update"
+        "upstream_url": "http://groups-service:9000/v1/group/update"
     },
     {
         "name": "listGroup",
@@ -11315,7 +11315,7 @@
         ],
         "request_path": "/group/v1/list",
         "strip_request_path": true,
-        "upstream_url": "http://groups-service.dock.svc.cluster.local:9000/v1/group/list"
+        "upstream_url": "http://groups-service:9000/v1/group/list"
     },
     {
         "name": "readGroup",
@@ -11358,7 +11358,7 @@
         ],
         "request_path": "/group/v1/read",
         "strip_request_path": true,
-        "upstream_url": "http://groups-service.dock.svc.cluster.local:9000/v1/group/read"
+        "upstream_url": "http://groups-service:9000/v1/group/read"
     },
     {
         "name": "groupActivityAgg",
@@ -11401,7 +11401,7 @@
         ],
         "request_path": "/data/v1/group/activity/agg",
         "strip_request_path": true,
-        "upstream_url": "http://lms-service.dock.svc.cluster.local:9000/v1/group/activity/agg"
+        "upstream_url": "http://lms-service:9000/v1/group/activity/agg"
     },
     {
         "name": "listForm",
@@ -11487,7 +11487,7 @@
         ],
         "request_path": "/user/v3/read",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v3/user/read"
+        "upstream_url": "http://learner-service:9000/v3/user/read"
     },
     {
         "name": "updateUserDeclarations",
@@ -11530,7 +11530,7 @@
         ],
         "request_path": "/user/v1/declarations",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/user/declarations"
+        "upstream_url": "http://learner-service:9000/v1/user/declarations"
     },
     {
         "name": "updateUserConsent",
@@ -11573,7 +11573,7 @@
         ],
         "request_path": "/user/v1/consent/update",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/user/consent/update"
+        "upstream_url": "http://learner-service:9000/v1/user/consent/update"
     },
     {
         "name": "readUserConsent",
@@ -11616,7 +11616,7 @@
         ],
         "request_path": "/user/v1/consent/read",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v1/user/consent/read"
+        "upstream_url": "http://learner-service:9000/v1/user/consent/read"
     },
     {
         "name": "channelSpecificTelemetryExhaust",
@@ -11659,7 +11659,7 @@
         ],
         "request_path": "/data/v3/dataset/get",
         "strip_request_path": true,
-        "upstream_url": "http://analytics-service.dock.svc.cluster.local:9000/dataset/get"
+        "upstream_url": "http://analytics-service:9000/dataset/get"
     },
     {
         "name": "submitDataExhaustRequest",
@@ -11702,7 +11702,7 @@
         ],
         "request_path": "/dataset/v1/request/submit",
         "strip_request_path": true,
-        "upstream_url": "http://analytics-service.dock.svc.cluster.local:9000/request/submit"
+        "upstream_url": "http://analytics-service:9000/request/submit"
     },
     {
         "name": "getDataExhaustRequest",
@@ -11745,7 +11745,7 @@
         ],
         "request_path": "/dataset/v1/request/read",
         "strip_request_path": true,
-        "upstream_url": "http://analytics-service.dock.svc.cluster.local:9000/request/read"
+        "upstream_url": "http://analytics-service:9000/request/read"
     },
     {
         "name": "listDataExhaustRequest",
@@ -11788,7 +11788,7 @@
         ],
         "request_path": "/dataset/v1/request/list",
         "strip_request_path": true,
-        "upstream_url": "http://analytics-service.dock.svc.cluster.local:9000/request/list"
+        "upstream_url": "http://analytics-service:9000/request/list"
     },
     {
         "name": "createTenantPreferences",
@@ -11831,7 +11831,7 @@
         ],
         "request_path": "/org/v2/preferences/create",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v2/org/preferences/create"
+        "upstream_url": "http://learner-service:9000/v2/org/preferences/create"
     },
     {
         "name": "updateTenantPreferences",
@@ -11874,7 +11874,7 @@
         ],
         "request_path": "/org/v2/preferences/update",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v2/org/preferences/update"
+        "upstream_url": "http://learner-service:9000/v2/org/preferences/update"
     },
     {
         "name": "readTenantPreferencess",
@@ -11917,7 +11917,7 @@
         ],
         "request_path": "/org/v2/preferences/read",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/v2/org/preferences/read"
+        "upstream_url": "http://learner-service:9000/v2/org/preferences/read"
     },
     {
         "name": "generateCertificateV2",
@@ -11960,7 +11960,7 @@
         ],
         "request_path": "/cert/v2/certs/generate",
         "strip_request_path": true,
-        "upstream_url": "http://cert-service.dock.svc.cluster.local:9000/v2/certs/generate"
+        "upstream_url": "http://cert-service:9000/v2/certs/generate"
     },
     {
         "name": "addRegCertificateV2",
@@ -12003,7 +12003,7 @@
         ],
         "request_path": "/certreg/v2/certs/add",
         "strip_request_path": true,
-        "upstream_url": "http://cert-registry-service.dock.svc.cluster.local:9000/certs/v2/registry/add"
+        "upstream_url": "http://cert-registry-service:9000/certs/v2/registry/add"
     },
     {
         "name": "downloadRegCertificateV2",
@@ -12046,7 +12046,7 @@
         ],
         "request_path": "/certreg/v2/certs/download",
         "strip_request_path": true,
-        "upstream_url": "http://cert-registry-service.dock.svc.cluster.local:9000/certs/v2/registry/download"
+        "upstream_url": "http://cert-registry-service:9000/certs/v2/registry/download"
     },
     {
         "name": "contentImportAPI",
@@ -12089,7 +12089,7 @@
         ],
         "request_path": "/content/v1/import",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/content/v3/import"
+        "upstream_url": "http://content-service:9000/content/v3/import"
     },
     {
         "name": "druidGetUpdateListReport",
@@ -12132,7 +12132,7 @@
         ],
         "request_path": "/data/v1/report/jobs",
         "strip_request_path": true,
-        "upstream_url": "http://analytics-service.dock.svc.cluster.local:9000/report/jobs"
+        "upstream_url": "http://analytics-service:9000/report/jobs"
     },
     {
         "name": "druidDeactivateReport",
@@ -12175,7 +12175,7 @@
         ],
         "request_path": "/data/v1/report/jobs/deactivate",
         "strip_request_path": true,
-        "upstream_url": "http://analytics-service.dock.svc.cluster.local:9000/report/jobs/deactivate"
+        "upstream_url": "http://analytics-service:9000/report/jobs/deactivate"
     },
     {
         "name": "druidCreateReport",
@@ -12218,7 +12218,7 @@
         ],
         "request_path": "/data/v1/report/jobs/submit",
         "strip_request_path": true,
-        "upstream_url": "http://analytics-service.dock.svc.cluster.local:9000/report/jobs/submit"
+        "upstream_url": "http://analytics-service:9000/report/jobs/submit"
     },
     {
         "name": "generateCertificate",
@@ -12261,7 +12261,7 @@
         ],
         "request_path": "/cert/v1/certs/generate",
         "strip_request_path": true,
-        "upstream_url": "http://cert-service.dock.svc.cluster.local:9000/v1/certs/generate"
+        "upstream_url": "http://cert-service:9000/v1/certs/generate"
     },
     {
         "name": "createObjectCategory",
@@ -12304,7 +12304,7 @@
         ],
         "request_path": "/object/category/v1/create",
         "strip_request_path": true,
-        "upstream_url": "http://taxonomy-service.dock.svc.cluster.local:9000/object/category/v4/create"
+        "upstream_url": "http://taxonomy-service:9000/object/category/v4/create"
     },
     {
         "name": "readObjectCategory",
@@ -12347,7 +12347,7 @@
         ],
         "request_path": "/object/category/v1/read",
         "strip_request_path": true,
-        "upstream_url": "http://taxonomy-service.dock.svc.cluster.local:9000/object/category/v4/read"
+        "upstream_url": "http://taxonomy-service:9000/object/category/v4/read"
     },
     {
         "name": "updateObjectCategory",
@@ -12390,7 +12390,7 @@
         ],
         "request_path": "/object/category/v1/update",
         "strip_request_path": true,
-        "upstream_url": "http://taxonomy-service.dock.svc.cluster.local:9000/object/category/v4/update"
+        "upstream_url": "http://taxonomy-service:9000/object/category/v4/update"
     },
     {
         "name": "createObjectCategoryDefinition",
@@ -12433,7 +12433,7 @@
         ],
         "request_path": "/object/category/definition/v1/create",
         "strip_request_path": true,
-        "upstream_url": "http://taxonomy-service.dock.svc.cluster.local:9000/object/category/definition/v4/create"
+        "upstream_url": "http://taxonomy-service:9000/object/category/definition/v4/create"
     },
     {
         "name": "readObjectCategoryDefinition",
@@ -12476,7 +12476,7 @@
         ],
         "request_path": "/object/category/definition/v1/read",
         "strip_request_path": true,
-        "upstream_url": "http://taxonomy-service.dock.svc.cluster.local:9000/object/category/definition/v4/read"
+        "upstream_url": "http://taxonomy-service:9000/object/category/definition/v4/read"
     },
     {
         "name": "updateObjectCategoryDefinition",
@@ -12519,7 +12519,7 @@
         ],
         "request_path": "/object/category/definition/v1/update",
         "strip_request_path": true,
-        "upstream_url": "http://taxonomy-service.dock.svc.cluster.local:9000/object/category/definition/v4/update"
+        "upstream_url": "http://taxonomy-service:9000/object/category/definition/v4/update"
     },
     {
         "name": "createAsset",
@@ -12562,7 +12562,7 @@
         ],
         "request_path": "/asset/v1/create",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/asset/v4/create"
+        "upstream_url": "http://content-service:9000/asset/v4/create"
     },
     {
         "name": "updateAsset",
@@ -12605,7 +12605,7 @@
         ],
         "request_path": "/asset/v1/update",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/asset/v4/update"
+        "upstream_url": "http://content-service:9000/asset/v4/update"
     },
     {
         "name": "readAsset",
@@ -12648,7 +12648,7 @@
         ],
         "request_path": "/asset/v1/read",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/asset/v4/read"
+        "upstream_url": "http://content-service:9000/asset/v4/read"
     },
     {
         "name": "uploadAsset",
@@ -12691,7 +12691,7 @@
         ],
         "request_path": "/asset/v1/upload",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/asset/v4/upload"
+        "upstream_url": "http://content-service:9000/asset/v4/upload"
     },
     {
         "name": "uploadUrlAsset",
@@ -12734,7 +12734,7 @@
         ],
         "request_path": "/asset/v1/upload/url",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/asset/v4/upload/url"
+        "upstream_url": "http://content-service:9000/asset/v4/upload/url"
     },
     {
         "name": "copyAsset",
@@ -12777,7 +12777,7 @@
         ],
         "request_path": "/asset/v1/copy",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/asset/v4/copy"
+        "upstream_url": "http://content-service:9000/asset/v4/copy"
     },
     {
         "name": "retireAsset",
@@ -12820,7 +12820,7 @@
         ],
         "request_path": "/asset/v1/retire",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/asset/v4/retire"
+        "upstream_url": "http://content-service:9000/asset/v4/retire"
     },
     {
         "name": "addEntity",
@@ -12863,7 +12863,7 @@
         ],
         "request_path": "/reg/add",
         "strip_request_path": true,
-        "upstream_url": "http://opensaber-service.dock.svc.cluster.local:8080/add"
+        "upstream_url": "http://opensaber-service:8080/add"
     },
     {
         "name": "readEntity",
@@ -12906,7 +12906,7 @@
         ],
         "request_path": "/reg/read",
         "strip_request_path": true,
-        "upstream_url": "http://opensaber-service.dock.svc.cluster.local:8080/read"
+        "upstream_url": "http://opensaber-service:8080/read"
     },
     {
         "name": "deleteEntity",
@@ -12949,7 +12949,7 @@
         ],
         "request_path": "/reg/delete",
         "strip_request_path": true,
-        "upstream_url": "http://opensaber-service.dock.svc.cluster.local:8080/delete"
+        "upstream_url": "http://opensaber-service:8080/delete"
     },
     {
         "name": "updateEntity",
@@ -12992,7 +12992,7 @@
         ],
         "request_path": "/reg/update",
         "strip_request_path": true,
-        "upstream_url": "http://opensaber-service.dock.svc.cluster.local:8080/update"
+        "upstream_url": "http://opensaber-service:8080/update"
     },
     {
         "name": "searchEntity",
@@ -13035,7 +13035,7 @@
         ],
         "request_path": "/reg/search",
         "strip_request_path": true,
-        "upstream_url": "http://opensaber-service.dock.svc.cluster.local:8080/search"
+        "upstream_url": "http://opensaber-service:8080/search"
     },
     {
         "name": "readProgram",
@@ -13078,7 +13078,7 @@
         ],
         "request_path": "/program/v1/read",
         "strip_request_path": true,
-        "upstream_url": "http://program-service.dock.svc.cluster.local:6000/program/v1/read"
+        "upstream_url": "http://program-service:6000/program/v1/read"
     },
     {
         "name": "createProgram",
@@ -13121,7 +13121,7 @@
         ],
         "request_path": "/program/v1/create",
         "strip_request_path": true,
-        "upstream_url": "http://program-service.dock.svc.cluster.local:6000/program/v1/create"
+        "upstream_url": "http://program-service:6000/program/v1/create"
     },
     {
         "name": "updateProgram",
@@ -13164,7 +13164,7 @@
         ],
         "request_path": "/program/v1/update",
         "strip_request_path": true,
-        "upstream_url": "http://program-service.dock.svc.cluster.local:6000/program/v1/update"
+        "upstream_url": "http://program-service:6000/program/v1/update"
     },
     {
         "name": "publishProgram",
@@ -13207,7 +13207,7 @@
         ],
         "request_path": "/program/v1/publish",
         "strip_request_path": true,
-        "upstream_url": "http://program-service.dock.svc.cluster.local:6000/program/v1/publish"
+        "upstream_url": "http://program-service:6000/program/v1/publish"
     },
     {
         "name": "unlistPublishProgram",
@@ -13250,7 +13250,7 @@
         ],
         "request_path": "/program/v1/unlist/publish",
         "strip_request_path": true,
-        "upstream_url": "http://program-service.dock.svc.cluster.local:6000/program/v1/unlist/publish"
+        "upstream_url": "http://program-service:6000/program/v1/unlist/publish"
     },
     {
         "name": "listProgram",
@@ -13293,7 +13293,7 @@
         ],
         "request_path": "/program/v1/list",
         "strip_request_path": true,
-        "upstream_url": "http://program-service.dock.svc.cluster.local:6000/program/v1/list"
+        "upstream_url": "http://program-service:6000/program/v1/list"
     },
     {
         "name": "searchProgram",
@@ -13336,7 +13336,7 @@
         ],
         "request_path": "/program/v1/search",
         "strip_request_path": true,
-        "upstream_url": "http://program-service.dock.svc.cluster.local:6000/program/v1/search"
+        "upstream_url": "http://program-service:6000/program/v1/search"
     },
     {
         "name": "programNominationAdd",
@@ -13379,7 +13379,7 @@
         ],
         "request_path": "/program/v1/nomination/add",
         "strip_request_path": true,
-        "upstream_url": "http://program-service.dock.svc.cluster.local:6000/program/v1/nomination/add"
+        "upstream_url": "http://program-service:6000/program/v1/nomination/add"
     },
     {
         "name": "programNominationUpdate",
@@ -13422,7 +13422,7 @@
         ],
         "request_path": "/program/v1/nomination/update",
         "strip_request_path": true,
-        "upstream_url": "http://program-service.dock.svc.cluster.local:6000/program/v1/nomination/update"
+        "upstream_url": "http://program-service:6000/program/v1/nomination/update"
     },
     {
         "name": "programNominationRemove",
@@ -13465,7 +13465,7 @@
         ],
         "request_path": "/program/v1/nomination/remove",
         "strip_request_path": true,
-        "upstream_url": "http://program-service.dock.svc.cluster.local:6000/program/v1/nomination/remove"
+        "upstream_url": "http://program-service:6000/program/v1/nomination/remove"
     },
     {
         "name": "programNominationList",
@@ -13508,7 +13508,7 @@
         ],
         "request_path": "/program/v1/nomination/list",
         "strip_request_path": true,
-        "upstream_url": "http://program-service.dock.svc.cluster.local:6000/program/v1/nomination/list"
+        "upstream_url": "http://program-service:6000/program/v1/nomination/list"
     },
     {
         "name": "programCollectionLink",
@@ -13551,7 +13551,7 @@
         ],
         "request_path": "/program/v1/collection/link",
         "strip_request_path": true,
-        "upstream_url": "http://program-service.dock.svc.cluster.local:6000/program/v1/collection/link"
+        "upstream_url": "http://program-service:6000/program/v1/collection/link"
     },
     {
         "name": "programContenttypesList",
@@ -13594,7 +13594,7 @@
         ],
         "request_path": "/program/v1/contenttypes/list",
         "strip_request_path": true,
-        "upstream_url": "http://program-service.dock.svc.cluster.local:6000/program/v1/contenttypes/list"
+        "upstream_url": "http://program-service:6000/program/v1/contenttypes/list"
     },
     {
         "name": "programCollectionCopy",
@@ -13637,7 +13637,7 @@
         ],
         "request_path": "/program/v1/collection/copy",
         "strip_request_path": true,
-        "upstream_url": "http://program-service.dock.svc.cluster.local:6000/program/v1/collection/copy"
+        "upstream_url": "http://program-service:6000/program/v1/collection/copy"
     },
     {
         "name": "programConfigurationSearch",
@@ -13680,7 +13680,7 @@
         ],
         "request_path": "/program/v1/configuration/search",
         "strip_request_path": true,
-        "upstream_url": "http://program-service.dock.svc.cluster.local:6000/program/v1/configuration/search"
+        "upstream_url": "http://program-service:6000/program/v1/configuration/search"
     },
     {
         "name": "programConfigurationList",
@@ -13723,7 +13723,7 @@
         ],
         "request_path": "/program/v1/configuration/list",
         "strip_request_path": true,
-        "upstream_url": "http://program-service.dock.svc.cluster.local:6000/program/v1/configuration/list"
+        "upstream_url": "http://program-service:6000/program/v1/configuration/list"
     },
     {
         "name": "downloadProgramNominationList",
@@ -13766,7 +13766,7 @@
         ],
         "request_path": "/program/v1/nomination/list/download",
         "strip_request_path": true,
-        "upstream_url": "http://program-service.dock.svc.cluster.local:6000/program/v1/nomination/list/download"
+        "upstream_url": "http://program-service:6000/program/v1/nomination/list/download"
     },
     {
         "name": "downloadProgramList",
@@ -13809,7 +13809,7 @@
         ],
         "request_path": "/program/v1/list/download",
         "strip_request_path": true,
-        "upstream_url": "http://program-service.dock.svc.cluster.local:6000/program/v1/list/download"
+        "upstream_url": "http://program-service:6000/program/v1/list/download"
     },
     {
         "name": "programContentReport",
@@ -13852,7 +13852,7 @@
         ],
         "request_path": "/program/v1/report",
         "strip_request_path": true,
-        "upstream_url": "http://program-service.dock.svc.cluster.local:6000/program/v1/report"
+        "upstream_url": "http://program-service:6000/program/v1/report"
     },
     {
         "name": "programPublishContent",
@@ -13895,7 +13895,7 @@
         ],
         "request_path": "/program/v1/content/publish",
         "strip_request_path": true,
-        "upstream_url": "http://program-service.dock.svc.cluster.local:6000/program/v1/content/publish"
+        "upstream_url": "http://program-service:6000/program/v1/content/publish"
     },
     {
         "name": "programPreferenceCreate",
@@ -13938,7 +13938,7 @@
         ],
         "request_path": "/program/v1/preference/create",
         "strip_request_path": true,
-        "upstream_url": "http://program-service.dock.svc.cluster.local:6000/program/v1/preference/create"
+        "upstream_url": "http://program-service:6000/program/v1/preference/create"
     },
     {
         "name": "programPreferenceUpdate",
@@ -13981,7 +13981,7 @@
         ],
         "request_path": "/program/v1/preference/update",
         "strip_request_path": true,
-        "upstream_url": "http://program-service.dock.svc.cluster.local:6000/program/v1/preference/update"
+        "upstream_url": "http://program-service:6000/program/v1/preference/update"
     },
     {
         "name": "programPreferenceRead",
@@ -14024,7 +14024,7 @@
         ],
         "request_path": "/program/v1/preference/read",
         "strip_request_path": true,
-        "upstream_url": "http://program-service.dock.svc.cluster.local:6000/program/v1/preference/read"
+        "upstream_url": "http://program-service:6000/program/v1/preference/read"
     },
     {
         "name": "mvcSearch",
@@ -14067,7 +14067,7 @@
         ],
         "request_path": "/mvc/v3/search",
         "strip_request_path": true,
-        "upstream_url": "http://mvc-service.dock.svc.cluster.local:9000/v3/mvcsearch"
+        "upstream_url": "http://mvc-service:9000/v3/mvcsearch"
     },
     {
         "name": "mvcContentCreate",
@@ -14110,7 +14110,7 @@
         ],
         "request_path": "/mvc/v3/create",
         "strip_request_path": true,
-        "upstream_url": "http://mvc-service.dock.svc.cluster.local:9000/v3/mvccontent/create"
+        "upstream_url": "http://mvc-service:9000/v3/mvccontent/create"
     },
     {
         "name": "programTenantList",
@@ -14153,7 +14153,7 @@
         ],
         "request_path": "/program/v1/tenant/list",
         "strip_request_path": true,
-        "upstream_url": "http://program-service.dock.svc.cluster.local:6000/program/v1/tenant/list"
+        "upstream_url": "http://program-service:6000/program/v1/tenant/list"
     },
     {
         "name": "programRegistrySync",
@@ -14196,7 +14196,7 @@
         ],
         "request_path": "/program/v1/sync/registry",
         "strip_request_path": true,
-        "upstream_url": "http://program-service.dock.svc.cluster.local:6000/program/v1/sync/registry"
+        "upstream_url": "http://program-service:6000/program/v1/sync/registry"
     },
     {
         "name": "bulkJobProcessCreate",
@@ -14239,7 +14239,7 @@
         ],
         "request_path": "/program/v1/process/create",
         "strip_request_path": true,
-        "upstream_url": "http://program-service.dock.svc.cluster.local:6000/program/v1/process/create"
+        "upstream_url": "http://program-service:6000/program/v1/process/create"
     },
     {
         "name": "bulkJobProcessRead",
@@ -14282,7 +14282,7 @@
         ],
         "request_path": "/program/v1/process/read",
         "strip_request_path": true,
-        "upstream_url": "http://program-service.dock.svc.cluster.local:6000/program/v1/process/read"
+        "upstream_url": "http://program-service:6000/program/v1/process/read"
     },
     {
         "name": "bulkJobProcessUpdate",
@@ -14325,7 +14325,7 @@
         ],
         "request_path": "/program/v1/process/update",
         "strip_request_path": true,
-        "upstream_url": "http://program-service.dock.svc.cluster.local:6000/program/v1/process/update"
+        "upstream_url": "http://program-service:6000/program/v1/process/update"
     },
     {
         "name": "bulkJobProcessSearch",
@@ -14368,7 +14368,7 @@
         ],
         "request_path": "/program/v1/process/search",
         "strip_request_path": true,
-        "upstream_url": "http://program-service.dock.svc.cluster.local:6000/program/v1/process/search"
+        "upstream_url": "http://program-service:6000/program/v1/process/search"
     },
     {
         "name": "contentImportAPI",
@@ -14411,7 +14411,7 @@
         ],
         "request_path": "/content/v1/import",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/content/v3/import"
+        "upstream_url": "http://content-service:9000/content/v3/import"
     },
     {
         "name": "projectFeedSearch",
@@ -14454,7 +14454,7 @@
         ],
         "request_path": "/program/v1/feed/search",
         "strip_request_path": true,
-        "upstream_url": "http://program-service.dock.svc.cluster.local:6000/program/v1/feed/search"
+        "upstream_url": "http://program-service:6000/program/v1/feed/search"
     },
     {
         "name": "contributorSearch",
@@ -14497,7 +14497,7 @@
         ],
         "request_path": "/program/v1/contributor/search",
         "strip_request_path": true,
-        "upstream_url": "http://program-service.dock.svc.cluster.local:6000/program/v1/contributor/search"
+        "upstream_url": "http://program-service:6000/program/v1/contributor/search"
     },
     {
         "name": "questionCreate",
@@ -14540,7 +14540,7 @@
         ],
         "request_path": "/question/v1/create",
         "strip_request_path": true,
-        "upstream_url": "http://assessment-service.dock.svc.cluster.local:9000/question/v4/create"
+        "upstream_url": "http://assessment-service:9000/question/v4/create"
     },
     {
         "name": "questionRead",
@@ -14574,7 +14574,7 @@
         ],
         "request_path": "/question/v1/read",
         "strip_request_path": true,
-        "upstream_url": "http://assessment-service.dock.svc.cluster.local:9000/question/v4/read"
+        "upstream_url": "http://assessment-service:9000/question/v4/read"
     },
     {
         "name": "questionPrivateRead",
@@ -14617,7 +14617,7 @@
         ],
         "request_path": "/question/v1/private/read",
         "strip_request_path": true,
-        "upstream_url": "http://assessment-service.dock.svc.cluster.local:9000/question/v4/private/read"
+        "upstream_url": "http://assessment-service:9000/question/v4/private/read"
     },
     {
         "name": "questionList",
@@ -14651,7 +14651,7 @@
         ],
         "request_path": "/question/v1/list",
         "strip_request_path": true,
-        "upstream_url": "http://assessment-service.dock.svc.cluster.local:9000/question/v4/list"
+        "upstream_url": "http://assessment-service:9000/question/v4/list"
     },
     {
         "name": "questionUpdate",
@@ -14694,7 +14694,7 @@
         ],
         "request_path": "/question/v1/update",
         "strip_request_path": true,
-        "upstream_url": "http://assessment-service.dock.svc.cluster.local:9000/question/v4/update"
+        "upstream_url": "http://assessment-service:9000/question/v4/update"
     },
     {
         "name": "questionRetire",
@@ -14737,7 +14737,7 @@
         ],
         "request_path": "/question/v1/retire",
         "strip_request_path": true,
-        "upstream_url": "http://assessment-service.dock.svc.cluster.local:9000/question/v4/retire"
+        "upstream_url": "http://assessment-service:9000/question/v4/retire"
     },
     {
         "name": "questionReview",
@@ -14780,7 +14780,7 @@
         ],
         "request_path": "/question/v1/review",
         "strip_request_path": true,
-        "upstream_url": "http://assessment-service.dock.svc.cluster.local:9000/question/v4/review"
+        "upstream_url": "http://assessment-service:9000/question/v4/review"
     },
     {
         "name": "questionPublish",
@@ -14823,7 +14823,7 @@
         ],
         "request_path": "/question/v1/publish",
         "strip_request_path": true,
-        "upstream_url": "http://assessment-service.dock.svc.cluster.local:9000/question/v4/publish"
+        "upstream_url": "http://assessment-service:9000/question/v4/publish"
     },
     {
         "name": "questionReject",
@@ -14866,7 +14866,7 @@
         ],
         "request_path": "/question/v1/reject",
         "strip_request_path": true,
-        "upstream_url": "http://assessment-service.dock.svc.cluster.local:9000/question/v4/reject"
+        "upstream_url": "http://assessment-service:9000/question/v4/reject"
     },
     {
         "name": "questionCopy",
@@ -14909,7 +14909,7 @@
         ],
         "request_path": "/question/v1/copy",
         "strip_request_path": true,
-        "upstream_url": "http://assessment-service.dock.svc.cluster.local:9000/question/v4/copy"
+        "upstream_url": "http://assessment-service:9000/question/v4/copy"
     },
     {
         "name": "questionSetCreate",
@@ -14952,7 +14952,7 @@
         ],
         "request_path": "/questionset/v1/create",
         "strip_request_path": true,
-        "upstream_url": "http://assessment-service.dock.svc.cluster.local:9000/questionset/v4/create"
+        "upstream_url": "http://assessment-service:9000/questionset/v4/create"
     },
     {
         "name": "questionSetRead",
@@ -14986,7 +14986,7 @@
         ],
         "request_path": "/questionset/v1/read",
         "strip_request_path": true,
-        "upstream_url": "http://assessment-service.dock.svc.cluster.local:9000/questionset/v4/read"
+        "upstream_url": "http://assessment-service:9000/questionset/v4/read"
     },
     {
         "name": "questionSetPrivateRead",
@@ -15029,7 +15029,7 @@
         ],
         "request_path": "/questionset/v1/private/read",
         "strip_request_path": true,
-        "upstream_url": "http://assessment-service.dock.svc.cluster.local:9000/questionset/v4/private/read"
+        "upstream_url": "http://assessment-service:9000/questionset/v4/private/read"
     },
     {
         "name": "questionSetUpdate",
@@ -15072,7 +15072,7 @@
         ],
         "request_path": "/questionset/v1/update",
         "strip_request_path": true,
-        "upstream_url": "http://assessment-service.dock.svc.cluster.local:9000/questionset/v4/update"
+        "upstream_url": "http://assessment-service:9000/questionset/v4/update"
     },
     {
         "name": "questionSetRetire",
@@ -15115,7 +15115,7 @@
         ],
         "request_path": "/questionset/v1/retire",
         "strip_request_path": true,
-        "upstream_url": "http://assessment-service.dock.svc.cluster.local:9000/questionset/v4/retire"
+        "upstream_url": "http://assessment-service:9000/questionset/v4/retire"
     },
     {
         "name": "questionSetReview",
@@ -15158,7 +15158,7 @@
         ],
         "request_path": "/questionset/v1/review",
         "strip_request_path": true,
-        "upstream_url": "http://assessment-service.dock.svc.cluster.local:9000/questionset/v4/review"
+        "upstream_url": "http://assessment-service:9000/questionset/v4/review"
     },
     {
         "name": "questionSetPublish",
@@ -15201,7 +15201,7 @@
         ],
         "request_path": "/questionset/v1/publish",
         "strip_request_path": true,
-        "upstream_url": "http://assessment-service.dock.svc.cluster.local:9000/questionset/v4/publish"
+        "upstream_url": "http://assessment-service:9000/questionset/v4/publish"
     },
     {
         "name": "questionSetUpdateHierarchy",
@@ -15244,7 +15244,7 @@
         ],
         "request_path": "/questionset/v1/hierarchy/update",
         "strip_request_path": true,
-        "upstream_url": "http://assessment-service.dock.svc.cluster.local:9000/questionset/v4/hierarchy/update"
+        "upstream_url": "http://assessment-service:9000/questionset/v4/hierarchy/update"
     },
     {
         "name": "questionSetReadHierarchy",
@@ -15287,7 +15287,7 @@
         ],
         "request_path": "/questionset/v1/hierarchy",
         "strip_request_path": true,
-        "upstream_url": "http://assessment-service.dock.svc.cluster.local:9000/questionset/v4/hierarchy"
+        "upstream_url": "http://assessment-service:9000/questionset/v4/hierarchy"
     },
     {
         "name": "questionSetAddQuestion",
@@ -15330,7 +15330,7 @@
         ],
         "request_path": "/questionset/v1/add",
         "strip_request_path": true,
-        "upstream_url": "http://assessment-service.dock.svc.cluster.local:9000/questionset/v4/add"
+        "upstream_url": "http://assessment-service:9000/questionset/v4/add"
     },
     {
         "name": "questionSetRemoveQuestion",
@@ -15373,7 +15373,7 @@
         ],
         "request_path": "/questionset/v1/remove",
         "strip_request_path": true,
-        "upstream_url": "http://assessment-service.dock.svc.cluster.local:9000/questionset/v4/remove"
+        "upstream_url": "http://assessment-service:9000/questionset/v4/remove"
     },
     {
         "name": "questionSetReject",
@@ -15416,7 +15416,7 @@
         ],
         "request_path": "/questionset/v1/reject",
         "strip_request_path": true,
-        "upstream_url": "http://assessment-service.dock.svc.cluster.local:9000/questionset/v4/reject"
+        "upstream_url": "http://assessment-service:9000/questionset/v4/reject"
     },
     {
         "name": "questionsetCopy",
@@ -15459,7 +15459,7 @@
         ],
         "request_path": "/questionset/v1/copy",
         "strip_request_path": true,
-        "upstream_url": "http://assessment-service.dock.svc.cluster.local:9000/questionset/v4/copy"
+        "upstream_url": "http://assessment-service:9000/questionset/v4/copy"
     },
     {
         "name": "collectionHierarchyRead",
@@ -15502,7 +15502,7 @@
         ],
         "request_path": "/content/v1/hierarchy",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/content/v3/hierarchy"
+        "upstream_url": "http://content-service:9000/content/v3/hierarchy"
     },
     {
         "name": "collectionPrivateRead",
@@ -15545,7 +15545,7 @@
         ],
         "request_path": "/collection/v1/private/read",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/collection/v4/private/read"
+        "upstream_url": "http://content-service:9000/collection/v4/private/read"
     },
     {
         "name": "assessmentItemSetRead",
@@ -15588,7 +15588,7 @@
         ],
         "request_path": "/assessment/v1/items/read",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/assessment/v3/items/read"
+        "upstream_url": "http://learner-service:9000/assessment/v3/items/read"
     },
     {
         "name": "assessmentItemRead",
@@ -15631,7 +15631,7 @@
         ],
         "request_path": "/itemset/v1/read",
         "strip_request_path": true,
-        "upstream_url": "http://learner-service.dev.svc.cluster.local:9000/itemset/v3/read"
+        "upstream_url": "http://learner-service:9000/itemset/v3/read"
     },
     {
         "name": "questionBulkUpload",
@@ -15674,7 +15674,7 @@
         ],
         "request_path": "/question/v1/bulkUpload",
         "strip_request_path": true,
-        "upstream_url": "http://program-service.dock.svc.cluster.local:6000/question/v1/bulkUpload"
+        "upstream_url": "http://program-service:6000/question/v1/bulkUpload"
     },
     {
         "name": "questionBulkUploadStatus",
@@ -15717,7 +15717,7 @@
         ],
         "request_path": "/question/v1/bulkUploadStatus",
         "strip_request_path": true,
-        "upstream_url": "http://program-service.dock.svc.cluster.local:6000/question/v1/bulkUploadStatus"
+        "upstream_url": "http://program-service:6000/question/v1/bulkUploadStatus"
     },
     {
         "name": "createContentV2",
@@ -15760,7 +15760,7 @@
         ],
         "request_path": "/content/v2/create",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/content/v4/create"
+        "upstream_url": "http://content-service:9000/content/v4/create"
     },
     {
         "name": "updateContentV2",
@@ -15803,7 +15803,7 @@
         ],
         "request_path": "/content/v2/update",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/content/v4/update"
+        "upstream_url": "http://content-service:9000/content/v4/update"
     },
     {
         "name": "readContentV2",
@@ -15837,7 +15837,7 @@
         ],
         "request_path": "/content/v2/read",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/content/v4/read"
+        "upstream_url": "http://content-service:9000/content/v4/read"
     },
     {
         "name": "uploadUrlContentV2",
@@ -15880,7 +15880,7 @@
         ],
         "request_path": "/content/v2/upload/url",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/content/v4/upload/url"
+        "upstream_url": "http://content-service:9000/content/v4/upload/url"
     },
     {
         "name": "uploadContentV2",
@@ -15923,7 +15923,7 @@
         ],
         "request_path": "/content/v2/upload",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/content/v4/upload"
+        "upstream_url": "http://content-service:9000/content/v4/upload"
     },
     {
         "name": "copyContentV2",
@@ -15966,7 +15966,7 @@
         ],
         "request_path": "/content/v2/copy",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/content/v4/copy"
+        "upstream_url": "http://content-service:9000/content/v4/copy"
     },
     {
         "name": "importContentV2",
@@ -16009,7 +16009,7 @@
         ],
         "request_path": "/content/v2/import",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/content/v4/import"
+        "upstream_url": "http://content-service:9000/content/v4/import"
     },
     {
         "name": "flagContentV2",
@@ -16052,7 +16052,7 @@
         ],
         "request_path": "/content/v2/flag",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/content/v4/flag"
+        "upstream_url": "http://content-service:9000/content/v4/flag"
     },
     {
         "name": "acceptFlagContentV2",
@@ -16095,7 +16095,7 @@
         ],
         "request_path": "/content/v2/flag/accept",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/content/v4/flag/accept"
+        "upstream_url": "http://content-service:9000/content/v4/flag/accept"
     },
     {
         "name": "discardContentV2",
@@ -16138,7 +16138,7 @@
         ],
         "request_path": "/content/v2/discard",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/content/v4/discard"
+        "upstream_url": "http://content-service:9000/content/v4/discard"
     },
     {
         "name": "retireContentV2",
@@ -16181,7 +16181,7 @@
         ],
         "request_path": "/content/v2/retire",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/content/v4/retire"
+        "upstream_url": "http://content-service:9000/content/v4/retire"
     },
     {
         "name": "reviewContentV2",
@@ -16224,7 +16224,7 @@
         ],
         "request_path": "/content/v2/review",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/content/v4/review"
+        "upstream_url": "http://content-service:9000/content/v4/review"
     },
     {
         "name": "rejectContentV2",
@@ -16267,7 +16267,7 @@
         ],
         "request_path": "/content/v2/reject",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/content/v4/reject"
+        "upstream_url": "http://content-service:9000/content/v4/reject"
     },
     {
         "name": "collectionCreate",
@@ -16310,7 +16310,7 @@
         ],
         "request_path": "/collection/v1/create",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/collection/v4/create"
+        "upstream_url": "http://content-service:9000/collection/v4/create"
     },
     {
         "name": "collectionRead",
@@ -16353,7 +16353,7 @@
         ],
         "request_path": "/collection/v1/read",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/collection/v4/read"
+        "upstream_url": "http://content-service:9000/collection/v4/read"
     },
     {
         "name": "collectionUpdate",
@@ -16396,7 +16396,7 @@
         ],
         "request_path": "/collection/v1/update",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/collection/v4/update"
+        "upstream_url": "http://content-service:9000/collection/v4/update"
     },
     {
         "name": "collectionFlag",
@@ -16439,7 +16439,7 @@
         ],
         "request_path": "/collection/v1/flag",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/collection/v4/flag"
+        "upstream_url": "http://content-service:9000/collection/v4/flag"
     },
     {
         "name": "collectionDiscard",
@@ -16482,7 +16482,7 @@
         ],
         "request_path": "/collection/v1/discard",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/collection/v4/discard"
+        "upstream_url": "http://content-service:9000/collection/v4/discard"
     },
     {
         "name": "collectionRetire",
@@ -16525,7 +16525,7 @@
         ],
         "request_path": "/collection/v1/retire",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/collection/v4/retire"
+        "upstream_url": "http://content-service:9000/collection/v4/retire"
     },
     {
         "name": "collectionHierarchyAdd",
@@ -16568,7 +16568,7 @@
         ],
         "request_path": "/collection/v1/hierarchy/add",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/collection/v4/hierarchy/add"
+        "upstream_url": "http://content-service:9000/collection/v4/hierarchy/add"
     },
     {
         "name": "collectionHierarchyRemove",
@@ -16611,7 +16611,7 @@
         ],
         "request_path": "/collection/v1/hierarchy/remove",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/collection/v4/hierarchy/remove"
+        "upstream_url": "http://content-service:9000/collection/v4/hierarchy/remove"
     },
     {
         "name": "collectionHierarchyUpdate",
@@ -16654,7 +16654,7 @@
         ],
         "request_path": "/collection/v1/hierarchy/update",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/collection/v4/hierarchy/update"
+        "upstream_url": "http://content-service:9000/collection/v4/hierarchy/update"
     },
     {
         "name": "collectionHierarchyRead",
@@ -16697,7 +16697,7 @@
         ],
         "request_path": "/collection/v1/hierarchy",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/collection/v4/hierarchy"
+        "upstream_url": "http://content-service:9000/collection/v4/hierarchy"
     },
     {
         "name": "collectionCopy",
@@ -16740,7 +16740,7 @@
         ],
         "request_path": "/collection/v1/copy",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/collection/v4/copy"
+        "upstream_url": "http://content-service:9000/collection/v4/copy"
     },
     {
         "name": "collectionImport",
@@ -16783,7 +16783,7 @@
         ],
         "request_path": "/collection/v1/import",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/collection/v4/import"
+        "upstream_url": "http://content-service:9000/collection/v4/import"
     },
     {
         "name": "collectionExport",
@@ -16826,7 +16826,7 @@
         ],
         "request_path": "/collection/v1/export",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/collection/v4/export"
+        "upstream_url": "http://content-service:9000/collection/v4/export"
     },
     {
         "name": "collectionReview",
@@ -16869,7 +16869,7 @@
         ],
         "request_path": "/collection/v1/review",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/collection/v4/review"
+        "upstream_url": "http://content-service:9000/collection/v4/review"
     },
     {
         "name": "collectionReject",
@@ -16912,7 +16912,7 @@
         ],
         "request_path": "/collection/v1/reject",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/collection/v4/reject"
+        "upstream_url": "http://content-service:9000/collection/v4/reject"
     },
     {
         "name": "acceptCollectionFlag",
@@ -16955,7 +16955,7 @@
         ],
         "request_path": "/collection/v1/flag/accept",
         "strip_request_path": true,
-        "upstream_url": "http://content-service.dock.svc.cluster.local:9000/collection/v4/flag/accept"
+        "upstream_url": "http://content-service:9000/collection/v4/flag/accept"
     },
     {
         "name": "createForm",
@@ -16998,7 +16998,7 @@
         ],
         "request_path": "/program/v1/form/create",
         "strip_request_path": true,
-        "upstream_url": "http://program-service.dock.svc.cluster.local:6000/program/v1/form/create"
+        "upstream_url": "http://program-service:6000/program/v1/form/create"
     },
     {
         "name": "updateForm",
@@ -17041,7 +17041,7 @@
         ],
         "request_path": "/program/v1/form/update",
         "strip_request_path": true,
-        "upstream_url": "http://program-service.dock.svc.cluster.local:6000/program/v1/form/update"
+        "upstream_url": "http://program-service:6000/program/v1/form/update"
     },
     {
         "name": "readForm",
@@ -17084,6 +17084,6 @@
         ],
         "request_path": "/program/v1/form/read",
         "strip_request_path": true,
-        "upstream_url": "http://program-service.dock.svc.cluster.local:6000/program/v1/form/read"
+        "upstream_url": "http://program-service:6000/program/v1/form/read"
     }
-  ]
+]
