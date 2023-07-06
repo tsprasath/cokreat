@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: learning-config
-  namespace: {{ .Values.api_namespace }}
+  namespace: {{ .Release.Namespace }}
 data:
   learning-service_application.conf: |
     #Platform Configuration
@@ -16,7 +16,7 @@ data:
     language.graph_ids=["as","bn","en","gu","hi","hoc","jun","ka","mai","mr","unx","or","san","sat","ta","te","urd","pj"]
 
     # Redis Configuration
-    redis.host="{{ .Values.redis_connection }}"
+    redis.host="{{ .Values.sunbird_redis_host }}"
     redis.port=6379
     redis.maxConnections=128
 
@@ -97,8 +97,8 @@ data:
 
 
     # Media download configuration
-    content.media.base.url=" "
-    plugin.media.base.url=" "
+    content.media.base.url="https://{{ .Values.domain}}"
+    plugin.media.base.url="https://{{ .Values.domain}}"
 
 
     # Content Extraction Configuration
@@ -148,7 +148,7 @@ data:
     graph.dir="/data/graphDB"
     akka.request_timeout=30
     environment.id="20000000"
-    graph.passport.key.base=" graph_passport_key "
+    graph.passport.key.base="jd5ECm/o0BXwQCe8PfZY1NoUkB9HN41QjA80p22MKyRIcP5RW4qHw8sZztCzv87M"
     route.domain="bolt://{{ .Values.neo4j_domain_connection }}"
     route.bolt.write.domain="bolt://{{ .Values.neo4j_domain_connection }}"
     route.bolt.read.domain="bolt://{{ .Values.neo4j_domain_connection }}"
@@ -168,10 +168,10 @@ data:
     channel.fetch.suggested_frameworks=true
 
     # Kafka configuration details
-    kafka.topics.instruction="local.learning.job.request"
+    kafka.topics.instruction="dock.learning.job.request"
+    kafka.publish.request.topic="dock.publish.job.request"
     kafka.urls="{{ .Values.kafka_connection }}"
-    kafka.publish.request.topic="staging.publish.job.request"
-    kafka.topic.system.command="staging.system.command"
+    kafka.topic.system.command="dock.system.command"
     job.request.event.mimetype=["application/pdf",
                                   "application/vnd.ekstep.ecml-archive",
                                   "application/vnd.ekstep.html-archive",
@@ -234,8 +234,8 @@ data:
     learning_content_youtube_apikey=""
 
     #Telemetry pdata ID
-    telemetry_env="sunbird"
-    telemetry.pdata_id="sunbird.ekstep.learning.platform"
+    telemetry_env="dock"
+    telemetry.pdata_id="dock.ekstep.learning.platform"
     telemetry.search.topn=5
 
     #Copy Content validation configuration
