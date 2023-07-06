@@ -185,7 +185,6 @@ content_service_url: http://content-service.dock.svc.cluster.local:9000/
 sunbird_cassandra_host: cassandra.dock.svc.cluster.local
 sunbird_cert_service_base_url: http://cert-service.dock.svc.cluster.local:9000
 sunbird_es_host: elasticsearch.dock.svc.cluster.local
-sunbird_group_service_api_base_url: http://groups.dock.svc.cluster.local:9000
 redis__host: redis-master.dock.svc.cluster.local
 kong_pg_host: postgresql.dev.svc.cluster.local
 kong_admin_listen: 0.0.0.0:8001
@@ -197,12 +196,23 @@ sunbird_pg_password: "postgres"
 sunbird_sso_realm: sunbird
 cloud_service_provider: "azure"       # Can be one of - azure, aws, gcloud
 cloud_public_storage_container: sunbird-content-dock  # STORAGE CONTAINER NAME eg : storageacc
+checkpoint_store_type: "azure"  # DEFAULT AZURE
 
+############## VALUES TO BE FILLED AFTER FIRST STEP OF INSTALL ###################
+# Take values from Keycloak
+# Go to http://localhost:8080/auth/admin/master/console/#/realms/sunbird/clients -> lms -> service account roles -> Click on client roles drop down -> Select realm-management -> Select manage-users in Available Roles -> Click on Add selected
+sunbird_sso_publickey: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAg5ZDJqTEnzgWxagD8C9rXhcqPj6rAG4Cn7tatmdTu2m+bgrU7VqVgr0yKGeuRdFc04toMQUOlBtTRW8dffexGmg5u08TqQnRorjWNqGOudY1HxE6nIu9hZ4EXAv1YyQqQ3DrX3isWoxWn1LDRo7Ykx/Hms49vNtwS+ItvOpRA65khMY9YedOFhyM4koytnh+Cd8PYrlSCOlnPhq04N2aUo2iba/8ISKRhr4vucx6USJUMwJIr/prEG7aP7nHdsgJeyQFZEtxcQ1fXlgSwTMRo6xuGEBg1Tx2Z9qRcKhTag9mLnNxo0OlVtTmRzZeXgVslME+V+pUu8t+VOJ5TgCtUQIDAQAB"     # Go to http://localhost:8080/auth/admin/master/console/#/realms/sunbird/keys
+
+
+nginx_private_ingress_ip: "10.224.0.100"   # Cokreat private ingress IP
+core_vault_sunbird_google_captcha_site_key_portal: "6LcNcdslAAAAAPtpvFLX2bVqiS26AiNgwJX5VYi4"      # Google reCaptcha site Key       
+google_captcha_private_key: "6LcNcdslAAAAADM55PQs_vMa092keKxssfDSXxRi"         # Google reCaptcha private Key
 sunbird_google_oauth_clientId : "438130763650-l4ffohe1ir6m1mb247b1qskrdv17rcj6.apps.googleusercontent.com"     # Google OAuth Client ID 
 sunbird_google_oauth_clientSecret : "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" #Google OAuth Client Secret 
-CORE_INGRESS_GATEWAY_IP: "20.204.204.171"  # Ed Public ingress IP
+sunbird_google_oauth_clientId : "438130763650-l4ffohe1ir6m1mb247b1qskrdv17rcj6.apps.googleusercontent.com"     # Google OAuth Client ID 
+sunbird_google_oauth_clientSecret : "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" #Google OAuth Client Secret 
 
-checkpoint_store_type: "azure"  # DEFAULT AZURE
+
 cloud_private_storage_accountname: "oneclicktest"
 cloud_storage_key: "oneclicktest"
 sunbird_azure_account_name: "oneclicktest"
@@ -213,12 +223,8 @@ sunbird_image_storage_url: "https://oneclicktest.blob.core.windows.net/dial/"
 cloud_private_storage_secret: "sWlgHDWgzYDNuKRZq8n4nAJ52JS3z8vCFos8HixlRRK3rz7YU53bZcVXTkVc6x+eYzwJsGNR7nlX+ASt3MYynA=="
 cloud_storage_secret: "sWlgHDWgzYDNuKRZq8n4nAJ52JS3z8vCFos8HixlRRK3rz7YU53bZcVXTkVc6x+eYzwJsGNR7nlX+ASt3MYynA=="
 sunbird_azure_account_key: "sWlgHDWgzYDNuKRZq8n4nAJ52JS3z8vCFos8HixlRRK3rz7YU53bZcVXTkVc6x+eYzwJsGNR7nlX+ASt3MYynA=="
-
-core_vault_sunbird_google_captcha_site_key_portal: "6LcNcdslAAAAAPtpvFLX2bVqiS26AiNgwJX5VYi4"      # Google reCaptcha site Key       
-google_captcha_private_key: "6LcNcdslAAAAADM55PQs_vMa092keKxssfDSXxRi"         # Google reCaptcha private Key
-sunbird_google_oauth_clientId : "438130763650-l4ffohe1ir6m1mb247b1qskrdv17rcj6.apps.googleusercontent.com"     # Google OAuth Client ID 
-sunbird_google_oauth_clientSecret : "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" #Google OAuth Client Secret 
 core_vault_sunbird_api_auth_token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIwVDNRZkR6QTFtNzNsQzhPZkszWU5ZeUVRMlg4Z0JRSiJ9.wFrjtNGfWy_xlZtBbVfXR4ioV1FZuB8TnnGGeQ7S368"
-nginx_private_ingress_ip: "10.224.0.100"
 PORTAL_API_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIwVDNRZkR6QTFtNzNsQzhPZkszWU5ZeUVRMlg4Z0JRSiJ9.wFrjtNGfWy_xlZtBbVfXR4ioV1FZuB8TnnGGeQ7S368"
 ANALYTICS_API_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIwVDNRZkR6QTFtNzNsQzhPZkszWU5ZeUVRMlg4Z0JRSiJ9.wFrjtNGfWy_xlZtBbVfXR4ioV1FZuB8TnnGGeQ7S368"
+dock_api_auth_token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIzNWZjN2Y0MTg5ODQ0ZGJmOGUxNWEyMTMyZjFlYzRlNyJ9.M_VzQ8cex67qIW3VWdl7TzCEBMkQ_NG9R6n5ygSMfjQ"
+sunbird_keycloak_public_key: 

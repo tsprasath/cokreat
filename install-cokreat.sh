@@ -92,15 +92,9 @@ echo "cloud_storage_base_url: \"https://$AccountNameStriped.blob.core.windows.ne
 echo "cloud_storage_cname_url: \"https://$AccountNameStriped.blob.core.windows.net\"" >> global-values.yaml
 echo "sunbird_azure_storage_account_name: \"https://$AccountNameStriped.blob.core.windows.net\"" >> global-values.yaml
 echo "sunbird_image_storage_url: \"https://$AccountNameStriped.blob.core.windows.net/dial/\"" >> global-values.yaml
-
-
 echo "cloud_private_storage_secret: $AccountKey" >> global-values.yaml
 echo "cloud_storage_secret: $AccountKey" >> global-values.yaml
 echo "sunbird_azure_account_key: $AccountKey" >> global-values.yaml
-
-# NginxPrvateIP=$(grep "nginx_private_ingress_ip" global-values.yaml | awk -F ":" '{if($1=="nginx_private_ingress_ip") print $2}' | awk '{print $1}' | sed 's/^.\(.*\).$/\1/')
-# echo "sunbird_user_service_base_url: \"http://$NginxPrvateIP/learner\"" >> global-values.yaml
-# echo "sunbird_lms_base_url: \"http://$NginxPrvateIP/api\"" >> global-values.yaml
 
 # Get the job logs and search for the tokens for onboardconsumer
 LOGS=$(kubectl logs -l job-name=onboardconsumer -n dev --tail=10000)
@@ -111,7 +105,25 @@ TOKEN=$(echo "$TOKEN_LINE" | awk -F' : ' '{print $2}')
 echo "PORTAL_API_KEY: \"$TOKEN\"" >> global-values.yaml
 echo "ANALYTICS_API_KEY: \"$TOKEN\"" >> global-values.yaml
 
+# ED Public Loadbalancer IP
+ed_public_ingress_external_ip=$(kubectl -n dev get service nginx-public-ingress -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+# Check if the external IP is available
+if [[ -n $ed_public_ingress_external_ip ]]; then
+  echo "ED Public Ingress IP: $ed_public_ingress_external_ip"
+  echo "CORE_INGRESS_GATEWAY_IP: \"$ed_public_ingress_external_ip\"" >> global-values.yaml
+else
+  echo "ED Public Ingress IP not found."
+fi
 
+# ED private Loadbalancer IP
+ed_private_ingress_external_ip=$(kubectl -n dev get service nginx-private-ingress -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+# Check if the external IP is available
+if [[ -n $ed_private_ingress_external_ip ]]; then
+  echo "ED Private Ingress IP: $ed_private_ingress_external_ip"
+  echo "nginx_ed_private_ingress_ip: \"$ed_private_ingress_external_ip\"" >> global-values.yaml
+else
+  echo "ED Private Ingress IP not found."
+fi
 
   while IFS=',' read -r chart_name chart_repo; do
     # Check if the chart repository URL is empty
@@ -127,17 +139,16 @@ echo "ANALYTICS_API_KEY: \"$TOKEN\"" >> global-values.yaml
       echo -e "\e[92m$chart_name is installed successfully\e[0m"
     # fi
   done < cokreat-charts.csv
-  # sleep 240
-  # PUBLIC_IP=$(kubectl get svc -n dev nginx-public-ingress --output jsonpath='{.status.loadBalancer.ingress[0].ip}')
-  # echo Public IP of $PUBLIC_IP
-  # exit 1
+  sleep 240
+  PUBLIC_IP=$(kubectl get svc -n dev nginx-public-ingress --output jsonpath='{.status.loadBalancer.ingress[0].ip}')
+  echo Public IP of $PUBLIC_IP
+  exit 1
 neo4j=$(kubectl get pods -l app=neo4j -n dock -o jsonpath='{.items[0].metadata.name}')
 kubectl -n dock exec -it $neo4j -c neo4j -- bash -c "bin/cypher-shell <<EOF
 CREATE CONSTRAINT ON (domain:domain) ASSERT domain.IL_UNIQUE_ID IS UNIQUE;
 CREATE INDEX ON :domain(IL_FUNC_OBJECT_TYPE);
 CREATE INDEX ON :domain(IL_SYS_NODE_TYPE);
-EOF"
-  
+EOF"  
 }
 
 postscript() {
@@ -153,7 +164,12 @@ do
   curl -X POST -H "Content-Type: application/json" -H "user-id: system" -d @$f  http://localhost:8085/learning-service/taxonomy/domain/definition
 done
 
-
+LOGS1=$(kubectl logs -l job-name=onboardconsumer -n dock --tail=10000)
+# Extract the JWT token from the logs
+TOKEN_LINE1=$(echo "$LOGS1" | grep "JWT token for api-admin is")
+# Use awk to extract the token from the line
+TOKEN1=$(echo "$TOKEN_LINE1" | awk -F' : ' '{print $2}')
+echo "dock_api_auth_token: \"$TOKEN1\"" >> global-values.yaml
 
     # # Loop through each line in the CSV file
     #     while IFS=',' read -r chart_name chart_repo; do
