@@ -1,3 +1,12 @@
+# Here's a revised version of the instructions for the Dockerfile you mentioned:
+
+# Download the Dockerfile from the following GitHub pull request: GitHub Pull Request.
+# Place the downloaded Dockerfile in the base path of your Helm chart.
+# Download the Sunbird Learning WAR file from the Jenkins artifacts. This file is required for the Docker image.
+# Place the downloaded Learning WAR file in the base path of your Helm chart as well.
+# Once the Dockerfile and the Learning WAR file are in the correct locations, you can proceed to build and run the Docker image using the Dockerfile.
+# Please note that these instructions assume you have the necessary tools and configurations in place to build and run Docker images.
+
 ### Default variable file for learning-service ###
 env:
   javaoptions: -Xmx600m
