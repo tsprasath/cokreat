@@ -1,8 +1,12 @@
 ### Default variable file for player-service ###
+sunbird_cassandra_replication_strategy:
+  class: SimpleStrategy
+  replication_factor: 1
+  
 config_refresh_interval: "10"
 config_service_enabled: "False"
 crypto_encryption_key_external: ""
-dock_api_auth_token: 
+dock_api_auth_token: "" 
 dock_api_call_log_status: "False"
 dock_default_file_size: "150"
 dock_default_video_size: "15000"
@@ -111,13 +115,12 @@ sunbird_transcript_supported_languages: '[{"language":"English","languageCode":"
 use_sunbird_kong_token: "true"
 sunbird_portal_offline_app_release_date: "17/06/2019"
 nginx_ed_private_ingress_ip: "10.244.0.20" 
+sunbird_portal_player_cdn_enabled: "False"
 
 ############## VALUES TO BE FILLED AFTER FIRST STEP OF INSTALL ###################
 # Take values from Keycloak
 # Go to http://localhost:8080/auth/admin/master/console/#/realms/sunbird/clients -> lms -> service account roles -> Click on client roles drop down -> Select realm-management -> Select manage-users in Available Roles -> Click on Add selected
 sunbird_sso_publickey: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAg5ZDJqTEnzgWxagD8C9rXhcqPj6rAG4Cn7tatmdTu2m+bgrU7VqVgr0yKGeuRdFc04toMQUOlBtTRW8dffexGmg5u08TqQnRorjWNqGOudY1HxE6nIu9hZ4EXAv1YyQqQ3DrX3isWoxWn1LDRo7Ykx/Hms49vNtwS+ItvOpRA65khMY9YedOFhyM4koytnh+Cd8PYrlSCOlnPhq04N2aUo2iba/8ISKRhr4vucx6USJUMwJIr/prEG7aP7nHdsgJeyQFZEtxcQ1fXlgSwTMRo6xuGEBg1Tx2Z9qRcKhTag9mLnNxo0OlVtTmRzZeXgVslME+V+pUu8t+VOJ5TgCtUQIDAQAB"     # Go to http://localhost:8080/auth/admin/master/console/#/realms/sunbird/keys
-
-
 
 imagepullsecrets: ""
 dockerhub: sunbirded.azurecr.io
