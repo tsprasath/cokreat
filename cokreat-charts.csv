@@ -8,9 +8,15 @@ apimanagerecho,https://sunbirdartifact.blob.core.windows.net/easyinstaller/apima
 assessment,https://sunbirdartifact.blob.core.windows.net/easyinstaller/assessment-0.2.0.tgz
 cert,https://sunbirdartifact.blob.core.windows.net/easyinstaller/cert-0.2.0.tgz
 certregistry,https://sunbirdartifact.blob.core.windows.net/easyinstaller/certregistry-0.2.0.tgz
+onboardapi,https://sunbirdartifact.blob.core.windows.net/easyinstaller/onboardapi-0.2.0.tgz
 content,https://sunbirdartifact.blob.core.windows.net/easyinstaller/content-0.2.0.tgz
 knowledgemw,https://sunbirdartifact.blob.core.windows.net/easyinstaller/knowledgemw-0.2.0.tgz
+onboardconsumer,https://sunbirdartifact.blob.core.windows.net/easyinstaller/onboardconsumer-0.2.0.tgz
 mlworkbench,https://sunbirdartifact.blob.core.windows.net/easyinstaller/mlworkbench-0.2.0.tgz
 nginx-private-ingress,https://sunbirdartifact.blob.core.windows.net/easyinstaller/nginx-private-ingress-0.2.0.tgz
 opensaber,https://sunbirdartifact.blob.core.windows.net/easyinstaller/opensaber-0.2.0.tgz
+taxonomy,https://sunbirdartifact.blob.core.windows.net/easyinstaller/taxonomy-0.2.0.tgz
+learning,https://sunbirdartifact.blob.core.windows.net/easyinstaller/learning-0.2.0.tgz
+search,https://sunbirdartifact.blob.core.windows.net/easyinstaller/search-0.2.0.tgz
+player,https://sunbirdartifact.blob.core.windows.net/easyinstaller/player-0.2.0.tgz
 nginx-public-ingress,https://sunbirdartifact.blob.core.windows.net/easyinstaller/nginx-public-ingress-0.2.0.tgz
