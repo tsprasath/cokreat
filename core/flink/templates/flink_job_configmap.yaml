@@ -75,8 +75,8 @@ data:
       }
     }
   
-  {{ if eq .Release.Name "post-publish-processor" }}
-    post-publish-processor: |+
+{{ if eq .Release.Name "post-publish-processor" }}
+  post-publish-processor: |+
     include file("/data/flink/conf/base-config.conf")
     kafka {
       input.topic = dock.content.postpublish.request
@@ -132,7 +132,6 @@ data:
     heartbeat.interval: 5000
     taskmanager.memory.process.size: 1700m
     jobmanager.memory.process.size: 1600m
-  
   {{ end }}
   
   log4j_console_properties: |+
