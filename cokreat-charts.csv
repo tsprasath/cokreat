@@ -20,3 +20,7 @@ learning,https://sunbirdartifact.blob.core.windows.net/easyinstaller/learning-0.
 search,https://sunbirdartifact.blob.core.windows.net/easyinstaller/search-0.2.0.tgz
 player,https://sunbirdartifact.blob.core.windows.net/easyinstaller/player-0.2.0.tgz
 nginx-public-ingress,https://sunbirdartifact.blob.core.windows.net/easyinstaller/nginx-public-ingress-0.2.0.tgz
+program,https://sunbirdartifact.blob.core.windows.net/easyinstaller/program-0.2.0.tgz
+print,https://sunbirdartifact.blob.core.windows.net/easyinstaller/print-0.2.0.tgz
+telemetry,https://sunbirdartifact.blob.core.windows.net/easyinstaller/telemetry-0.2.0.tgz
+telemetry-logstash-dock,https://sunbirdartifact.blob.core.windows.net/easyinstaller/telemetry-logstash-dock-0.2.0.tgz

@@ -3,7 +3,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: {{ .Release.Name }}-jobmanager
-  namespace: {{ .Values.namespace }}
+  namespace: {{ .Release.namespace }}
   labels:
     app: flink
     component: {{ .Release.Name }}-jobmanager
@@ -28,7 +28,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: {{ .Release.Name }}-jobmanager-webui
-  namespace: {{ .Values.namespace }}
+  namespace: {{ .Release.namespace }}
   {{- if .Values.service.annotations }}
   {{- with .Values.service.annotations }}
 annotations:
@@ -55,7 +55,7 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: {{ .Release.Name }}-jobmanager
-  namespace: {{ .Values.namespace }}
+  namespace: {{ .Release.namespace }}
 spec:
   template:
     metadata:
@@ -137,7 +137,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Release.Name }}-taskmanager
-  namespace: {{ .Values.namespace }}
+  namespace: {{ .Release.namespace }}
 spec:
   replicas: {{ .Values.taskmanager.replicas }}
   selector:

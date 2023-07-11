@@ -1,8 +1,7 @@
-namespace: "dev"
 imagepullsecrets: ""
 dockerhub: ""
 repository: "sunbirded.azurecr.io/knowledge-platform-jobs"
-image_tag: "release-5.2.1_RC1_5816fae_50"
+image_tag: "release-5.2.0_c6d3f7b_46"
 serviceMonitor:
   enabled: false
 replicaCount: 1
@@ -41,7 +40,7 @@ azure_account: ""
 azure_secret: ""
 flink_container_name: ""
 cloud_storage_flink_bucketname: flink-state-backend
-cloud_storage_content_bucketname: sunbird-contents-dock
+cloud_storage_content_bucketname: sunbird-content-dock
 cloud_storage_dial_bucketname: dial
 
 kafka_host: kafka.dock.svc.cluster.local
@@ -50,7 +49,9 @@ elasticsearch_host: elasticsearch.dock.svc.cluster.local
 cassandra_host: cassandra.dock.svc.cluster.local
 neo4j_host: neo4j.dock.svc.cluster.local
 redis_host: redis-master.dock.svc.cluster.local
+kp_schema_base_path: https://stagingdock.blob.core.windows.net/content-service/schemas
 
+nginx_private_ingress_ip: ""
 
 log4j_console_properties: |
   # This affects logging for both user code and Flink
@@ -84,19 +85,19 @@ log4j_console_properties: |
   logger.netty.level = OFF
 
 ## classname
-search-indexer: 
-  job_classname: org.sunbird.job.searchindexer.task.SearchIndexerStreamTask
-audit-event-generator:
-  job_classname: org.sunbird.job.auditevent.task.AuditEventGeneratorStreamTask
-asset-enrichment:
-  job_classname: org.sunbird.job.assetenricment.task.AssetEnrichmentStreamTask
+# search-indexer: 
+#   job_classname: org.sunbird.job.searchindexer.task.SearchIndexerStreamTask
+# audit-event-generator:
+#   job_classname: org.sunbird.job.auditevent.task.AuditEventGeneratorStreamTask
+# asset-enrichment:
+#   job_classname: org.sunbird.job.assetenricment.task.AssetEnrichmentStreamTask
 post-publish-processor:
   job_classname: org.sunbird.job.postpublish.task.PostPublishProcessorStreamTask
-dialcode-context-updater:
-  job_classname: org.sunbird.job.dialcodecontextupdater.task.DialcodeContextUpdaterStreamTask  
-qrcode-image-generator:
-  job_classname: org.sunbird.job.qrimagegenerator.task.QRCodeImageGeneratorTask   
-audit-history-indexer:
-  job_classname: org.sunbird.job.audithistory.task.AuditHistoryIndexerStreamTask
-content-publish:
-  job_classname: org.sunbird.job.content.task.ContentPublishStreamTask        
+# dialcode-context-updater:
+#   job_classname: org.sunbird.job.dialcodecontextupdater.task.DialcodeContextUpdaterStreamTask  
+# qrcode-image-generator:
+#   job_classname: org.sunbird.job.qrimagegenerator.task.QRCodeImageGeneratorTask   
+# audit-history-indexer:
+#   job_classname: org.sunbird.job.audithistory.task.AuditHistoryIndexerStreamTask
+# content-publish:
+#   job_classname: org.sunbird.job.content.task.ContentPublishStreamTask        
