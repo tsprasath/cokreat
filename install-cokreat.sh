@@ -153,6 +153,13 @@ EOF"
 
 postscript() {
 
+neo4j=$(kubectl get pods -l app=neo4j -n dock -o jsonpath='{.items[0].metadata.name}')
+kubectl -n dock exec -it $neo4j -c neo4j -- bash -c "bin/cypher-shell <<EOF
+CREATE CONSTRAINT ON (domain:domain) ASSERT domain.IL_UNIQUE_ID IS UNIQUE;
+CREATE INDEX ON :domain(IL_FUNC_OBJECT_TYPE);
+CREATE INDEX ON :domain(IL_SYS_NODE_TYPE);
+EOF"
+
 ## Update Neo4J Definition ##
 ## It is expected to have the definition directory kept in the same folder. Download the definitions
 learningpod=`kubectl get pods --selector=app=learning -n dock | awk '{if(NR==2) print $1}'`
