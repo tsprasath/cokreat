@@ -133,6 +133,137 @@ data:
     taskmanager.memory.process.size: 1700m
     jobmanager.memory.process.size: 1600m
   {{ end }}
-  
+
+{{ if eq .Release.Name "search-indexer" }}
+  search-indexer: |+
+    include file("/data/flink/conf/base-config.conf")
+    kafka {
+      input.topic = "staging.learning.graph.events"
+      error.topic = "staging.learning.events.failed"
+      groupId = "staging-search-indexer-group"
+    }
+    task {
+      consumer.parallelism = 1
+      router.parallelism = 1
+      compositeSearch.parallelism = 1
+      dialcodeIndexer.parallelism = 1
+      dialcodemetricsIndexer.parallelism = 1
+    }
+    compositesearch.index.name = "compositesearch"
+    dialcode.index.name = "dialcode"
+    dailcodemetrics.index.name = "dialcodemetrics"
+    restrict.metadata.objectTypes = []
+    nested.fields = ["badgeAssertions", "targets", "badgeAssociations", "plugins", "me_totalTimeSpent", "me_totalPlaySessionCount", "me_totalTimeSpentInSec", "batches", "trackable", "credentials", "discussionForum", "provider", "osMetadata", "actions", "transcripts", "accessibility"]
+    schema.definition_cache.expiry = 14400
+    restrict.objectTypes = ["EventSet", "EventSetImage", "Event", "EventImage", "Questionnaire", "Misconception", "FrameworkType", "Concept", "Misconception", "Language", "Reference", "Dimension", "Method", "Library", "Domain", "Api"]
+    ignored.fields=["responseDeclaration", "body", "options", "lastStatusChangedOn", "SYS_INTERNAL_LAST_UPDATED_ON", "sYS_INTERNAL_LAST_UPDATED_ON", "branchingLogic"]
+
+    cloud_storage_type="{{ .Values.cloud_service_provider }}"
+    cloud_storage_key="{{ .Values.cloud_storage_key }}"
+    cloud_storage_secret="{{ .Values.cloud_storage_secret }}"
+    cloud_storage_container="{{ .Values.cloud_storage_content_bucketname }}"
+
+    cloudstorage.metadata.replace_absolute_path=false
+    cloudstorage.relative_path_prefix=CONTENT_STORAGE_BASE_PATH
+    cloudstorage.read_base_path="https://{{ .Values.cloud_storage_key }}.core.windows.net"
+    cloudstorage.write_base_path=["https://{{ .Values.cloud_storage_key }}.core.windows.net","https://obj.dev.sunbird.org"]
+    cloudstorage.metadata.list=["appIcon", "artifactUrl", "posterImage", "previewUrl", "thumbnail", "assetsMap", "certTemplate", "itemSetPreviewUrl", "grayScaleAppIcon", "sourceURL", "variants", "downloadUrl", "streamingUrl", "toc_url", "data", "question", "solutions", "editorState", "media", "pdfUrl", "transcripts"]
+
+  flink-conf: |+
+    jobmanager.memory.flink.size: 1024m
+    taskmanager.memory.flink.size: 1024m
+    taskmanager.numberOfTaskSlots: 1
+    parallelism.default: 1
+    jobmanager.execution.failover-strategy: region
+    taskmanager.memory.network.fraction: 0.1
+    scheduler-mode: reactive
+    heartbeat.timeout: 8000
+    heartbeat.interval: 5000
+    taskmanager.memory.process.size: 1700m
+    jobmanager.memory.process.size: 1600m
+  {{ end }}
+
+
+{{ if eq .Release.Name "video-stream-generator" }}
+  video-stream-generator: |+
+    include file("/data/flink/conf/base-config.conf")
+    kafka {
+      input.topic = "dock.content.postpublish.request"
+      groupId = "dock-video-stream-generator-group"
+    }
+    task {
+      timer.duration = 1800
+      consumer.parallelism = 1
+      parallelism = 1
+      max.retries = 10
+    }
+    lms-cassandra {
+      keyspace = dock_platform_db
+      table = "job_request"
+    }
+    service.content.basePath="http://{{ .Values.nginx_private_ingress_ip }}/content"
+    azure {
+      location = "centralindia"
+      login {
+        endpoint="https://login.microsoftonline.com"
+      }
+      api {
+        endpoint="https://management.azure.com"
+        version = "2018-07-01"
+      }
+      transform {
+        default = "media_transform_default"
+        hls = "media_transform_hls"
+      }
+      stream {
+        base_url=""
+        endpoint_name = "default"
+        protocol = "Hls"
+        policy_name = "Predefined_ClearStreamingOnly"
+      }
+    }
+    azure_tenant=""
+    azure_subscription_id=""
+    azure_account_name=""
+    azure_resource_group_name=""
+    azure_token_client_key=""
+    azure_token_client_secret=""
+    ## CSP Name. e.g: aws or azure
+    media_service_type="azure"
+    ## AWS Elemental Media Convert Config
+    aws {
+      region=""
+      content_bucket_name=""
+      token {
+        access_key=""
+        access_secret=""
+      }
+      api {
+        endpoint=""
+        version="2017-08-29"
+      }
+      service {
+        name="mediaconvert"
+        queue=""
+        role=""
+      }
+      stream {
+        protocol="Hls"
+      }
+    }
+
+  flink-conf: |+
+    jobmanager.memory.flink.size: 1024m
+    taskmanager.memory.flink.size: 1024m
+    taskmanager.numberOfTaskSlots: 1
+    parallelism.default: 1
+    jobmanager.execution.failover-strategy: region
+    taskmanager.memory.network.fraction: 0.1
+    scheduler-mode: reactive
+    heartbeat.timeout: 8000
+    heartbeat.interval: 5000
+    taskmanager.memory.process.size: 1700m
+    jobmanager.memory.process.size: 1600m  
+  {{ end }}
   log4j_console_properties: |+
 {{ .Values.log4j_console_properties | indent 4 }}

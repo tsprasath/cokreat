@@ -85,8 +85,8 @@ log4j_console_properties: |
   logger.netty.level = OFF
 
 ## classname
-# search-indexer: 
-#   job_classname: org.sunbird.job.searchindexer.task.SearchIndexerStreamTask
+search-indexer: 
+  job_classname: org.sunbird.job.searchindexer.task.SearchIndexerStreamTask
 # audit-event-generator:
 #   job_classname: org.sunbird.job.auditevent.task.AuditEventGeneratorStreamTask
 # asset-enrichment:
