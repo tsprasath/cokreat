@@ -213,6 +213,7 @@ sunbird_google_oauth_clientId : "438130763650-l4ffohe1ir6m1mb247b1qskrdv17rcj6.a
 sunbird_google_oauth_clientSecret : "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" #Google OAuth Client Secret 
 
 
+
 cloud_private_storage_accountname: "oneclicktest"
 cloud_storage_key: "oneclicktest"
 sunbird_azure_account_name: "oneclicktest"
@@ -225,5 +226,8 @@ cloud_storage_secret: "sWlgHDWgzYDNuKRZq8n4nAJ52JS3z8vCFos8HixlRRK3rz7YU53bZcVXT
 sunbird_azure_account_key: "sWlgHDWgzYDNuKRZq8n4nAJ52JS3z8vCFos8HixlRRK3rz7YU53bZcVXTkVc6x+eYzwJsGNR7nlX+ASt3MYynA=="
 PORTAL_API_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJMVFl1ZWl4SkdMSGQ5Z0UzYUxwaUw5STl4bFZpZFJmUyJ9.cNqfptKCb6ogIPdNJ-Ai46JsGbbPu1nCsSNcoetjSjo"
 ANALYTICS_API_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJMVFl1ZWl4SkdMSGQ5Z0UzYUxwaUw5STl4bFZpZFJmUyJ9.cNqfptKCb6ogIPdNJ-Ai46JsGbbPu1nCsSNcoetjSjo"
+core_vault_sunbird_api_auth_token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJMVFl1ZWl4SkdMSGQ5Z0UzYUxwaUw5STl4bFZpZFJmUyJ9.cNqfptKCb6ogIPdNJ-Ai46JsGbbPu1nCsSNcoetjSjo"
 CORE_INGRESS_GATEWAY_IP: "20.204.204.171"
 nginx_ed_private_ingress_ip: "10.224.0.20"
+dock_api_auth_token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIyMzYxNWI1Yzk3ZTQ0NDUzYTBlYTczYmZhZGQ5ZmQzNCJ9.3sZyJkBzxeDMW8Fw-8xD0zTu4hdk8198ql_UQ18CFeM"
+dock_api_auth_token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIyMzYxNWI1Yzk3ZTQ0NDUzYTBlYTczYmZhZGQ5ZmQzNCJ9.3sZyJkBzxeDMW8Fw-8xD0zTu4hdk8198ql_UQ18CFeM"

@@ -104,6 +104,7 @@ TOKEN_LINE=$(echo "$LOGS" | grep "JWT token for api-admin is")
 TOKEN=$(echo "$TOKEN_LINE" | awk -F' : ' '{print $2}')
 echo "PORTAL_API_KEY: \"$TOKEN\"" >> global-values.yaml
 echo "ANALYTICS_API_KEY: \"$TOKEN\"" >> global-values.yaml
+echo "core_vault_sunbird_api_auth_token: \"$TOKEN\"" >> global-values.yaml
 
 # ED Public Loadbalancer IP
 ed_public_ingress_external_ip=$(kubectl -n dev get service nginx-public-ingress -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
@@ -178,20 +179,20 @@ TOKEN_LINE1=$(echo "$LOGS1" | grep "JWT token for api-admin is")
 TOKEN1=$(echo "$TOKEN_LINE1" | awk -F' : ' '{print $2}')
 echo "dock_api_auth_token: \"$TOKEN1\"" >> global-values.yaml
 
-    # # Loop through each line in the CSV file
-    #     while IFS=',' read -r chart_name chart_repo; do
-    #         # Check if the chart repository URL is empty
-    #         if [ -z "$chart_repo" ]; then
-    #             echo "Error: Repository URL not found for $chart_name in postscript.csv"
-    #             exit 1
-    #         fi
-    #         if ! helm upgrade --install "$chart_name" "$chart_repo" -n "$namespace" -f global-values.yaml --kubeconfig "$kubeconfig_file" ; then
-    #             echo -e "\e[91mError installing $chart_name\e[0m"
-    #             # exit 1
-    #         fi
-    #         echo -e "\e[92m$chart_name is installed successfully\e[0m"
-    #         # fi
-    #     done < postscript.csv
+    # Loop through each line in the CSV file
+        while IFS=',' read -r chart_name chart_repo; do
+            # Check if the chart repository URL is empty
+            if [ -z "$chart_repo" ]; then
+                echo "Error: Repository URL not found for $chart_name in postscript.csv"
+                exit 1
+            fi
+            if ! helm upgrade --install "$chart_name" "$chart_repo" -n "$namespace" -f global-values.yaml --kubeconfig "$kubeconfig_file" ; then
+                echo -e "\e[91mError installing $chart_name\e[0m"
+                # exit 1
+            fi
+            echo -e "\e[92m$chart_name is installed successfully\e[0m"
+            # fi
+        done < postscript.csv
 }
 
 # Parse the command-line arguments
